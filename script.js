@@ -91,3 +91,16 @@ mobilGomb.addEventListener("click", () => {
 });
 
 tortakatFrissit();
+
+
+menu.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("nyitott");
+  });
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 820) {
+    menu.classList.remove("nyitott");
+  }
+});
