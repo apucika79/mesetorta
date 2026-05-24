@@ -127,14 +127,46 @@ main { max-width: 1100px; margin: 0 auto; padding: clamp(0.9rem, 2.5vw, 1.2rem);
 label { display: flex; flex-direction: column; font-weight: 700; gap: .4rem; min-width: 0; }
 select { width: 100%; padding: .6rem; border-radius: 12px; border: 1px solid #ddd; }
 
+.torta-gorggeto { position: relative; margin-top: 1.2rem; }
+
 .torta-racs {
-  margin-top: 1.2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  display: flex;
   gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: .25rem .1rem .6rem;
+  scrollbar-width: thin;
+  touch-action: pan-x;
 }
 
+.torta-racs::-webkit-scrollbar { height: 8px; }
+.torta-racs::-webkit-scrollbar-thumb { background: rgba(140, 89, 255, 0.35); border-radius: 999px; }
+
+.gorggeto-nyil {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(140, 89, 255, 0.25);
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--lila);
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 16px rgba(45, 34, 65, 0.15);
+  z-index: 2;
+}
+
+.gorggeto-nyil.balra { left: -0.75rem; }
+.gorggeto-nyil.jobbra { right: -0.75rem; }
+.gorggeto-nyil.rejtett { opacity: 0; pointer-events: none; }
+
 .torta-kartya {
+  flex: 0 0 min(260px, calc(100vw - 5rem));
   background: #fff;
   border-radius: 18px;
   overflow: hidden;
@@ -186,4 +218,6 @@ select { width: 100%; padding: .6rem; border-radius: 12px; border: 1px solid #dd
   .torta-kartya img {
     height: 170px;
   }
+
+  .gorggeto-nyil { display: none; }
 }

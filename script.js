@@ -46,6 +46,8 @@ const alkalomSzuro = document.getElementById("alkalomSzuro");
 const temaSzuro = document.getElementById("temaSzuro");
 const mobilGomb = document.getElementById("mobilGomb");
 const menu = document.getElementById("menu");
+const gorditBalra = document.getElementById("gorditBalra");
+const gorditJobbra = document.getElementById("gorditJobbra");
 
 function megfelelSzuronek(ertek, szuroErtek) {
   return szuroErtek === "osszes" || ertek === szuroErtek;
@@ -80,6 +82,24 @@ function tortakatFrissit() {
     szurt.length > 0
       ? szurt.map(kartyatGeneral).join("")
       : `<p>Nincs találat ehhez a szűréshez. Próbálj másik kombinációt!</p>`;
+
+  tortaRacs.scrollLeft = 0;
+  nyilakFrissitese();
+}
+
+function nyilakFrissitese() {
+  const vanGorgetes = tortaRacs.scrollWidth > tortaRacs.clientWidth + 5;
+  const balSzelen = tortaRacs.scrollLeft <= 5;
+  const jobbSzelen = tortaRacs.scrollLeft + tortaRacs.clientWidth >= tortaRacs.scrollWidth - 5;
+
+  gorditBalra.classList.toggle("rejtett", !vanGorgetes || balSzelen);
+  gorditJobbra.classList.toggle("rejtett", !vanGorgetes || jobbSzelen);
+}
+
+function gorgetesIranyba(irany) {
+  const kartya = tortaRacs.querySelector(".torta-kartya");
+  const lepes = kartya ? kartya.getBoundingClientRect().width + 16 : 280;
+  tortaRacs.scrollBy({ left: lepes * irany, behavior: "smooth" });
 }
 
 [alkalomSzuro, temaSzuro].forEach((elem) => {
@@ -89,6 +109,10 @@ function tortakatFrissit() {
 mobilGomb.addEventListener("click", () => {
   menu.classList.toggle("nyitott");
 });
+
+gorditBalra.addEventListener("click", () => gorgetesIranyba(-1));
+gorditJobbra.addEventListener("click", () => gorgetesIranyba(1));
+tortaRacs.addEventListener("scroll", nyilakFrissitese, { passive: true });
 
 tortakatFrissit();
 
@@ -103,4 +127,6 @@ window.addEventListener("resize", () => {
   if (window.innerWidth > 820) {
     menu.classList.remove("nyitott");
   }
+
+  nyilakFrissitese();
 });
