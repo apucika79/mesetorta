@@ -289,3 +289,38 @@ document.getElementById("kosarhozAdGomb").addEventListener("click", kosarhozAd);
 tortakatFrissit();
 kosarFrissitese();
 requestAnimationFrame(autoGorgetesLeptetes);
+
+
+const kosarLista = document.getElementById("kosarLista");
+const kosarUres = document.getElementById("kosarUres");
+const fizetesForm = document.getElementById("fizetesForm");
+const fizetesVisszajelzes = document.getElementById("fizetesVisszajelzes");
+
+function kosarListaFrissitese() {
+  kosarLista.innerHTML = kosar
+    .map(
+      (tetel, i) => `<div class="kosar-tetel"><strong>${i + 1}. ${tetel.nev}</strong><br>${tetel.meret} szeletes<br>${tetel.uzenet ? `Megjegyzés: ${tetel.uzenet}` : ""}</div>`
+    )
+    .join("");
+  kosarUres.style.display = kosar.length ? "none" : "block";
+}
+
+const eredetiKosarFrissitese = kosarFrissitese;
+kosarFrissitese = function () {
+  eredetiKosarFrissitese();
+  kosarListaFrissitese();
+};
+
+fizetesForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!kosar.length) {
+    fizetesVisszajelzes.textContent = "Előbb tegyél legalább 1 tortát a kosárba.";
+    return;
+  }
+  fizetesVisszajelzes.textContent = "Siker! Átirányítás bankkártyás fizetésre...";
+  fizetesForm.reset();
+  kosar.length = 0;
+  kosarFrissitese();
+});
+
+kosarListaFrissitese();
