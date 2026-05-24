@@ -246,18 +246,43 @@ select { width: 100%; padding: .6rem; border-radius: 12px; border: 1px solid #dd
   position: fixed;
   inset: 0;
   background: rgba(22, 12, 36, 0.58);
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  z-index: 30;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
-.modal-hatter.nyitott { display: flex; }
+.modal-hatter.nyitott {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 .modal-panel {
-  width: min(760px, 100%);
+  width: min(760px, calc(100vw - 2rem));
+  max-width: 94vw;
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
   background: #fff;
   border-radius: 18px;
   padding: 1rem;
+}
+
+body.modal-nyitva {
+  overflow: hidden;
+}
+
+body.modal-nyitva header,
+body.modal-nyitva main,
+body.modal-nyitva footer {
+  pointer-events: none;
+}
+
+body.modal-nyitva .modal-hatter,
+body.modal-nyitva .modal-panel {
+  pointer-events: auto;
 }
 .modal-bezaro { margin-left: auto; display: block; border: none; background: #f3efff; border-radius: 8px; padding: .45rem .7rem; }
 .modal-kep-wrap { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .5rem; }

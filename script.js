@@ -222,10 +222,14 @@ function modalMegnyitasa(tortaIndex) {
   rendelesUzenet.value = "";
   kepFrissitese();
   termekModal.classList.add("nyitott");
+  termekModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-nyitva");
 }
 
 function modalBezarasa() {
   termekModal.classList.remove("nyitott");
+  termekModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-nyitva");
   aktivTorta = null;
 }
 
