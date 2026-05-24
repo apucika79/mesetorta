@@ -128,7 +128,7 @@ const mobilGomb = document.getElementById("mobilGomb");
 const menu = document.getElementById("menu");
 const gorditBalra = document.getElementById("gorditBalra");
 const gorditJobbra = document.getElementById("gorditJobbra");
-
+const autoGorgetesGomb = document.getElementById("autoGorgetesGomb");
 
 const autoGorgetesAllapot = {
   fut: true,
@@ -169,10 +169,22 @@ function autoGorgetesLeptetes(ido) {
 
 function autoGorgetesMegallitasa() {
   autoGorgetesAllapot.fut = false;
+  autoGorgetesGomb.textContent = "▶ Automatikus görgetés folytatása";
+  autoGorgetesGomb.setAttribute("aria-pressed", "false");
 }
 
 function autoGorgetesInditasa() {
   autoGorgetesAllapot.fut = true;
+  autoGorgetesGomb.textContent = "⏸ Automatikus görgetés";
+  autoGorgetesGomb.setAttribute("aria-pressed", "true");
+}
+
+function autoGorgetesValtasa() {
+  if (autoGorgetesAllapot.fut) {
+    autoGorgetesMegallitasa();
+  } else {
+    autoGorgetesInditasa();
+  }
 }
 
 function megfelelSzuronek(ertek, szuroErtek) {
@@ -239,12 +251,10 @@ mobilGomb.addEventListener("click", () => {
 
 gorditBalra.addEventListener("click", () => gorgetesIranyba(-1));
 gorditJobbra.addEventListener("click", () => gorgetesIranyba(1));
+gorditBalra.addEventListener("click", autoGorgetesMegallitasa);
+gorditJobbra.addEventListener("click", autoGorgetesMegallitasa);
+autoGorgetesGomb.addEventListener("click", autoGorgetesValtasa);
 tortaRacs.addEventListener("scroll", nyilakFrissitese, { passive: true });
-tortaRacs.addEventListener("mouseenter", autoGorgetesMegallitasa);
-tortaRacs.addEventListener("mouseleave", autoGorgetesInditasa);
-tortaRacs.addEventListener("touchstart", autoGorgetesMegallitasa, { passive: true });
-tortaRacs.addEventListener("touchend", autoGorgetesInditasa, { passive: true });
-tortaRacs.addEventListener("touchcancel", autoGorgetesInditasa, { passive: true });
 
 tortakatFrissit();
 requestAnimationFrame(autoGorgetesLeptetes);
