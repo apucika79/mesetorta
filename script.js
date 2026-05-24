@@ -119,7 +119,18 @@ const tortak = [
     tema: "unikornis",
     kep: "https://images.unsplash.com/photo-1519915028121-7d3463d5b1e3?auto=format&fit=crop&w=900&q=80",
   },
-];
+].map((torta) => ({
+  ...torta,
+  kepek: [
+    torta.kep,
+    `${torta.kep}&sat=-25`,
+    `${torta.kep}&sat=20`,
+  ],
+}));
+
+const kosar = [];
+let aktivTorta = null;
+let aktivKepIndex = 0;
 
 const tortaRacs = document.getElementById("tortaRacs");
 const alkalomSzuro = document.getElementById("alkalomSzuro");
@@ -129,98 +140,52 @@ const menu = document.getElementById("menu");
 const gorditBalra = document.getElementById("gorditBalra");
 const gorditJobbra = document.getElementById("gorditJobbra");
 const autoGorgetesGomb = document.getElementById("autoGorgetesGomb");
+const termekModal = document.getElementById("termekModal");
+const modalBezaro = document.getElementById("modalBezaro");
+const modalCim = document.getElementById("modalCim");
+const modalAr = document.getElementById("modalAr");
+const modalSzeletek = document.getElementById("modalSzeletek");
+const modalKep = document.getElementById("modalKep");
+const kepSzamlalo = document.getElementById("kepSzamlalo");
+const modalKepBalra = document.getElementById("modalKepBalra");
+const modalKepJobbra = document.getElementById("modalKepJobbra");
+const rendelesMeret = document.getElementById("rendelesMeret");
+const rendelesUzenet = document.getElementById("rendelesUzenet");
+const kosarElemSzam = document.getElementById("kosarElemSzam");
 
-const autoGorgetesAllapot = {
-  fut: true,
-  irany: 1,
-  sebesseg: 0.25,
-  utolsoIdo: null,
-};
+const autoGorgetesAllapot = { fut: true, irany: 1, sebesseg: 0.25, utolsoIdo: null };
 
-function autoGorgetesLeptetes(ido) {
-  if (autoGorgetesAllapot.utolsoIdo === null) {
-    autoGorgetesAllapot.utolsoIdo = ido;
-  }
-
+function autoGorgetesLeptetes(ido) { /* unchanged */
+  if (autoGorgetesAllapot.utolsoIdo === null) autoGorgetesAllapot.utolsoIdo = ido;
   const eltelt = ido - autoGorgetesAllapot.utolsoIdo;
   autoGorgetesAllapot.utolsoIdo = ido;
-
   if (autoGorgetesAllapot.fut) {
     const maxGorgetes = tortaRacs.scrollWidth - tortaRacs.clientWidth;
-
     if (maxGorgetes > 0) {
-      const kovetkezo =
-        tortaRacs.scrollLeft + autoGorgetesAllapot.irany * autoGorgetesAllapot.sebesseg * eltelt;
-
+      const kovetkezo = tortaRacs.scrollLeft + autoGorgetesAllapot.irany * autoGorgetesAllapot.sebesseg * eltelt;
       if (kovetkezo <= 0) {
-        tortaRacs.scrollLeft = 0;
-        autoGorgetesAllapot.irany = 1;
+        tortaRacs.scrollLeft = 0; autoGorgetesAllapot.irany = 1;
       } else if (kovetkezo >= maxGorgetes) {
-        tortaRacs.scrollLeft = maxGorgetes;
-        autoGorgetesAllapot.irany = -1;
-      } else {
-        tortaRacs.scrollLeft = kovetkezo;
-      }
+        tortaRacs.scrollLeft = maxGorgetes; autoGorgetesAllapot.irany = -1;
+      } else tortaRacs.scrollLeft = kovetkezo;
     }
   }
-
   requestAnimationFrame(autoGorgetesLeptetes);
 }
 
-function autoGorgetesMegallitasa() {
-  autoGorgetesAllapot.fut = false;
-  autoGorgetesGomb.textContent = "▶ Automatikus görgetés folytatása";
-  autoGorgetesGomb.setAttribute("aria-pressed", "false");
-}
+const autoGorgetesMegallitasa = () => { autoGorgetesAllapot.fut = false; autoGorgetesGomb.textContent = "▶ Automatikus görgetés folytatása"; autoGorgetesGomb.setAttribute("aria-pressed", "false"); };
+const autoGorgetesInditasa = () => { autoGorgetesAllapot.fut = true; autoGorgetesGomb.textContent = "⏸ Automatikus görgetés"; autoGorgetesGomb.setAttribute("aria-pressed", "true"); };
+const autoGorgetesValtasa = () => autoGorgetesAllapot.fut ? autoGorgetesMegallitasa() : autoGorgetesInditasa();
 
-function autoGorgetesInditasa() {
-  autoGorgetesAllapot.fut = true;
-  autoGorgetesGomb.textContent = "⏸ Automatikus görgetés";
-  autoGorgetesGomb.setAttribute("aria-pressed", "true");
-}
+const megfelelSzuronek = (ertek, szuroErtek) => szuroErtek === "osszes" || ertek === szuroErtek;
 
-function autoGorgetesValtasa() {
-  if (autoGorgetesAllapot.fut) {
-    autoGorgetesMegallitasa();
-  } else {
-    autoGorgetesInditasa();
-  }
-}
-
-function megfelelSzuronek(ertek, szuroErtek) {
-  return szuroErtek === "osszes" || ertek === szuroErtek;
-}
-
-function kartyatGeneral(torta) {
-  return `
-    <article class="torta-kartya">
-      <img src="${torta.kep}" alt="${torta.nev}" loading="lazy" />
-      <div class="torta-torzs">
-        <h3>${torta.nev}</h3>
-        <p><strong>Ár:</strong> ${torta.ar}</p>
-        <p><strong>Méretek:</strong> ${torta.szeletek.join(", ")} szeletes</p>
-        <div class="cimke-sor">
-          <span>${torta.alkalom}</span>
-          <span>${torta.tema}</span>
-        </div>
-      </div>
-    </article>
-  `;
+function kartyatGeneral(torta, index) {
+  return `<article class="torta-kartya" data-index="${index}"><img src="${torta.kep}" alt="${torta.nev}" loading="lazy" /><div class="torta-torzs"><h3>${torta.nev}</h3><p><strong>Ár:</strong> ${torta.ar}</p><p><strong>Méretek:</strong> ${torta.szeletek.join(", ")} szeletes</p><div class="cimke-sor"><span>${torta.alkalom}</span><span>${torta.tema}</span></div></div></article>`;
 }
 
 function tortakatFrissit() {
-  const szurt = tortak.filter((torta) => {
-    return (
-      megfelelSzuronek(torta.alkalom, alkalomSzuro.value) &&
-      megfelelSzuronek(torta.tema, temaSzuro.value)
-    );
-  });
-
-  tortaRacs.innerHTML =
-    szurt.length > 0
-      ? szurt.map(kartyatGeneral).join("")
-      : `<p>Nincs találat ehhez a szűréshez. Próbálj másik kombinációt!</p>`;
-
+  const szurt = tortak.filter((torta) => megfelelSzuronek(torta.alkalom, alkalomSzuro.value) && megfelelSzuronek(torta.tema, temaSzuro.value));
+  tortaRacs.innerHTML = szurt.length > 0 ? szurt.map((torta) => kartyatGeneral(torta, tortak.indexOf(torta))).join("") : `<p>Nincs találat ehhez a szűréshez. Próbálj másik kombinációt!</p>`;
   tortaRacs.scrollLeft = 0;
   autoGorgetesAllapot.irany = 1;
   nyilakFrissitese();
@@ -230,7 +195,6 @@ function nyilakFrissitese() {
   const vanGorgetes = tortaRacs.scrollWidth > tortaRacs.clientWidth + 5;
   const balSzelen = tortaRacs.scrollLeft <= 5;
   const jobbSzelen = tortaRacs.scrollLeft + tortaRacs.clientWidth >= tortaRacs.scrollWidth - 5;
-
   gorditBalra.classList.toggle("rejtett", !vanGorgetes || balSzelen);
   gorditJobbra.classList.toggle("rejtett", !vanGorgetes || jobbSzelen);
 }
@@ -241,14 +205,44 @@ function gorgetesIranyba(irany) {
   tortaRacs.scrollBy({ left: lepes * irany, behavior: "smooth" });
 }
 
-[alkalomSzuro, temaSzuro].forEach((elem) => {
-  elem.addEventListener("change", tortakatFrissit);
-});
+function kepFrissitese() {
+  if (!aktivTorta) return;
+  modalKep.src = aktivTorta.kepek[aktivKepIndex];
+  modalKep.alt = `${aktivTorta.nev} - ${aktivKepIndex + 1}. kép`;
+  kepSzamlalo.textContent = `${aktivKepIndex + 1} / ${aktivTorta.kepek.length}`;
+}
 
-mobilGomb.addEventListener("click", () => {
-  menu.classList.toggle("nyitott");
-});
+function modalMegnyitasa(tortaIndex) {
+  aktivTorta = tortak[tortaIndex];
+  aktivKepIndex = 0;
+  modalCim.textContent = aktivTorta.nev;
+  modalAr.textContent = `Ár: ${aktivTorta.ar}`;
+  modalSzeletek.textContent = `Elérhető méretek: ${aktivTorta.szeletek.join(", ")} szeletes`;
+  rendelesMeret.innerHTML = aktivTorta.szeletek.map((meret) => `<option value="${meret}">${meret} szeletes</option>`).join("");
+  rendelesUzenet.value = "";
+  kepFrissitese();
+  termekModal.classList.add("nyitott");
+}
 
+function modalBezarasa() {
+  termekModal.classList.remove("nyitott");
+  aktivTorta = null;
+}
+
+function kosarFrissitese() {
+  kosarElemSzam.textContent = `${kosar.length} termék`;
+}
+
+function kosarhozAd() {
+  if (!aktivTorta) return;
+  kosar.push({ nev: aktivTorta.nev, meret: rendelesMeret.value, uzenet: rendelesUzenet.value.trim() });
+  kosarFrissitese();
+  modalBezarasa();
+}
+
+alkalomSzuro.addEventListener("change", tortakatFrissit);
+temaSzuro.addEventListener("change", tortakatFrissit);
+mobilGomb.addEventListener("click", () => menu.classList.toggle("nyitott"));
 gorditBalra.addEventListener("click", () => gorgetesIranyba(-1));
 gorditJobbra.addEventListener("click", () => gorgetesIranyba(1));
 gorditBalra.addEventListener("click", autoGorgetesMegallitasa);
@@ -256,19 +250,18 @@ gorditJobbra.addEventListener("click", autoGorgetesMegallitasa);
 autoGorgetesGomb.addEventListener("click", autoGorgetesValtasa);
 tortaRacs.addEventListener("scroll", nyilakFrissitese, { passive: true });
 
+tortaRacs.addEventListener("click", (event) => {
+  const kartya = event.target.closest(".torta-kartya");
+  if (!kartya) return;
+  modalMegnyitasa(Number(kartya.dataset.index));
+});
+
+modalBezaro.addEventListener("click", modalBezarasa);
+termekModal.addEventListener("click", (event) => { if (event.target === termekModal) modalBezarasa(); });
+modalKepBalra.addEventListener("click", () => { if (!aktivTorta) return; aktivKepIndex = (aktivKepIndex - 1 + aktivTorta.kepek.length) % aktivTorta.kepek.length; kepFrissitese(); });
+modalKepJobbra.addEventListener("click", () => { if (!aktivTorta) return; aktivKepIndex = (aktivKepIndex + 1) % aktivTorta.kepek.length; kepFrissitese(); });
+document.getElementById("kosarhozAdGomb").addEventListener("click", kosarhozAd);
+
 tortakatFrissit();
+kosarFrissitese();
 requestAnimationFrame(autoGorgetesLeptetes);
-
-menu.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    menu.classList.remove("nyitott");
-  });
-});
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 820) {
-    menu.classList.remove("nyitott");
-  }
-
-  nyilakFrissitese();
-});
