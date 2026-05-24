@@ -179,6 +179,26 @@ const autoGorgetesValtasa = () => autoGorgetesAllapot.fut ? autoGorgetesMegallit
 
 const megfelelSzuronek = (ertek, szuroErtek) => szuroErtek === "osszes" || ertek === szuroErtek;
 
+
+function arSzamkent(arSzoveg) {
+  return Number(arSzoveg.replace(/\D/g, ""));
+}
+
+function meretArSzorzo(meret, alapMeret) {
+  if (meret === alapMeret) return 1;
+  if (meret > alapMeret) {
+    return 1 + ((meret - alapMeret) / 4) * 0.12;
+  }
+  return 1 - ((alapMeret - meret) / 4) * 0.1;
+}
+
+function meretArLabel(torta, meret) {
+  const alapMeret = Math.min(...torta.szeletek);
+  const alapAr = arSzamkent(torta.ar);
+  const meretAr = Math.round(alapAr * meretArSzorzo(meret, alapMeret) / 100) * 100;
+  return `${meret} szeletes – ${meretAr.toLocaleString("hu-HU")} Ft`;
+}
+
 function kartyatGeneral(torta, index) {
   return `<article class="torta-kartya" data-index="${index}"><img src="${torta.kep}" alt="${torta.nev}" loading="lazy" /><div class="torta-torzs"><h3>${torta.nev}</h3><p><strong>Ár:</strong> ${torta.ar}</p><p><strong>Méretek:</strong> ${torta.szeletek.join(", ")} szeletes</p><div class="cimke-sor"><span>${torta.alkalom}</span><span>${torta.tema}</span></div></div></article>`;
 }
@@ -218,7 +238,7 @@ function modalMegnyitasa(tortaIndex) {
   modalCim.textContent = aktivTorta.nev;
   modalAr.textContent = `Ár: ${aktivTorta.ar}`;
   modalSzeletek.textContent = `Elérhető méretek: ${aktivTorta.szeletek.join(", ")} szeletes`;
-  rendelesMeret.innerHTML = aktivTorta.szeletek.map((meret) => `<option value="${meret}">${meret} szeletes</option>`).join("");
+  rendelesMeret.innerHTML = aktivTorta.szeletek.map((meret) => `<option value="${meret}">${meretArLabel(aktivTorta, meret)}</option>`).join("");
   rendelesUzenet.value = "";
   kepFrissitese();
   termekModal.classList.add("nyitott");
