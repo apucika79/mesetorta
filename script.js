@@ -5,16 +5,14 @@ const tortak = [
     szeletek: [8, 12, 16],
     alkalom: "gyerek",
     tema: "unikornis",
-    kinezet: "pasztell",
     kep: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=900&q=80",
   },
   {
     nev: "Arany Elegancia",
     ar: "24 900 Ft",
     szeletek: [12, 16],
-    alkalom: "eskuvo",
+    alkalom: "evfordulo",
     tema: "minimal",
-    kinezet: "arany",
     kep: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80",
   },
   {
@@ -23,16 +21,14 @@ const tortak = [
     szeletek: [8, 12],
     alkalom: "szulinap",
     tema: "hercegno",
-    kinezet: "vidam",
     kep: "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=80",
   },
   {
     nev: "Sport Bajnok",
     ar: "20 900 Ft",
     szeletek: [8, 12, 16],
-    alkalom: "ceges",
+    alkalom: "egyeb",
     tema: "sport",
-    kinezet: "elegans",
     kep: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=900&q=80",
   },
   {
@@ -41,7 +37,6 @@ const tortak = [
     szeletek: [12, 16],
     alkalom: "szulinap",
     tema: "minimal",
-    kinezet: "pasztell",
     kep: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=80",
   },
 ];
@@ -49,7 +44,6 @@ const tortak = [
 const tortaRacs = document.getElementById("tortaRacs");
 const alkalomSzuro = document.getElementById("alkalomSzuro");
 const temaSzuro = document.getElementById("temaSzuro");
-const kinezetSzuro = document.getElementById("kinezetSzuro");
 const mobilGomb = document.getElementById("mobilGomb");
 const menu = document.getElementById("menu");
 
@@ -68,7 +62,6 @@ function kartyatGeneral(torta) {
         <div class="cimke-sor">
           <span>${torta.alkalom}</span>
           <span>${torta.tema}</span>
-          <span>${torta.kinezet}</span>
         </div>
       </div>
     </article>
@@ -79,8 +72,7 @@ function tortakatFrissit() {
   const szurt = tortak.filter((torta) => {
     return (
       megfelelSzuronek(torta.alkalom, alkalomSzuro.value) &&
-      megfelelSzuronek(torta.tema, temaSzuro.value) &&
-      megfelelSzuronek(torta.kinezet, kinezetSzuro.value)
+      megfelelSzuronek(torta.tema, temaSzuro.value)
     );
   });
 
@@ -90,7 +82,7 @@ function tortakatFrissit() {
       : `<p>Nincs találat ehhez a szűréshez. Próbálj másik kombinációt!</p>`;
 }
 
-[alkalomSzuro, temaSzuro, kinezetSzuro].forEach((elem) => {
+[alkalomSzuro, temaSzuro].forEach((elem) => {
   elem.addEventListener("change", tortakatFrissit);
 });
 
