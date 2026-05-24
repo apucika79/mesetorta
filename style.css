@@ -128,6 +128,21 @@ label { display: flex; flex-direction: column; font-weight: 700; gap: .4rem; min
 select { width: 100%; padding: .6rem; border-radius: 12px; border: 1px solid #ddd; }
 
 .torta-gorggeto { position: relative; margin-top: 1.2rem; }
+.gorggeto-vezerlok {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.auto-gorgetes-gomb {
+  border: 1px solid rgba(140, 89, 255, 0.25);
+  background: #fff;
+  color: var(--lila);
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
 
 .torta-racs {
   display: flex;
