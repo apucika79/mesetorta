@@ -240,3 +240,29 @@ select { width: 100%; padding: .6rem; border-radius: 12px; border: 1px solid #dd
     font-size: 1.2rem;
   }
 }
+
+.kosar-link { font-weight: 700; }
+.modal-hatter {
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 12, 36, 0.58);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 30;
+}
+.modal-hatter.nyitott { display: flex; }
+.modal-panel {
+  width: min(760px, 100%);
+  background: #fff;
+  border-radius: 18px;
+  padding: 1rem;
+}
+.modal-bezaro { margin-left: auto; display: block; border: none; background: #f3efff; border-radius: 8px; padding: .45rem .7rem; }
+.modal-kep-wrap { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .5rem; }
+.modal-kep-wrap img { width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; }
+.modal-kep-nyil { border: none; background: #f3efff; color: var(--lila); width: 2rem; height: 2rem; border-radius: 50%; font-size: 1.3rem; }
+.kep-szamlalo { text-align: center; margin: .45rem 0 0; color: var(--lila); font-weight: 700; }
+.rendeles-blokk { display: grid; gap: .45rem; margin-top: .8rem; }
+textarea { width: 100%; border-radius: 12px; border: 1px solid #ddd; padding: .6rem; font-family: inherit; }

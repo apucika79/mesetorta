@@ -33,6 +33,7 @@
         <a href="#termekek">Termékek</a>
         <a href="#webaruhaz">Webshop</a>
         <a href="#kapcsolat">Kapcsolat</a>
+        <a href="#webaruhaz" class="kosar-link">🛒 <span id="kosarElemSzam">0 termék</span></a>
       </nav>
     </header>
 
@@ -159,6 +160,30 @@
     <footer class="lablec">
       <p>© 2026 Mesetorta.hu — Minden torta egy mese kezdete.</p>
     </footer>
+
+
+    <div id="termekModal" class="modal-hatter" aria-hidden="true">
+      <div class="modal-panel">
+        <button id="modalBezaro" class="modal-bezaro" type="button">Bezár ✕</button>
+        <div class="modal-kep-wrap">
+          <button id="modalKepBalra" type="button" class="modal-kep-nyil">‹</button>
+          <img id="modalKep" src="" alt="" />
+          <button id="modalKepJobbra" type="button" class="modal-kep-nyil">›</button>
+        </div>
+        <p id="kepSzamlalo" class="kep-szamlalo"></p>
+        <h3 id="modalCim"></h3>
+        <p id="modalAr"></p>
+        <p id="modalSzeletek"></p>
+
+        <div class="rendeles-blokk">
+          <label for="rendelesMeret">Méret választása</label>
+          <select id="rendelesMeret"></select>
+          <label for="rendelesUzenet">Megjegyzés a rendeléshez</label>
+          <textarea id="rendelesUzenet" rows="2" placeholder="Pl. név a tortára"></textarea>
+          <button id="kosarhozAdGomb" class="fo-gomb" type="button">Megrendelem (Kosárhoz adás)</button>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
