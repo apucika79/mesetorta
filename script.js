@@ -129,6 +129,52 @@ const menu = document.getElementById("menu");
 const gorditBalra = document.getElementById("gorditBalra");
 const gorditJobbra = document.getElementById("gorditJobbra");
 
+
+const autoGorgetesAllapot = {
+  fut: true,
+  irany: 1,
+  sebesseg: 0.25,
+  utolsoIdo: null,
+};
+
+function autoGorgetesLeptetes(ido) {
+  if (autoGorgetesAllapot.utolsoIdo === null) {
+    autoGorgetesAllapot.utolsoIdo = ido;
+  }
+
+  const eltelt = ido - autoGorgetesAllapot.utolsoIdo;
+  autoGorgetesAllapot.utolsoIdo = ido;
+
+  if (autoGorgetesAllapot.fut) {
+    const maxGorgetes = tortaRacs.scrollWidth - tortaRacs.clientWidth;
+
+    if (maxGorgetes > 0) {
+      const kovetkezo =
+        tortaRacs.scrollLeft + autoGorgetesAllapot.irany * autoGorgetesAllapot.sebesseg * eltelt;
+
+      if (kovetkezo <= 0) {
+        tortaRacs.scrollLeft = 0;
+        autoGorgetesAllapot.irany = 1;
+      } else if (kovetkezo >= maxGorgetes) {
+        tortaRacs.scrollLeft = maxGorgetes;
+        autoGorgetesAllapot.irany = -1;
+      } else {
+        tortaRacs.scrollLeft = kovetkezo;
+      }
+    }
+  }
+
+  requestAnimationFrame(autoGorgetesLeptetes);
+}
+
+function autoGorgetesMegallitasa() {
+  autoGorgetesAllapot.fut = false;
+}
+
+function autoGorgetesInditasa() {
+  autoGorgetesAllapot.fut = true;
+}
+
 function megfelelSzuronek(ertek, szuroErtek) {
   return szuroErtek === "osszes" || ertek === szuroErtek;
 }
@@ -164,6 +210,7 @@ function tortakatFrissit() {
       : `<p>Nincs találat ehhez a szűréshez. Próbálj másik kombinációt!</p>`;
 
   tortaRacs.scrollLeft = 0;
+  autoGorgetesAllapot.irany = 1;
   nyilakFrissitese();
 }
 
@@ -193,8 +240,14 @@ mobilGomb.addEventListener("click", () => {
 gorditBalra.addEventListener("click", () => gorgetesIranyba(-1));
 gorditJobbra.addEventListener("click", () => gorgetesIranyba(1));
 tortaRacs.addEventListener("scroll", nyilakFrissitese, { passive: true });
+tortaRacs.addEventListener("mouseenter", autoGorgetesMegallitasa);
+tortaRacs.addEventListener("mouseleave", autoGorgetesInditasa);
+tortaRacs.addEventListener("touchstart", autoGorgetesMegallitasa, { passive: true });
+tortaRacs.addEventListener("touchend", autoGorgetesInditasa, { passive: true });
+tortaRacs.addEventListener("touchcancel", autoGorgetesInditasa, { passive: true });
 
 tortakatFrissit();
+requestAnimationFrame(autoGorgetesLeptetes);
 
 menu.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
