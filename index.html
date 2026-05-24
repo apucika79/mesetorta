@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesetorta.hu | Egyedi torták álomból</title>
+    <meta
+      name="description"
+      content="Mesetorta.hu — csodás, egyedi, grafikus torták alkalmakra és különleges témákra."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hatter-paca paca-1"></div>
+    <div class="hatter-paca paca-2"></div>
+
+    <header class="fejlec" id="fooldal">
+      <a href="#fooldal" class="logo-link" aria-label="Ugrás a főoldalra">
+        <span class="logo-ikon">🎂</span>
+        <span class="logo-szoveg">Mesetorta.hu</span>
+      </a>
+
+      <button class="mobil-gomb" id="mobilGomb" aria-label="Menü megnyitása">☰</button>
+
+      <nav class="menu" id="menu">
+        <a href="#rolunk">Rólunk</a>
+        <a href="#termekek">Termékek</a>
+        <a href="#webaruhaz">Webshop</a>
+        <a href="#kapcsolat">Kapcsolat</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hos" id="hos">
+        <div class="hos-szoveg">
+          <p class="cimke">Kézzel készített, varázslatos tortavilág</p>
+          <h1>Mesébe illő torták, amikből emlék születik.</h1>
+          <p>
+            Szülinap, keresztelő, esküvő vagy tematikus buli? Mi tortába álmodjuk az
+            ötletedet — figurákkal, csillogással, egyedi látványvilággal.
+          </p>
+          <a href="#termekek" class="fo-gomb">Torták megtekintése</a>
+        </div>
+        <div class="hos-kep-keret">
+          <img
+            src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=900&q=80"
+            alt="Színes ünnepi torta"
+          />
+        </div>
+      </section>
+
+      <section class="szakasz" id="rolunk">
+        <h2>Rólunk</h2>
+        <p>
+          A Mesetorta.hu egy kreatív cukrász műhely, ahol minden torta személyre szabott
+          történetet mesél el. Hisszük, hogy a desszert nem csak finom, hanem látványos
+          élmény is lehet.
+        </p>
+      </section>
+
+      <section class="szakasz" id="termekek">
+        <div class="szakasz-fej">
+          <h2>Termékek — Tortaválasztó</h2>
+          <p>Szűrj alkalomra, figurára/témára és kinézetre.</p>
+        </div>
+
+        <div class="szurok">
+          <label>
+            Alkalom
+            <select id="alkalomSzuro">
+              <option value="osszes">Összes</option>
+              <option value="szulinap">Szülinap</option>
+              <option value="eskuvo">Esküvő</option>
+              <option value="gyerek">Gyerekzsúr</option>
+              <option value="ceges">Céges</option>
+            </select>
+          </label>
+
+          <label>
+            Figura / téma
+            <select id="temaSzuro">
+              <option value="osszes">Összes</option>
+              <option value="unikornis">Unikornis</option>
+              <option value="hercegno">Hercegnő</option>
+              <option value="minimal">Minimal</option>
+              <option value="sport">Sport</option>
+            </select>
+          </label>
+
+          <label>
+            Kinézet
+            <select id="kinezetSzuro">
+              <option value="osszes">Összes</option>
+              <option value="pasztell">Pasztell</option>
+              <option value="arany">Arany</option>
+              <option value="vidam">Vidám</option>
+              <option value="elegans">Elegáns</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="tortaRacs" class="torta-racs"></div>
+      </section>
+
+      <section class="szakasz" id="webaruhaz">
+        <h2>Webshop</h2>
+        <p>
+          A rendelés online történik, az átvétel kizárólag személyesen lehetséges
+          előre egyeztetett időpontban Budapesten.
+        </p>
+        <ul>
+          <li>Minimum rendelési idő: 5 nap</li>
+          <li>Szeletméretek: 8, 12 és 16 szeletes</li>
+          <li>Fizetés: készpénz / azonnali utalás személyes átvételkor</li>
+        </ul>
+      </section>
+
+      <section class="szakasz" id="kapcsolat">
+        <h2>Kapcsolat</h2>
+        <p>E-mail: hello@mesetorta.hu</p>
+        <p>Telefon: +36 30 123 4567</p>
+        <p>Instagram: @mesetorta.hu</p>
+      </section>
+    </main>
+
+    <footer class="lablec">
+      <p>© 2026 Mesetorta.hu — Minden torta egy mese kezdete.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
