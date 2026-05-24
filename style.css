@@ -135,12 +135,12 @@ select { width: 100%; padding: .6rem; border-radius: 12px; border: 1px solid #dd
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: .25rem .1rem .6rem;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   touch-action: pan-x;
 }
 
-.torta-racs::-webkit-scrollbar { height: 8px; }
-.torta-racs::-webkit-scrollbar-thumb { background: rgba(140, 89, 255, 0.35); border-radius: 999px; }
+.torta-racs::-webkit-scrollbar { display: none; }
 
 .gorggeto-nyil {
   position: absolute;
@@ -219,5 +219,9 @@ select { width: 100%; padding: .6rem; border-radius: 12px; border: 1px solid #dd
     height: 170px;
   }
 
-  .gorggeto-nyil { display: none; }
+  .gorggeto-nyil {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+  }
 }
