@@ -1,4 +1,4 @@
-/* MESETORTA alap dizájnrendszer */
+/* Mesetorta.hu alap dizájnrendszer */
 
 :root {
   --szin-hatter: #f7f3ee;
@@ -26,10 +26,12 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
+  overflow-x: hidden;
   margin: 0;
   min-width: 320px;
   background: var(--szin-hatter);
@@ -42,6 +44,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -105,6 +108,7 @@ main {
 .logo-helye a,
 .lablec-logo-helye {
   display: inline-flex;
+  max-width: 100%;
   align-items: center;
   color: var(--szin-szoveg);
   font-size: 1.3rem;
@@ -123,6 +127,12 @@ main {
   box-shadow: 0 0 0 6px #fff0e6;
 }
 
+.fomenu-helye,
+.lablec-menu-helye {
+  max-width: 100%;
+  min-width: 0;
+}
+
 .fomenu-lista,
 .lablec-menu-lista {
   display: flex;
@@ -135,6 +145,11 @@ main {
   list-style: none;
 }
 
+.fomenu-elem,
+.lablec-menu-elem {
+  max-width: 100%;
+}
+
 .fomenu-elem a,
 .lablec-menu-elem a {
   display: inline-flex;
@@ -145,6 +160,8 @@ main {
   color: var(--szin-halvany);
   font-size: 0.94rem;
   font-weight: 650;
+  text-align: center;
+  white-space: normal;
 }
 
 .fomenu-elem a:hover,
@@ -253,6 +270,8 @@ input,
 select,
 textarea {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   min-height: 48px;
   padding: 12px 14px;
   border: 1px solid var(--szin-vonal);
@@ -260,6 +279,10 @@ textarea {
   background: #ffffff;
   color: var(--szin-szoveg);
   font: inherit;
+}
+
+input[type="file"] {
+  overflow: hidden;
 }
 
 .kereso-input:focus,
@@ -295,6 +318,9 @@ a[href="#"],
   font: inherit;
   font-weight: 800;
   cursor: pointer;
+  max-width: 100%;
+  text-align: center;
+  white-space: normal;
   box-shadow: 0 10px 22px rgba(155, 77, 54, 0.22);
 }
 
@@ -784,6 +810,19 @@ article > section > p,
     gap: 14px;
   }
 
+  .logo-helye,
+  .fomenu-helye,
+  .lablec-logo-helye,
+  .lablec-menu-helye {
+    width: 100%;
+  }
+
+  .logo-helye a,
+  .lablec-logo-helye {
+    font-size: 1.12rem;
+    overflow-wrap: anywhere;
+  }
+
   .fomenu-lista,
   .lablec-menu-lista {
     gap: 6px;
@@ -798,6 +837,21 @@ article > section > p,
 
   .hero-szekcio {
     padding: 50px 12px 42px;
+  }
+
+  .hero-cim,
+  .oldal-cim,
+  main > h1,
+  article > header h1 {
+    font-size: clamp(1.85rem, 10vw, 2.7rem);
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+  }
+
+  .hero-alcim,
+  .oldal-fejlec-szekcio p,
+  article > header p {
+    font-size: 1rem;
   }
 
   .kereso-helye,
@@ -816,6 +870,25 @@ article > section > p,
     border-radius: 18px;
   }
 
+  .kereso-muvelet,
+  .szuro-muvelet,
+  .urlap-muvelet,
+  .partner-muveletek {
+    width: 100%;
+  }
+
+  .kereso-gomb,
+  .szuro-gomb,
+  .urlap-gomb,
+  .jelentkezes-gomb,
+  .kapcsolati-urlap button,
+  .partner-urlap button,
+  .torta-erdekel-gomb,
+  .partner-fo-gomb,
+  .partner-masodlagos-gomb,
+  .ures-allapot-gomb {
+    width: 100%;
+  }
 
   .kapcsolati-urlap {
     grid-template-columns: 1fr;
@@ -851,6 +924,45 @@ article > section > p,
   .torta-adat-sor dd,
   .cukraszda-adat-sor dd {
     text-align: left;
+  }
+
+  .torta-kartya,
+  .cukraszda-kartya,
+  .varos-lista-elem,
+  .partner-torta-hely,
+  .partner-galeria-hely,
+  .admin-muvelet-kartya,
+  .admin-statusz-kartya {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 420px) {
+  main,
+  .fejlec-belso,
+  .lablec-belso,
+  .hero-belso,
+  .szekcio-belso,
+  .oldal-tartalom {
+    width: min(100% - 20px, var(--tartalom-szelesseg));
+  }
+
+  .fomenu-elem a,
+  .lablec-menu-elem a {
+    padding-inline: 9px;
+    font-size: 0.86rem;
+  }
+
+  .oldal-fejlec-szekcio,
+  main > h1,
+  article > header,
+  .torta-kartya-tartalom,
+  .cukraszda-kartya-tartalom,
+  .oldal-tartalom > section,
+  main > section:not(.hero-szekcio),
+  article > section,
+  .urlap-blokk {
+    padding: 16px;
   }
 }
 
@@ -1192,6 +1304,11 @@ article > section > p,
     width: 104px;
     border-radius: 22px;
   }
+
+  .partner-muveletek a,
+  .partner-vissza-linkek a {
+    width: 100%;
+  }
 }
 
 /* Partner jelentkezési oldal */
@@ -1302,6 +1419,17 @@ textarea {
   resize: vertical;
 }
 
+.urlap-blokk {
+  min-inline-size: 0;
+}
+
+.urlap-mezo label,
+.jelolonegyzet span,
+.urlap-checkbox-sor span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .szolgaltatas-lista {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1324,6 +1452,7 @@ textarea {
 }
 
 .jelolonegyzet input {
+  flex: 0 0 auto;
   width: 18px;
   min-height: 18px;
   accent-color: var(--szin-elsodleges);
@@ -1372,6 +1501,10 @@ textarea {
 @media (max-width: 680px) {
   .urlap-racs {
     grid-template-columns: 1fr;
+  }
+
+  .urlap-blokk {
+    padding: 16px;
   }
 
   .jelentkezes-gomb {
@@ -1532,7 +1665,9 @@ textarea {
 }
 
 .admin-tabla-gorgeto {
+  max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .admin-tabla {
