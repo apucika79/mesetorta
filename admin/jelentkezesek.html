@@ -25,54 +25,172 @@
   <main class="oldal-tartalom admin-tartalom">
     <section class="oldal-fejlec-szekcio" aria-labelledby="oldal-cim">
       <p class="partner-jelentkezes-jeloles">Statikus lista</p>
-      <h1 id="oldal-cim" class="oldal-cim">Jelentkezések</h1>
-      <p>Partner jelentkezések mintalistája státuszokkal. Az oldal csak statikus admin váz, nincs adatbázis kapcsolat.</p>
+      <h1 id="oldal-cim" class="oldal-cim">Partner jelentkezések</h1>
+      <p>Partner jelentkezések áttekintési és jóváhagyási folyamatának statikus admin váza. Nincs működő adatmentés, adatbázis, API vagy e-mail küldés.</p>
     </section>
 
     <section class="admin-lista-szekcio" aria-labelledby="jelentkezes-lista-cim">
-      <h2 id="jelentkezes-lista-cim">Jelentkezések listája</h2>
-      <div class="admin-tabla-gorgeto">
-        <table class="admin-tabla">
-          <thead>
-            <tr>
-              <th>Jelentkező</th>
-              <th>Város</th>
-              <th>Partner típusa</th>
-              <th>E-mail</th>
-              <th>Státusz</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Habos Álom Cukrászda</td>
-              <td>Budapest</td>
-              <td>Cukrászda</td>
-              <td>hello@habosalom.hu</td>
-              <td><span class="admin-statusz-jelzo admin-statusz-jelzo--uj">új</span></td>
-            </tr>
-            <tr>
-              <td>Édes Sarok Tortaműhely</td>
-              <td>Győr</td>
-              <td>Tortaműhely</td>
-              <td>info@edessarok.hu</td>
-              <td><span class="admin-statusz-jelzo admin-statusz-jelzo--feldolgozas">feldolgozás alatt</span></td>
-            </tr>
-            <tr>
-              <td>Vanília Műhely</td>
-              <td>Pécs</td>
-              <td>Otthoni tortakészítő</td>
-              <td>kapcsolat@vaniliamuhely.hu</td>
-              <td><span class="admin-statusz-jelzo admin-statusz-jelzo--elfogadva">elfogadva</span></td>
-            </tr>
-            <tr>
-              <td>Torta Expressz</td>
-              <td>Szeged</td>
-              <td>Cukrászüzem</td>
-              <td>jelentkezes@tortaexpressz.hu</td>
-              <td><span class="admin-statusz-jelzo admin-statusz-jelzo--elutasitva">elutasítva</span></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="urlap-fejlec">
+        <h2 id="jelentkezes-lista-cim">Jelentkezési lista</h2>
+        <p>A műveleti gombok csak a későbbi jóváhagyási folyamat helyét jelölik.</p>
+      </div>
+
+      <div class="jelentkezes-kartya-racs">
+        <article class="jelentkezes-admin-kartya">
+          <div class="jelentkezes-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Partner neve</p>
+              <h3>Habos Álom Cukrászda</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--uj">Új</span>
+          </div>
+          <dl class="jelentkezes-adatlista">
+            <div><dt>Kapcsolattartó neve</dt><dd>Kovács Anna</dd></div>
+            <div><dt>Város</dt><dd>Budapest</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>XIII. kerület</dd></div>
+            <div><dt>Partner típusa</dt><dd>Cukrászda</dd></div>
+            <div><dt>Megjelenési igény</dt><dd>Ingyenes alap megjelenés, kiemelt partner</dd></div>
+            <div><dt>Szolgáltatások</dt><dd>Rendelhető torták, egyedi torták, mentes torták</dd></div>
+            <div><dt>Státusz</dt><dd>Új</dd></div>
+          </dl>
+          <div class="jelentkezes-muveletek" aria-label="Habos Álom Cukrászda műveletek">
+            <button type="button">Részletek megtekintése</button>
+            <button type="button">Jóváhagyás</button>
+            <button type="button">Elutasítás</button>
+            <button type="button">Partner létrehozása</button>
+          </div>
+        </article>
+
+        <article class="jelentkezes-admin-kartya">
+          <div class="jelentkezes-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Partner neve</p>
+              <h3>Édes Sarok Tortaműhely</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--feldolgozas">Átnézés alatt</span>
+          </div>
+          <dl class="jelentkezes-adatlista">
+            <div><dt>Kapcsolattartó neve</dt><dd>Nagy Márton</dd></div>
+            <div><dt>Város</dt><dd>Győr</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>Belváros és környéke</dd></div>
+            <div><dt>Partner típusa</dt><dd>Tortaműhely</dd></div>
+            <div><dt>Megjelenési igény</dt><dd>Területi kiemelés, készleten lévő torták kiemelése</dd></div>
+            <div><dt>Szolgáltatások</dt><dd>Azonnal átvehető torták, céges torták, esküvői torták</dd></div>
+            <div><dt>Státusz</dt><dd>Átnézés alatt</dd></div>
+          </dl>
+          <div class="jelentkezes-muveletek" aria-label="Édes Sarok Tortaműhely műveletek">
+            <button type="button">Részletek megtekintése</button>
+            <button type="button">Jóváhagyás</button>
+            <button type="button">Elutasítás</button>
+            <button type="button">Partner létrehozása</button>
+          </div>
+        </article>
+
+        <article class="jelentkezes-admin-kartya">
+          <div class="jelentkezes-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Partner neve</p>
+              <h3>Vanília Műhely</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--elfogadva">Jóváhagyva</span>
+          </div>
+          <dl class="jelentkezes-adatlista">
+            <div><dt>Kapcsolattartó neve</dt><dd>Szabó Réka</dd></div>
+            <div><dt>Város</dt><dd>Pécs</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>Kertváros</dd></div>
+            <div><dt>Partner típusa</dt><dd>Otthoni tortakészítő</dd></div>
+            <div><dt>Megjelenési igény</dt><dd>Ingyenes alap megjelenés</dd></div>
+            <div><dt>Szolgáltatások</dt><dd>Gyerektorták, formatorták, gluténmentes torták</dd></div>
+            <div><dt>Státusz</dt><dd>Jóváhagyva</dd></div>
+          </dl>
+          <div class="jelentkezes-muveletek" aria-label="Vanília Műhely műveletek">
+            <button type="button">Részletek megtekintése</button>
+            <button type="button">Jóváhagyás</button>
+            <button type="button">Elutasítás</button>
+            <button type="button">Partner létrehozása</button>
+          </div>
+        </article>
+
+        <article class="jelentkezes-admin-kartya">
+          <div class="jelentkezes-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Partner neve</p>
+              <h3>Torta Expressz</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--elutasitva">Elutasítva</span>
+          </div>
+          <dl class="jelentkezes-adatlista">
+            <div><dt>Kapcsolattartó neve</dt><dd>Tóth Bence</dd></div>
+            <div><dt>Város</dt><dd>Szeged</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>Újszeged</dd></div>
+            <div><dt>Partner típusa</dt><dd>Cukrászüzem</dd></div>
+            <div><dt>Megjelenési igény</dt><dd>Kiemelt partner</dd></div>
+            <div><dt>Szolgáltatások</dt><dd>Nagy tételes rendelések, céges torták</dd></div>
+            <div><dt>Státusz</dt><dd>Elutasítva</dd></div>
+          </dl>
+          <div class="jelentkezes-muveletek" aria-label="Torta Expressz műveletek">
+            <button type="button">Részletek megtekintése</button>
+            <button type="button">Jóváhagyás</button>
+            <button type="button">Elutasítás</button>
+            <button type="button">Partner létrehozása</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="jelentkezes-reszletek-szekcio" aria-labelledby="jelentkezes-reszletek-cim">
+      <div class="urlap-fejlec">
+        <h2 id="jelentkezes-reszletek-cim">Jelentkezés részletei</h2>
+        <p>Minta részletnézet egy kiválasztott jelentkezéshez. A blokk statikus, nem kapcsolódik adatbázishoz.</p>
+      </div>
+
+      <div class="jelentkezes-reszletek-racs">
+        <article class="jelentkezes-reszlet-blokk">
+          <h3>Alapadatok</h3>
+          <p><strong>Partner:</strong> Habos Álom Cukrászda</p>
+          <p><strong>Kapcsolattartó:</strong> Kovács Anna</p>
+          <p><strong>E-mail:</strong> hello@habosalom.hu</p>
+          <p><strong>Telefon:</strong> +36 30 123 4567</p>
+        </article>
+        <article class="jelentkezes-reszlet-blokk">
+          <h3>Területi adatok</h3>
+          <p><strong>Város:</strong> Budapest</p>
+          <p><strong>Körzet / kerület:</strong> XIII. kerület</p>
+          <p><strong>Kiszolgált terület:</strong> Budapest belső kerületei és agglomerációs kiszállítás egyeztetéssel.</p>
+        </article>
+        <article class="jelentkezes-reszlet-blokk">
+          <h3>Szolgáltatások</h3>
+          <ul>
+            <li>Rendelhető torták</li>
+            <li>Egyedi gyerektorták</li>
+            <li>Cukormentes és gluténmentes opciók</li>
+          </ul>
+        </article>
+        <article class="jelentkezes-reszlet-blokk">
+          <h3>Megjelenési igények</h3>
+          <ul>
+            <li>Ingyenes alap megjelenés</li>
+            <li>Kiemelt partner lehetőség</li>
+            <li>Készleten lévő torták későbbi kiemelése</li>
+          </ul>
+        </article>
+        <article class="jelentkezes-reszlet-blokk jelentkezes-reszlet-blokk--szeles">
+          <h3>Bemutatkozás</h3>
+          <p>Családi cukrászdaként mesés gyerektortákat, születésnapi tortákat és egyedi alkalmi tortákat készítünk. A Mesetorta.hu felületén szeretnénk láthatóbbá tenni a rendelhető kínálatunkat.</p>
+        </article>
+        <article class="jelentkezes-reszlet-blokk">
+          <h3>Képek helye</h3>
+          <div class="jelentkezes-kephelyek">
+            <span>Logó helye</span>
+            <span>Borítókép helye</span>
+            <span>Bemutatkozó kép helye</span>
+          </div>
+        </article>
+        <article class="jelentkezes-reszlet-blokk">
+          <h3>Hozzájárulás állapota</h3>
+          <p><span class="admin-statusz-jelzo admin-statusz-jelzo--elfogadva">Hozzájárult</span></p>
+          <p>A jelentkező hozzájárult ahhoz, hogy a Mesetorta.hu a jelentkezés miatt kapcsolatba lépjen vele.</p>
+        </article>
       </div>
     </section>
 
