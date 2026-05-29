@@ -172,6 +172,43 @@ main {
   color: var(--szin-elsodleges-sotet);
 }
 
+
+/* Morzsa menü */
+.morzsa {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: min(var(--tartalom-szelesseg), calc(100% - 32px));
+  margin: 18px auto 0;
+  color: var(--szin-halvany);
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.morzsa-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--szin-elsodleges);
+}
+
+.morzsa-link::after {
+  content: ">";
+  margin-left: 8px;
+  color: var(--szin-halvany);
+}
+
+.morzsa-link:hover,
+.morzsa-link:focus-visible {
+  color: var(--szin-elsodleges-sotet);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.morzsa-aktualis {
+  color: var(--szin-szoveg);
+}
+
 /* Hero és oldalfejlécek */
 .hero-szekcio {
   margin-inline: calc(50% - 50vw);
