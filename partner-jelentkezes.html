@@ -66,10 +66,10 @@
 
       <form class="partner-urlap" action="#" method="post" enctype="multipart/form-data" aria-describedby="urlap-megjegyzes">
         <fieldset class="urlap-blokk">
-          <legend>Alapadatok</legend>
+          <legend>Partner alapadatok</legend>
           <div class="urlap-racs">
             <div class="urlap-mezo">
-              <label for="cukraszda-neve">Cukrászda neve</label>
+              <label for="cukraszda-neve">Cukrászda / tortakészítő neve</label>
               <input type="text" id="cukraszda-neve" name="cukraszda-neve" placeholder="Pl. MeseHab Cukrászda">
             </div>
             <div class="urlap-mezo">
@@ -92,6 +92,16 @@
               <label for="facebook-oldal">Facebook oldal</label>
               <input type="url" id="facebook-oldal" name="facebook-oldal" placeholder="https://facebook.com/">
             </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="instagram-oldal">Instagram oldal</label>
+              <input type="url" id="instagram-oldal" name="instagram-oldal" placeholder="https://instagram.com/">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk">
+          <legend>Területi adatok</legend>
+          <div class="urlap-racs">
             <div class="urlap-mezo">
               <label for="varos">Város</label>
               <input type="text" id="varos" name="varos" placeholder="Pl. Budapest">
@@ -105,6 +115,16 @@
               <input type="text" id="cim" name="cim" placeholder="Utca, házszám, emelet vagy átvételi pont">
             </div>
             <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="kiszolgalt-teruletek">Kiszolgált területek</label>
+              <textarea id="kiszolgalt-teruletek" name="kiszolgalt-teruletek" rows="4" placeholder="Pl. Budapest XIII. kerület, Újlipótváros, Angyalföld, környező városrészek"></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk">
+          <legend>Partner típusa</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo urlap-mezo--szeles">
               <label for="partner-tipusa">Partner típusa</label>
               <select id="partner-tipusa" name="partner-tipusa">
                 <option value="">Válassz partner típust</option>
@@ -112,6 +132,7 @@
                 <option value="tortamuhely">Tortaműhely</option>
                 <option value="otthoni-tortakeszito">Otthoni tortakészítő</option>
                 <option value="cukraszuzem">Cukrászüzem</option>
+                <option value="egyeb">Egyéb</option>
               </select>
             </div>
           </div>
@@ -121,32 +142,93 @@
           <legend>Szolgáltatások</legend>
           <p class="urlap-segedszoveg">Jelöld be, milyen típusú tortákkal szeretnél megjelenni.</p>
           <div class="szolgaltatas-lista">
-            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="ma-atveheto-tortak"> <span>Ma átvehető torták</span></label>
-            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="rendelheto-tortak"> <span>Rendelhető torták</span></label>
-            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="eskuvoi-tortak"> <span>Esküvői torták</span></label>
-            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="mentes-tortak"> <span>Mentes torták</span></label>
-            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="ceges-tortak"> <span>Céges torták</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="azonnal-atveheto-tortak"> <span>Azonnal átvehető tortákat is szeretnék feltölteni</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="rendelheto-tortak"> <span>Rendelhető tortákat szeretnék feltölteni</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="egyedi-tortak"> <span>Egyedi tortákat vállalok</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="eskuvoi-tortak"> <span>Esküvői tortákat vállalok</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="mentes-tortak"> <span>Mentes tortákat vállalok</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="ceges-tortak"> <span>Céges tortákat vállalok</span></label>
           </div>
         </fieldset>
 
         <fieldset class="urlap-blokk">
-          <legend>Bemutatkozás és képek</legend>
+          <legend>Megjelenési igény</legend>
+          <p class="urlap-segedszoveg">Válaszd ki, milyen megjelenési lehetőségek érdekelnek. Ez nem jelent megrendelést vagy fizetési kötelezettséget.</p>
+          <div class="szolgaltatas-lista megjelenesi-igeny-lista">
+            <label class="jelolonegyzet"><input type="checkbox" name="megjelenesi-igeny" value="ingyenes-alap"> <span>Ingyenes alap megjelenés érdekel</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="megjelenesi-igeny" value="kiemelt-partner"> <span>Kiemelt partner megjelenés érdekel</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="megjelenesi-igeny" value="teruleti-kiemeles"> <span>Területi kiemelés érdekel</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="megjelenesi-igeny" value="keszleten-levo-tortak-kiemelese"> <span>Készleten lévő torták kiemelése érdekel</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk">
+          <legend>Képek</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo">
+              <label for="logo-feltoltes">Logó feltöltése</label>
+              <input type="file" id="logo-feltoltes" name="logo-feltoltes" accept="image/*">
+            </div>
+            <div class="urlap-mezo">
+              <label for="boritokep-feltoltes">Borítókép feltöltése</label>
+              <input type="file" id="boritokep-feltoltes" name="boritokep-feltoltes" accept="image/*">
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="bemutatkozo-kep-feltoltes">Bemutatkozó kép feltöltése</label>
+              <input type="file" id="bemutatkozo-kep-feltoltes" name="bemutatkozo-kep-feltoltes" accept="image/*">
+              <p class="urlap-segedszoveg">A feltöltési mezők csak az adatbekérési szerkezetet jelzik, működő beküldés nélkül.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk">
+          <legend>Bemutatkozás</legend>
           <div class="urlap-racs">
             <div class="urlap-mezo urlap-mezo--szeles">
-              <label for="bemutatkozas">Szöveges bemutatkozás</label>
+              <label for="bemutatkozas">Rövid bemutatkozás</label>
               <textarea id="bemutatkozas" name="bemutatkozas" rows="7" placeholder="Írd le röviden a cukrászdát, tortaműhelyt, kínálatot, átvételi lehetőségeket és különlegességeket."></textarea>
             </div>
             <div class="urlap-mezo urlap-mezo--szeles">
-              <label for="kep-feltoltes">Kép feltöltés helye</label>
-              <input type="file" id="kep-feltoltes" name="kep-feltoltes" accept="image/*">
-              <p class="urlap-segedszoveg">Ide kerülhet majd logó, üzletfotó vagy tortaképek feltöltési mezője.</p>
+              <label for="megjegyzes">Megjegyzés / kérdés</label>
+              <textarea id="megjegyzes" name="megjegyzes" rows="5" placeholder="Ide írhatod a jelentkezéssel vagy megjelenéssel kapcsolatos kérdéseidet."></textarea>
             </div>
           </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk">
+          <legend>Hozzájárulás</legend>
+          <label class="jelolonegyzet urlap-hozzajarulas">
+            <input type="checkbox" name="hozzajarulas" value="kapcsolatfelvetel">
+            <span>Elfogadom, hogy a Mesetorta.hu felvegye velem a kapcsolatot a jelentkezés miatt.</span>
+          </label>
         </fieldset>
 
         <p id="urlap-megjegyzes" class="urlap-megjegyzes">Ez egy statikus jelentkezési oldal: nincs adatbázis, nincs admin felület, és a beküldés még nem működik.</p>
         <button class="jelentkezes-gomb" type="button">Jelentkezés</button>
       </form>
+    </section>
+
+    <section class="bemutatkozo-szoveg-helye megjelenesi-lehetosegek" aria-labelledby="megjelenesi-lehetosegek-cim">
+      <h2 id="megjelenesi-lehetosegek-cim">Megjelenési lehetőségek</h2>
+      <p>A jelentkezés során jelezheted, melyik megjelenési forma érdekel. Ez jelenleg csak igényfelmérés, nem működő megrendelés és nem fizetési folyamat.</p>
+      <div class="partner-elony-racs" aria-label="Megjelenési lehetőségek listája">
+        <div class="partner-elony-kartya">
+          <h3>Alap megjelenés</h3>
+          <p>Ingyenes, alap partneradatlap előkészítése a cukrászda vagy tortakészítő fő adataival.</p>
+        </div>
+        <div class="partner-elony-kartya">
+          <h3>Kiemelt partner</h3>
+          <p>Nagyobb láthatóságot adó partnermegjelenés lehetősége a későbbi üzleti csomagokhoz.</p>
+        </div>
+        <div class="partner-elony-kartya">
+          <h3>Területi kiemelés</h3>
+          <p>Városhoz, körzethez vagy kerülethez kapcsolódó erősebb megjelenési igény jelzése.</p>
+        </div>
+        <div class="partner-elony-kartya">
+          <h3>Készleten lévő torták kiemelése</h3>
+          <p>Azonnal átvehető torták külön hangsúlyozása a későbbi találati és kiemelési logikához.</p>
+        </div>
+      </div>
     </section>
 
     <section class="gyik-szekcio" aria-labelledby="gyik-cim">
@@ -167,6 +249,26 @@
         <details class="gyik-elem">
           <summary>Hogyan kerülök a keresőbe?</summary>
           <p>A megadott város, körzet, partner típus és szolgáltatások alapján később a kereső releváns listáiban jelenhet meg a partnered adatlapja.</p>
+        </details>
+        <details class="gyik-elem">
+          <summary>Kell fizetni a jelentkezésért?</summary>
+          <p>Nem. A jelentkezési oldal jelenleg igényfelmérő és kapcsolatfelvételi előkészítő felület, fizetés és működő beküldés nélkül.</p>
+        </details>
+        <details class="gyik-elem">
+          <summary>Lehet több városban megjelenni?</summary>
+          <p>Igen, a kiszolgált területek mezőben megadhatod azokat a városokat, körzeteket vagy kerületeket, ahol vállalsz megrendelést vagy átvételt.</p>
+        </details>
+        <details class="gyik-elem">
+          <summary>Mit jelent a területi kiemelés?</summary>
+          <p>A területi kiemelés azt jelzi, hogy egy adott városban, körzetben vagy kerületben erősebb láthatóság érdekelhet. Ennek pontos üzleti szabályai később készülnek el.</p>
+        </details>
+        <details class="gyik-elem">
+          <summary>Feltölthetek azonnal átvehető tortákat?</summary>
+          <p>Igen, a szolgáltatások között külön jelezheted, ha készleten lévő, azonnal átvehető tortákat is szeretnél feltölteni.</p>
+        </details>
+        <details class="gyik-elem">
+          <summary>Ki kezeli az adatlapomat?</summary>
+          <p>A későbbi folyamatban a Mesetorta.hu veszi fel veled a kapcsolatot, és az egyeztetett adatok alapján készülhet el vagy frissülhet a partneradatlapod.</p>
         </details>
       </div>
     </section>
