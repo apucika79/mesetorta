@@ -280,6 +280,7 @@ textarea:focus {
 button,
 .kereso-gomb,
 .szuro-gomb,
+.ures-allapot-gomb,
 a[href="#"],
 .partner-tartalom-helye a {
   display: inline-flex;
@@ -302,7 +303,9 @@ button:focus-visible,
 .kereso-gomb:hover,
 .kereso-gomb:focus-visible,
 .szuro-gomb:hover,
-.szuro-gomb:focus-visible {
+.szuro-gomb:focus-visible,
+.ures-allapot-gomb:hover,
+.ures-allapot-gomb:focus-visible {
   background: var(--szin-elsodleges-sotet);
   color: #ffffff;
   transform: translateY(-1px);
@@ -1386,24 +1389,46 @@ textarea {
   list-style: none;
 }
 
-.korzet-lista li,
-.ures-allapot {
+.korzet-lista li {
+  padding: 10px 12px;
   border: 1px solid var(--szin-vonal);
   border-radius: 14px;
   background: var(--szin-felulet-meleg);
-}
-
-.korzet-lista li {
-  padding: 10px 12px;
   color: var(--szin-halvany);
   font-weight: 750;
 }
 
 .ures-allapot {
+  grid-column: 1 / -1;
   margin: 0;
-  padding: 18px;
+  padding: 28px;
+  border: 1px dashed rgba(155, 77, 54, 0.28);
+  border-radius: var(--sugar-kozepes);
+  background:
+    radial-gradient(circle at top left, rgba(244, 170, 121, 0.16), transparent 32%),
+    var(--szin-felulet-meleg);
+  color: var(--szin-halvany);
+  box-shadow: var(--arnyek-finoman);
+  text-align: center;
+}
+
+.ures-allapot-cim {
+  margin-bottom: 8px;
+  color: var(--szin-szoveg);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.ures-allapot-szoveg {
+  max-width: 620px;
+  margin: 0 auto 18px;
   color: var(--szin-halvany);
   font-weight: 750;
+}
+
+.ures-allapot-gomb {
+  box-shadow: 0 10px 22px rgba(155, 77, 54, 0.18);
 }
 
 .partner-varos-blokk {
