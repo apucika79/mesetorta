@@ -315,6 +315,81 @@ a[href="#"] {
   box-shadow: none;
 }
 
+
+/* Érdeklődési és kapcsolatfelvételi űrlapok */
+.erdeklodes-urlap-szekcio,
+.partner-kapcsolat-urlap-szekcio {
+  background: linear-gradient(135deg, #ffffff, var(--szin-felulet-meleg));
+}
+
+.kapcsolati-urlap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid rgba(155, 77, 54, 0.14);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--arnyek-finoman);
+}
+
+.urlap-mezo {
+  min-width: 0;
+}
+
+.urlap-mezo--teljes,
+.urlap-checkbox-sor,
+.urlap-muvelet {
+  grid-column: 1 / -1;
+}
+
+.urlap-mezo label,
+.urlap-checkbox-sor {
+  color: var(--szin-halvany);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.urlap-mezo input,
+.urlap-mezo textarea {
+  margin-top: 7px;
+}
+
+.urlap-mezo textarea {
+  min-height: 138px;
+  resize: vertical;
+}
+
+.urlap-checkbox-sor {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 2px 0 0;
+  padding: 14px;
+  border: 1px solid #f1e8df;
+  border-radius: 16px;
+  background: var(--szin-felulet-meleg);
+}
+
+.urlap-checkbox-sor input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 18px;
+  min-height: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--szin-elsodleges);
+}
+
+.urlap-muvelet {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.urlap-gomb {
+  min-width: 210px;
+}
+
 /* Szekciók és listák */
 .szekcio-vaz,
 .oldal-tartalom > section,
@@ -683,6 +758,16 @@ article > section > p,
   .kereso-helye {
     padding: 14px;
     border-radius: 18px;
+  }
+
+
+  .kapcsolati-urlap {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .urlap-gomb {
+    width: 100%;
   }
 
   .szuro-urlap {
