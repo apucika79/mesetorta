@@ -286,6 +286,118 @@
     }
 
     kontener.innerHTML = elemek.length ? elemek.map(kartyaKeszito).join('') : uresListaKartya(uresBeallitasok);
+    if (kontener.classList.contains('ajanlosav-gorgeto')) {
+      ajanlosavKartyakJelolese(kontener);
+    }
+  }
+
+
+  function ajanlosavKartyakJelolese(gorgeto) {
+    if (!gorgeto) {
+      return;
+    }
+
+    Array.prototype.forEach.call(gorgeto.children, function (kartya) {
+      if (!kartya.classList.contains('ajanlosav-nyil')) {
+        kartya.classList.add('ajanlosav-kartya');
+      }
+    });
+  }
+
+  function kozvetlenGyerekSzuro(szulo, valogato) {
+    return Array.prototype.find.call(szulo.children, function (gyerek) {
+      return gyerek.matches(valogato);
+    }) || null;
+  }
+
+  function ajanlosavFejlecLetrehozasa(sav, gyoker) {
+    let fejlec = kozvetlenGyerekSzuro(gyoker, '.ajanlosav-fejlec, .szekcio-fejlec');
+    const cim = fejlec
+      ? fejlec.querySelector('h2')
+      : kozvetlenGyerekSzuro(gyoker, 'h2');
+
+    if (!fejlec && cim) {
+      fejlec = document.createElement('header');
+      gyoker.insertBefore(fejlec, cim);
+      fejlec.appendChild(cim);
+    }
+
+    if (!fejlec) {
+      return null;
+    }
+
+    fejlec.classList.add('ajanlosav-fejlec');
+    if (cim) {
+      cim.classList.add('ajanlosav-cim');
+    }
+
+    const osszesLink = sav.getAttribute('data-osszes-link');
+    if (osszesLink && !fejlec.querySelector('.ajanlosav-osszes-link')) {
+      const link = document.createElement('a');
+      link.className = 'ajanlosav-osszes-link';
+      link.href = osszesLink;
+      link.textContent = 'Összes megtekintése';
+      fejlec.appendChild(link);
+    }
+
+    return fejlec;
+  }
+
+  function ajanlosavTartalomLetrehozasa(gyoker) {
+    let gorgeto = gyoker.querySelector('.ajanlosav-gorgeto');
+    if (gorgeto) {
+      return gorgeto;
+    }
+
+    const tartalomElem = gyoker.querySelector('.varos-lista, .torta-lista, .cukraszda-lista, .partner-torta-lista, .torta-lista-helye, .cukraszda-lista-helye, .szekcio-tartalom, .ures-allapot');
+    if (!tartalomElem) {
+      return null;
+    }
+
+    const tartalom = document.createElement('div');
+    tartalom.className = 'ajanlosav-tartalom';
+
+    const balNyil = document.createElement('button');
+    balNyil.className = 'ajanlosav-nyil ajanlosav-nyil-bal';
+    balNyil.type = 'button';
+    balNyil.setAttribute('aria-label', 'Ajánlósáv görgetése balra');
+    balNyil.textContent = '‹';
+
+    const jobbNyil = document.createElement('button');
+    jobbNyil.className = 'ajanlosav-nyil ajanlosav-nyil-jobb';
+    jobbNyil.type = 'button';
+    jobbNyil.setAttribute('aria-label', 'Ajánlósáv görgetése jobbra');
+    jobbNyil.textContent = '›';
+
+    tartalomElem.parentNode.insertBefore(tartalom, tartalomElem);
+    gorgeto = tartalomElem;
+    gorgeto.classList.add('ajanlosav-gorgeto');
+    tartalom.appendChild(balNyil);
+    tartalom.appendChild(gorgeto);
+    tartalom.appendChild(jobbNyil);
+
+    function lapoz(irany) {
+      const tavolsag = Math.max(gorgeto.clientWidth * 0.82, 280);
+      gorgeto.scrollBy({ left: irany * tavolsag, behavior: 'smooth' });
+    }
+
+    balNyil.addEventListener('click', function () {
+      lapoz(-1);
+    });
+    jobbNyil.addEventListener('click', function () {
+      lapoz(1);
+    });
+
+    return gorgeto;
+  }
+
+  function ajanlosavokInditasa() {
+    document.querySelectorAll('.ajanlosav').forEach(function (sav) {
+      const gyoker = kozvetlenGyerekSzuro(sav, '.szekcio-belso') || sav;
+      ajanlosavFejlecLetrehozasa(sav, gyoker);
+      const gorgeto = ajanlosavTartalomLetrehozasa(gyoker);
+      ajanlosavKartyakJelolese(gorgeto);
+    });
   }
 
   function selectErtek(id) {
@@ -443,6 +555,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    ajanlosavokInditasa();
     fooldaliKeresoInditasa();
     maAtvehetoOldalInditasa();
     rendelhetoOldalInditasa();
