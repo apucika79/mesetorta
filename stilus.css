@@ -322,6 +322,26 @@ input[type="file"] {
   overflow: hidden;
 }
 
+.fajl-mezo {
+  cursor: pointer;
+}
+
+.kep-url-mezo {
+  font-family: inherit;
+}
+
+.kep-mezo-csoport {
+  border-color: rgba(155, 77, 54, 0.22);
+  background: linear-gradient(135deg, #ffffff, var(--szin-felulet-meleg));
+}
+
+.urlap-segedszoveg {
+  margin: 12px 0 0;
+  color: var(--szin-halvany);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
 .kereso-input:focus,
 .szuro-input:focus,
 input:focus,

@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../stilus.css">
-  <title>Városok kezelése - MESETORTA</title>
+  <title>Városok kezelése - Mesetorta.hu</title>
 </head>
 <body class="aloldal admin-oldal">
   <header class="fejlec">
     <div class="fejlec-belso">
-      <div class="logo-helye" aria-label="MESETORTA logó"><a href="../index.html">MESETORTA</a></div>
+      <div class="logo-helye" aria-label="Mesetorta.hu logó"><a href="../index.html">Mesetorta.hu</a></div>
       <nav class="fomenu-helye" aria-label="Admin menü">
         <ul class="fomenu-lista">
           <li class="fomenu-elem"><a href="index.html">Admin főoldal</a></li>
@@ -35,7 +35,7 @@
         <p>Az űrlap csak statikus szerkezet, működő mentés nélkül.</p>
       </div>
 
-      <form class="partner-urlap" action="#" method="post" aria-describedby="urlap-megjegyzes">
+      <form class="partner-urlap" action="#" method="post" enctype="multipart/form-data" aria-describedby="urlap-megjegyzes">
         <fieldset class="urlap-blokk">
           <legend>Város és körzet</legend>
           <div class="urlap-racs">
@@ -50,6 +50,20 @@
             <div class="urlap-mezo urlap-mezo--szeles">
               <label for="korzet-hozzaadasa">Körzet / kerület hozzáadása</label>
               <input type="text" id="korzet-hozzaadasa" name="korzet-hozzaadasa" placeholder="Pl. XIII. kerület vagy Belváros">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk kep-mezo-csoport">
+          <legend>Város képe</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo">
+              <label for="varoskep-feltoltes">Városkép feltöltése</label>
+              <input class="fajl-mezo" type="file" id="varoskep-feltoltes" name="varoskep-feltoltes" accept="image/*">
+            </div>
+            <div class="urlap-mezo">
+              <label for="varoskep-url">Városkép URL</label>
+              <input class="kep-url-mezo" type="url" id="varoskep-url" name="varoskep-url" placeholder="https://">
             </div>
           </div>
         </fieldset>
@@ -96,7 +110,7 @@
       </div>
     </section>
 
-    <p class="admin-vissza-link"><a href="../index.html">Vissza a MESETORTA főoldalra</a></p>
+    <p class="admin-vissza-link"><a href="../index.html">Vissza a Mesetorta.hu főoldalra</a></p>
   </main>
 </body>
 </html>

@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../stilus.css">
-  <title>Új torta felvétele - MESETORTA</title>
+  <title>Új torta felvétele - Mesetorta.hu</title>
 </head>
 <body class="aloldal admin-oldal">
   <header class="fejlec">
     <div class="fejlec-belso">
-      <div class="logo-helye" aria-label="MESETORTA logó"><a href="../index.html">MESETORTA</a></div>
+      <div class="logo-helye" aria-label="Mesetorta.hu logó"><a href="../index.html">Mesetorta.hu</a></div>
       <nav class="fomenu-helye" aria-label="Admin menü">
         <ul class="fomenu-lista">
           <li class="fomenu-elem"><a href="index.html">Admin főoldal</a></li>
@@ -97,7 +97,7 @@
         </fieldset>
 
         <fieldset class="urlap-blokk">
-          <legend>Leírás, kiemelés és kép</legend>
+          <legend>Leírás és kiemelés</legend>
           <div class="urlap-racs">
             <div class="urlap-mezo urlap-mezo--szeles">
               <label for="leiras">Leírás</label>
@@ -106,11 +106,26 @@
             <div class="urlap-mezo urlap-mezo--szeles">
               <label class="jelolonegyzet"><input type="checkbox" name="kiemelt-torta" value="igen"> <span>Kiemelt torta jelölés</span></label>
             </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk kep-mezo-csoport">
+          <legend>Képadatok</legend>
+          <div class="urlap-racs">
             <div class="urlap-mezo urlap-mezo--szeles">
-              <label for="kep-feltoltes">Kép feltöltés helye</label>
-              <input type="file" id="kep-feltoltes" name="kep-feltoltes" accept="image/*">
+              <label for="fokep-feltoltes">Főkép feltöltése</label>
+              <input class="fajl-mezo" type="file" id="fokep-feltoltes" name="fokep-feltoltes" accept="image/*">
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="kep-url">Kép URL megadása</label>
+              <input class="kep-url-mezo" type="url" id="kep-url" name="kep-url" placeholder="https://">
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="kep-alt">Képaláírás</label>
+              <input type="text" id="kep-alt" name="kep-alt" placeholder="Pl. Erdei gyümölcsös torta fehér krémmel">
             </div>
           </div>
+          <p class="urlap-segedszoveg">Ajánlott képarány: 4:3</p>
         </fieldset>
 
         <p id="urlap-megjegyzes" class="urlap-megjegyzes">Statikus admin űrlap: nincs működő mentés, adatbázis vagy beküldés.</p>
@@ -118,7 +133,7 @@
       </form>
     </section>
 
-    <p class="admin-vissza-link"><a href="../index.html">Vissza a MESETORTA főoldalra</a></p>
+    <p class="admin-vissza-link"><a href="../index.html">Vissza a Mesetorta.hu főoldalra</a></p>
   </main>
 </body>
 </html>
