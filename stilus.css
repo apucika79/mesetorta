@@ -1,4 +1,4 @@
-/* Mesetorta alap dizájnrendszer */
+/* MESETORTA alap dizájnrendszer */
 
 :root {
   --szin-hatter: #f7f3ee;
@@ -1235,5 +1235,71 @@ textarea {
 
   .jelentkezes-gomb {
     width: 100%;
+  }
+}
+
+/* Városoldalak helyi tartalommal */
+.korzet-lista {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.korzet-lista li,
+.ures-allapot {
+  border: 1px solid var(--szin-vonal);
+  border-radius: 14px;
+  background: var(--szin-felulet-meleg);
+}
+
+.korzet-lista li {
+  padding: 10px 12px;
+  color: var(--szin-halvany);
+  font-weight: 750;
+}
+
+.ures-allapot {
+  margin: 0;
+  padding: 18px;
+  color: var(--szin-halvany);
+  font-weight: 750;
+}
+
+.partner-varos-blokk {
+  background: linear-gradient(135deg, #ffffff, #fff1e6) !important;
+}
+
+.partner-varos-blokk p {
+  color: var(--szin-halvany);
+}
+
+.varos-kartya-tartalom {
+  display: grid;
+  gap: 6px;
+}
+
+.varos-kartya-nev,
+.varos-kartya-adatok {
+  display: block;
+}
+
+.varos-kartya-adatok {
+  color: var(--szin-halvany);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .korzet-lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .korzet-lista {
+    grid-template-columns: 1fr;
   }
 }
