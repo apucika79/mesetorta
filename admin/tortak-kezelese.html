@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../stilus.css">
+  <title>Torták kezelése - Mesetorta.hu</title>
+</head>
+<body class="aloldal admin-oldal">
+  <header class="fejlec">
+    <div class="fejlec-belso">
+      <div class="logo-helye" aria-label="Mesetorta.hu logó"><a href="../index.html">Mesetorta.hu</a></div>
+      <nav class="fomenu-helye" aria-label="Admin menü">
+        <ul class="fomenu-lista">
+          <li class="fomenu-elem"><a href="index.html">Admin főoldal</a></li>
+          <li class="fomenu-elem"><a href="uj-partner.html">Új partner</a></li>
+          <li class="fomenu-elem"><a href="uj-torta.html">Új torta</a></li>
+          <li class="fomenu-elem"><a href="tortak-kezelese.html" aria-current="page">Torták kezelése</a></li>
+          <li class="fomenu-elem"><a href="varosok-kezelese.html">Városok</a></li>
+          <li class="fomenu-elem"><a href="jelentkezesek.html">Jelentkezések</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="oldal-tartalom admin-tartalom">
+    <section class="oldal-fejlec-szekcio" aria-labelledby="oldal-cim">
+      <p class="partner-jelentkezes-jeloles">Statikus státuszkezelési váz</p>
+      <h1 id="oldal-cim" class="oldal-cim">Torták kezelése</h1>
+      <p>A torták admin oldali áttekintésének és státuszkezelésének szerkezeti előkészítése. A gombok most még nem mentenek adatot, nincs adatbázis, API vagy automatikus lejárati logika.</p>
+    </section>
+
+    <section class="admin-szuro-szekcio" aria-labelledby="szuro-cim">
+      <div class="urlap-fejlec">
+        <h2 id="szuro-cim">Szűrőpanel</h2>
+        <p>A szűrők csak a későbbi admin működés helyét jelölik, jelenleg nem szűrnek.</p>
+      </div>
+      <form class="admin-torta-szuro" action="#" method="get">
+        <div class="szuro-mezo">
+          <label for="partner-szuro">Partner</label>
+          <select id="partner-szuro" name="partner">
+            <option value="">Összes partner</option>
+            <option value="mesehab-cukraszda">MeseHab Cukrászda</option>
+            <option value="tundersuti-muhely">Tündérsüti Műhely</option>
+            <option value="cukorcsillag-tortamuhely">Cukorcsillag Tortaműhely</option>
+          </select>
+        </div>
+        <div class="szuro-mezo">
+          <label for="varos-szuro">Város</label>
+          <select id="varos-szuro" name="varos">
+            <option value="">Összes város</option>
+            <option value="budapest">Budapest</option>
+            <option value="gyor">Győr</option>
+            <option value="pecs">Pécs</option>
+          </select>
+        </div>
+        <div class="szuro-mezo">
+          <label for="korzet-szuro">Körzet / kerület</label>
+          <select id="korzet-szuro" name="korzet">
+            <option value="">Összes körzet</option>
+            <option value="xiii-kerulet">XIII. kerület</option>
+            <option value="belvaros">Belváros</option>
+            <option value="kertvaros">Kertváros</option>
+          </select>
+        </div>
+        <div class="szuro-mezo">
+          <label for="allapot-szuro">Állapot</label>
+          <select id="allapot-szuro" name="allapot">
+            <option value="">Összes állapot</option>
+            <option value="keszleten">Készleten</option>
+            <option value="rendelheto">Rendelhető</option>
+            <option value="lejart">Lejárt</option>
+            <option value="rejtett">Rejtett</option>
+            <option value="eladva">Eladva</option>
+          </select>
+        </div>
+        <div class="szuro-mezo">
+          <label for="kiemelt-szuro">Kiemelt</label>
+          <select id="kiemelt-szuro" name="kiemelt">
+            <option value="">Mindegy</option>
+            <option value="igen">Kiemelt</option>
+            <option value="nem">Nem kiemelt</option>
+          </select>
+        </div>
+        <div class="szuro-mezo">
+          <label for="kategoria-szuro">Kategória</label>
+          <select id="kategoria-szuro" name="kategoria">
+            <option value="">Összes kategória</option>
+            <option value="gyumolcsos">Gyümölcsös</option>
+            <option value="csokolade">Csokoládés</option>
+            <option value="formatorta">Formatorta</option>
+          </select>
+        </div>
+        <div class="szuro-muvelet">
+          <button type="button">Szűrés előnézet</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="admin-torta-lista-szekcio" aria-labelledby="torta-lista-cim">
+      <div class="urlap-fejlec">
+        <h2 id="torta-lista-cim">Tortalista mintaadatokkal</h2>
+        <p>Az alábbi kártyák a státuszok admin kezelésének statikus mintái.</p>
+      </div>
+
+      <div class="admin-torta-racs">
+        <article class="admin-torta-kartya">
+          <div class="admin-torta-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Torta neve</p>
+              <h3>Erdei gyümölcsös álomtorta</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--keszleten">Készleten</span>
+          </div>
+          <dl class="admin-torta-adatlista">
+            <div><dt>Partner neve</dt><dd>MeseHab Cukrászda</dd></div>
+            <div><dt>Város</dt><dd>Budapest</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>XIII. kerület</dd></div>
+            <div><dt>Ár</dt><dd>12 900 Ft</dd></div>
+            <div><dt>Kategória</dt><dd>Gyümölcsös</dd></div>
+            <div><dt>Jelenlegi állapot</dt><dd>Készleten</dd></div>
+            <div><dt>Készlet darabszám</dt><dd>2 db</dd></div>
+            <div><dt>Átvételi / rendelési határidő</dt><dd>Ma 18:00-ig átvehető</dd></div>
+            <div><dt>Kiemelt státusz</dt><dd>Kiemelt készleten</dd></div>
+          </dl>
+          <div class="admin-torta-muveletek" aria-label="Erdei gyümölcsös álomtorta admin műveletek">
+            <button type="button">Szerkesztés</button>
+            <button type="button">Készleten</button>
+            <button type="button">Rendelhető</button>
+            <button type="button">Lejárt</button>
+            <button type="button">Rejtés</button>
+            <button type="button">Eladva</button>
+          </div>
+        </article>
+
+        <article class="admin-torta-kartya">
+          <div class="admin-torta-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Torta neve</p>
+              <h3>Csokis varázstorta</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--rendelheto">Rendelhető</span>
+          </div>
+          <dl class="admin-torta-adatlista">
+            <div><dt>Partner neve</dt><dd>Tündérsüti Műhely</dd></div>
+            <div><dt>Város</dt><dd>Győr</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>Belváros</dd></div>
+            <div><dt>Ár</dt><dd>15 500 Ft</dd></div>
+            <div><dt>Kategória</dt><dd>Csokoládés</dd></div>
+            <div><dt>Jelenlegi állapot</dt><dd>Rendelhető</dd></div>
+            <div><dt>Készlet darabszám</dt><dd>0 db</dd></div>
+            <div><dt>Átvételi / rendelési határidő</dt><dd>3 nappal korábban rendelhető</dd></div>
+            <div><dt>Kiemelt státusz</dt><dd>Nem kiemelt</dd></div>
+          </dl>
+          <div class="admin-torta-muveletek" aria-label="Csokis varázstorta admin műveletek">
+            <button type="button">Szerkesztés</button>
+            <button type="button">Készleten</button>
+            <button type="button">Rendelhető</button>
+            <button type="button">Lejárt</button>
+            <button type="button">Rejtés</button>
+            <button type="button">Eladva</button>
+          </div>
+        </article>
+
+        <article class="admin-torta-kartya">
+          <div class="admin-torta-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Torta neve</p>
+              <h3>Unikornis formatorta</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--lejart">Lejárt</span>
+          </div>
+          <dl class="admin-torta-adatlista">
+            <div><dt>Partner neve</dt><dd>Cukorcsillag Tortaműhely</dd></div>
+            <div><dt>Város</dt><dd>Pécs</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>Kertváros</dd></div>
+            <div><dt>Ár</dt><dd>18 900 Ft</dd></div>
+            <div><dt>Kategória</dt><dd>Formatorta</dd></div>
+            <div><dt>Jelenlegi állapot</dt><dd>Lejárt</dd></div>
+            <div><dt>Készlet darabszám</dt><dd>1 db</dd></div>
+            <div><dt>Átvételi / rendelési határidő</dt><dd>Tegnap 17:00-ig volt átvehető</dd></div>
+            <div><dt>Kiemelt státusz</dt><dd>Kiemelt készleten</dd></div>
+          </dl>
+          <div class="admin-torta-muveletek" aria-label="Unikornis formatorta admin műveletek">
+            <button type="button">Szerkesztés</button>
+            <button type="button">Készleten</button>
+            <button type="button">Rendelhető</button>
+            <button type="button">Lejárt</button>
+            <button type="button">Rejtés</button>
+            <button type="button">Eladva</button>
+          </div>
+        </article>
+
+        <article class="admin-torta-kartya">
+          <div class="admin-torta-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Torta neve</p>
+              <h3>Vaníliás mini torta</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--rejtett">Rejtett</span>
+          </div>
+          <dl class="admin-torta-adatlista">
+            <div><dt>Partner neve</dt><dd>MeseHab Cukrászda</dd></div>
+            <div><dt>Város</dt><dd>Budapest</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>XIII. kerület</dd></div>
+            <div><dt>Ár</dt><dd>8 900 Ft</dd></div>
+            <div><dt>Kategória</dt><dd>Vaníliás</dd></div>
+            <div><dt>Jelenlegi állapot</dt><dd>Rejtett</dd></div>
+            <div><dt>Készlet darabszám</dt><dd>1 db</dd></div>
+            <div><dt>Átvételi / rendelési határidő</dt><dd>Admin ellenőrzés után jelenhet meg</dd></div>
+            <div><dt>Kiemelt státusz</dt><dd>Nem kiemelt</dd></div>
+          </dl>
+          <div class="admin-torta-muveletek" aria-label="Vaníliás mini torta admin műveletek">
+            <button type="button">Szerkesztés</button>
+            <button type="button">Készleten</button>
+            <button type="button">Rendelhető</button>
+            <button type="button">Lejárt</button>
+            <button type="button">Rejtés</button>
+            <button type="button">Eladva</button>
+          </div>
+        </article>
+
+        <article class="admin-torta-kartya">
+          <div class="admin-torta-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Torta neve</p>
+              <h3>Málnás csoda szelettorta</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--eladva">Eladva</span>
+          </div>
+          <dl class="admin-torta-adatlista">
+            <div><dt>Partner neve</dt><dd>Tündérsüti Műhely</dd></div>
+            <div><dt>Város</dt><dd>Győr</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>Belváros</dd></div>
+            <div><dt>Ár</dt><dd>10 900 Ft</dd></div>
+            <div><dt>Kategória</dt><dd>Gyümölcsös</dd></div>
+            <div><dt>Jelenlegi állapot</dt><dd>Eladva</dd></div>
+            <div><dt>Készlet darabszám</dt><dd>0 db</dd></div>
+            <div><dt>Átvételi / rendelési határidő</dt><dd>Elkelt, nincs elérhető határidő</dd></div>
+            <div><dt>Kiemelt státusz</dt><dd>Kiemelt készleten</dd></div>
+          </dl>
+          <div class="admin-torta-muveletek" aria-label="Málnás csoda szelettorta admin műveletek">
+            <button type="button">Szerkesztés</button>
+            <button type="button">Készleten</button>
+            <button type="button">Rendelhető</button>
+            <button type="button">Lejárt</button>
+            <button type="button">Rejtés</button>
+            <button type="button">Eladva</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <p class="admin-vissza-link"><a href="index.html">Vissza az admin főoldalra</a></p>
+  </main>
+</body>
+</html>
