@@ -227,6 +227,9 @@ Az admin alapfelület statikusan megmutatja, milyen tartalomtípusokat kell kés
 **Későbbi torta státuszkezelési megjegyzés:**
 Az azonnal átvehető torták később automatikusan lejárhatnak a `keszlet_lejar` mező alapján. Ez ebben a szakaszban csak dokumentált előkészítés, nem automatikus lejárati logika.
 
+**Későbbi kiemeléskezelési megjegyzés:**
+A kiemelések később dátum alapján automatikusan lejárhatnak. Ez ebben a szakaszban csak dokumentált előkészítés, nem automatikus lejárati logika.
+
 **Partner jelentkezés későbbi folyamata:**
 
 1. Partner kitölti a jelentkezési űrlapot.

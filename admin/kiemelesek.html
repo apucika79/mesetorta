@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../stilus.css">
+  <title>Kiemelések kezelése - Mesetorta.hu</title>
+</head>
+<body class="aloldal admin-oldal">
+  <header class="fejlec">
+    <div class="fejlec-belso">
+      <div class="logo-helye" aria-label="Mesetorta.hu logó"><a href="../index.html">Mesetorta.hu</a></div>
+      <nav class="fomenu-helye" aria-label="Admin menü">
+        <ul class="fomenu-lista">
+          <li class="fomenu-elem"><a href="index.html">Admin főoldal</a></li>
+          <li class="fomenu-elem"><a href="uj-partner.html">Új partner</a></li>
+          <li class="fomenu-elem"><a href="uj-torta.html">Új torta</a></li>
+          <li class="fomenu-elem"><a href="tortak-kezelese.html">Torták kezelése</a></li>
+          <li class="fomenu-elem"><a href="varosok-kezelese.html">Városok</a></li>
+          <li class="fomenu-elem"><a href="jelentkezesek.html">Jelentkezések</a></li>
+          <li class="fomenu-elem"><a href="kiemelesek.html" aria-current="page">Kiemelések</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="oldal-tartalom admin-tartalom">
+    <section class="oldal-fejlec-szekcio" aria-labelledby="oldal-cim">
+      <p class="partner-jelentkezes-jeloles">Admin váz</p>
+      <h1 id="oldal-cim" class="oldal-cim">Kiemelések kezelése</h1>
+      <p>A Mesetorta.hu fizetős vagy kézi kiemeléseinek statikus kezelőfelülete. Az oldal csak szerkezeti előkészítés: nincs működő fizetés, adatbázis, API vagy automatikus lejárati logika.</p>
+    </section>
+
+    <section class="jelentkezesi-urlap-helye" aria-labelledby="uj-kiemeles-cim">
+      <div class="urlap-fejlec">
+        <h2 id="uj-kiemeles-cim">Új kiemelés</h2>
+        <p>Az űrlap a későbbi partner-, torta-, készlet- és területi kiemelések admin mezőit jelöli ki működő adatmentés nélkül.</p>
+      </div>
+
+      <form class="partner-urlap" action="#" method="post" aria-describedby="kiemeles-urlap-megjegyzes">
+        <fieldset class="urlap-blokk">
+          <legend>Kiemelés adatai</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo">
+              <label for="kiemeles-tipusa">Kiemelés típusa</label>
+              <select id="kiemeles-tipusa" name="kiemeles-tipusa">
+                <option value="torta-kiemeles">Torta kiemelés</option>
+                <option value="keszleten-levo-torta-kiemeles">Készleten lévő torta kiemelés</option>
+                <option value="partner-kiemeles">Partner kiemelés</option>
+                <option value="teruleti-kiemeles">Területi kiemelés</option>
+              </select>
+            </div>
+            <div class="urlap-mezo">
+              <label for="partner-kivalasztasa">Partner kiválasztása</label>
+              <select id="partner-kivalasztasa" name="partner-kivalasztasa">
+                <option value="">Válassz partnert</option>
+                <option value="mesehab-cukraszda">MeseHab Cukrászda</option>
+                <option value="tundersuti-muhely">Tündérsüti Műhely</option>
+                <option value="cukorcsillag-tortamuhely">Cukorcsillag Tortaműhely</option>
+              </select>
+            </div>
+            <div class="urlap-mezo">
+              <label for="torta-kivalasztasa">Torta kiválasztása</label>
+              <select id="torta-kivalasztasa" name="torta-kivalasztasa">
+                <option value="">Válassz tortát</option>
+                <option value="erdei-gyumolcsos-alomtorta">Erdei gyümölcsös álomtorta</option>
+                <option value="csokolades-mesevar">Csokoládés mesevár</option>
+                <option value="vanilias-tunderkert">Vaníliás tündérkert</option>
+              </select>
+            </div>
+            <div class="urlap-mezo">
+              <label for="varos-kivalasztasa">Város kiválasztása</label>
+              <select id="varos-kivalasztasa" name="varos-kivalasztasa">
+                <option value="">Válassz várost</option>
+                <option value="budapest">Budapest</option>
+                <option value="gyor">Győr</option>
+                <option value="szeged">Szeged</option>
+                <option value="debrecen">Debrecen</option>
+              </select>
+            </div>
+            <div class="urlap-mezo">
+              <label for="korzet-kivalasztasa">Körzet / kerület kiválasztása</label>
+              <select id="korzet-kivalasztasa" name="korzet-kivalasztasa">
+                <option value="">Válassz körzetet vagy kerületet</option>
+                <option value="xiii-kerulet">XIII. kerület</option>
+                <option value="belvaros">Belváros</option>
+                <option value="ujvaros">Újváros</option>
+                <option value="korzet-nelkul">Körzet nélkül</option>
+              </select>
+            </div>
+            <div class="urlap-mezo">
+              <label for="kezdo-datum">Kezdő dátum</label>
+              <input type="date" id="kezdo-datum" name="kezdo-datum">
+            </div>
+            <div class="urlap-mezo">
+              <label for="zaro-datum">Záró dátum</label>
+              <input type="date" id="zaro-datum" name="zaro-datum">
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="megjegyzes">Megjegyzés</label>
+              <textarea id="megjegyzes" name="megjegyzes" rows="5" placeholder="Belső admin megjegyzés a kiemeléshez."></textarea>
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label class="jelolonegyzet"><input type="checkbox" name="aktiv" value="igen" checked> <span>Aktív jelölőnégyzet</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <p id="kiemeles-urlap-megjegyzes" class="urlap-megjegyzes">Statikus admin űrlap: a Mentés gomb jelenleg nem ment adatot, nem indít fizetést és nem hív API-t.</p>
+        <button type="button">Mentés</button>
+      </form>
+    </section>
+
+    <section class="admin-lista-szekcio" aria-labelledby="aktiv-kiemelesek-cim">
+      <div class="urlap-fejlec">
+        <h2 id="aktiv-kiemelesek-cim">Aktív kiemelések</h2>
+        <p>Mintaadatokkal feltöltött lista a későbbi aktív kiemelések admin áttekintéséhez.</p>
+      </div>
+
+      <div class="kiemeles-kartya-racs">
+        <article class="kiemeles-admin-kartya">
+          <div class="admin-torta-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Kiemelés típusa</p>
+              <h3>Partner kiemelés</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--elfogadva">Aktív</span>
+          </div>
+          <dl class="admin-torta-adatlista">
+            <div><dt>Érintett partner</dt><dd>MeseHab Cukrászda</dd></div>
+            <div><dt>Érintett torta</dt><dd>Nincs megadva</dd></div>
+            <div><dt>Város</dt><dd>Budapest</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>XIII. kerület</dd></div>
+            <div><dt>Kezdő dátum</dt><dd>2026-05-01</dd></div>
+            <div><dt>Záró dátum</dt><dd>2026-06-30</dd></div>
+            <div><dt>Státusz</dt><dd>aktiv</dd></div>
+          </dl>
+          <div class="kiemeles-muveletek" aria-label="MeseHab Cukrászda partner kiemelés műveletek">
+            <button type="button">Szerkesztés</button>
+            <button type="button">Aktiválás</button>
+            <button type="button">Lejárttá tétel</button>
+            <button type="button">Törlés</button>
+          </div>
+        </article>
+
+        <article class="kiemeles-admin-kartya">
+          <div class="admin-torta-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Kiemelés típusa</p>
+              <h3>Készleten lévő torta kiemelés</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--keszleten">Aktív</span>
+          </div>
+          <dl class="admin-torta-adatlista">
+            <div><dt>Érintett partner</dt><dd>Tündérsüti Műhely</dd></div>
+            <div><dt>Érintett torta</dt><dd>Erdei gyümölcsös álomtorta</dd></div>
+            <div><dt>Város</dt><dd>Győr</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>Belváros</dd></div>
+            <div><dt>Kezdő dátum</dt><dd>2026-05-20</dd></div>
+            <div><dt>Záró dátum</dt><dd>2026-06-05</dd></div>
+            <div><dt>Státusz</dt><dd>aktiv</dd></div>
+          </dl>
+          <div class="kiemeles-muveletek" aria-label="Erdei gyümölcsös álomtorta kiemelés műveletek">
+            <button type="button">Szerkesztés</button>
+            <button type="button">Aktiválás</button>
+            <button type="button">Lejárttá tétel</button>
+            <button type="button">Törlés</button>
+          </div>
+        </article>
+
+        <article class="kiemeles-admin-kartya">
+          <div class="admin-torta-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Kiemelés típusa</p>
+              <h3>Területi kiemelés</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--elfogadva">Aktív</span>
+          </div>
+          <dl class="admin-torta-adatlista">
+            <div><dt>Érintett partner</dt><dd>Cukorcsillag Tortaműhely</dd></div>
+            <div><dt>Érintett torta</dt><dd>Nincs megadva</dd></div>
+            <div><dt>Város</dt><dd>Szeged</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>Újváros</dd></div>
+            <div><dt>Kezdő dátum</dt><dd>2026-05-15</dd></div>
+            <div><dt>Záró dátum</dt><dd>2026-07-15</dd></div>
+            <div><dt>Státusz</dt><dd>aktiv</dd></div>
+          </dl>
+          <div class="kiemeles-muveletek" aria-label="Szeged területi kiemelés műveletek">
+            <button type="button">Szerkesztés</button>
+            <button type="button">Aktiválás</button>
+            <button type="button">Lejárttá tétel</button>
+            <button type="button">Törlés</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="admin-lista-szekcio" aria-labelledby="lejart-kiemelesek-cim">
+      <div class="urlap-fejlec">
+        <h2 id="lejart-kiemelesek-cim">Lejárt kiemelések</h2>
+        <p>Korábbi kiemelések mintalistája, automatikus lejárati logika nélkül.</p>
+      </div>
+
+      <div class="kiemeles-kartya-racs">
+        <article class="kiemeles-admin-kartya">
+          <div class="admin-torta-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Kiemelés típusa</p>
+              <h3>Torta kiemelés</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--lejart">Lejárt</span>
+          </div>
+          <dl class="admin-torta-adatlista">
+            <div><dt>Érintett partner</dt><dd>MeseHab Cukrászda</dd></div>
+            <div><dt>Érintett torta</dt><dd>Csokoládés mesevár</dd></div>
+            <div><dt>Város</dt><dd>Budapest</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>XI. kerület</dd></div>
+            <div><dt>Kezdő dátum</dt><dd>2026-03-01</dd></div>
+            <div><dt>Záró dátum</dt><dd>2026-03-31</dd></div>
+            <div><dt>Státusz</dt><dd>lejart</dd></div>
+          </dl>
+          <div class="kiemeles-muveletek" aria-label="Csokoládés mesevár lejárt kiemelés műveletek">
+            <button type="button">Szerkesztés</button>
+            <button type="button">Aktiválás</button>
+            <button type="button">Lejárttá tétel</button>
+            <button type="button">Törlés</button>
+          </div>
+        </article>
+
+        <article class="kiemeles-admin-kartya">
+          <div class="admin-torta-kartya-fejlec">
+            <div>
+              <p class="jelentkezes-kartya-felirat">Kiemelés típusa</p>
+              <h3>Területi kiemelés</h3>
+            </div>
+            <span class="admin-statusz-jelzo admin-statusz-jelzo--lejart">Lejárt</span>
+          </div>
+          <dl class="admin-torta-adatlista">
+            <div><dt>Érintett partner</dt><dd>Tündérsüti Műhely</dd></div>
+            <div><dt>Érintett torta</dt><dd>Nincs megadva</dd></div>
+            <div><dt>Város</dt><dd>Debrecen</dd></div>
+            <div><dt>Körzet / kerület</dt><dd>Körzet nélkül</dd></div>
+            <div><dt>Kezdő dátum</dt><dd>2026-02-10</dd></div>
+            <div><dt>Záró dátum</dt><dd>2026-02-28</dd></div>
+            <div><dt>Státusz</dt><dd>lejart</dd></div>
+          </dl>
+          <div class="kiemeles-muveletek" aria-label="Debrecen lejárt területi kiemelés műveletek">
+            <button type="button">Szerkesztés</button>
+            <button type="button">Aktiválás</button>
+            <button type="button">Lejárttá tétel</button>
+            <button type="button">Törlés</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <p class="admin-vissza-link"><a href="index.html">Vissza az admin főoldalra</a></p>
+  </main>
+</body>
+</html>
