@@ -1,4 +1,4 @@
-// Mesetorta próbaadatok - adatbázis nélkül, későbbi fejlesztéshez.
+// MESETORTA próbaadatok - adatbázis nélkül, későbbi fejlesztéshez.
 
 const azonnalAtvehetoTortak = [
   {
@@ -8,9 +8,11 @@ const azonnalAtvehetoTortak = [
     ar: '12 900 Ft',
     varos: 'Budapest',
     kerulet: 'XIII. kerület',
+    korzet: 'XIII. kerület',
     cukraszda: 'MeseHab Cukrászda',
     allapot: 'keszleten',
     hatarido: 'Ma 16:00-ig átvehető',
+    atveteli_informacio: 'Ma 16:00-ig',
     kategoria: 'Gyümölcsös torta',
     szeletszam: 12
   },
@@ -21,9 +23,11 @@ const azonnalAtvehetoTortak = [
     ar: '14 500 Ft',
     varos: 'Debrecen',
     kerulet: 'Belváros',
+    korzet: 'Belváros',
     cukraszda: 'Tündérsüti Műhely',
     allapot: 'keszleten',
     hatarido: 'Ma 18:00-ig átvehető',
+    atveteli_informacio: 'Ma 18:00-ig',
     kategoria: 'Csokoládétorta',
     szeletszam: 16
   },
@@ -34,9 +38,11 @@ const azonnalAtvehetoTortak = [
     ar: '11 800 Ft',
     varos: 'Szeged',
     kerulet: 'Újszeged',
+    korzet: 'Újszeged',
     cukraszda: 'Cukorcsillag Tortaműhely',
     allapot: 'keszleten',
     hatarido: 'Ma 17:30-ig átvehető',
+    atveteli_informacio: 'Ma 17:30-ig',
     kategoria: 'Tejszínes torta',
     szeletszam: 10
   },
@@ -47,9 +53,11 @@ const azonnalAtvehetoTortak = [
     ar: '13 200 Ft',
     varos: 'Pécs',
     kerulet: 'Tettye',
+    korzet: 'Tettye',
     cukraszda: 'Édes Mesék Cukrászda',
     allapot: 'keszleten',
     hatarido: 'Ma 15:00-ig átvehető',
+    atveteli_informacio: 'Ma 15:00-ig',
     kategoria: 'Sajttorta',
     szeletszam: 12
   },
@@ -60,9 +68,11 @@ const azonnalAtvehetoTortak = [
     ar: '15 900 Ft',
     varos: 'Győr',
     kerulet: 'Nádorváros',
+    korzet: 'Nádorváros',
     cukraszda: 'MeseHab Cukrászda',
     allapot: 'keszleten',
     hatarido: 'Ma 19:00-ig átvehető',
+    atveteli_informacio: 'Ma 19:00-ig',
     kategoria: 'Klasszikus torta',
     szeletszam: 16
   },
@@ -73,9 +83,11 @@ const azonnalAtvehetoTortak = [
     ar: '10 900 Ft',
     varos: 'Miskolc',
     kerulet: 'Avas',
+    korzet: 'Avas',
     cukraszda: 'Tündérsüti Műhely',
     allapot: 'keszleten',
     hatarido: 'Ma 16:30-ig átvehető',
+    atveteli_informacio: 'Ma 16:30-ig',
     kategoria: 'Gyümölcsös torta',
     szeletszam: 8
   }
@@ -89,9 +101,11 @@ const rendelhetoTortak = [
     ar: '18 900 Ft-tól',
     varos: 'Budapest',
     kerulet: 'XI. kerület',
+    korzet: 'XI. kerület',
     cukraszda: 'MeseHab Cukrászda',
     allapot: 'rendelheto',
     hatarido: 'Rendelési határidő: 3 nap',
+    atveteli_informacio: 'Rendelhető 3 nap alatt',
     kategoria: 'Gyerektorta',
     szeletszam: 16
   },
@@ -102,9 +116,11 @@ const rendelhetoTortak = [
     ar: '39 900 Ft-tól',
     varos: 'Debrecen',
     kerulet: 'Nagyerdő',
+    korzet: 'Nagyerdő',
     cukraszda: 'Tündérsüti Műhely',
     allapot: 'rendelheto',
     hatarido: 'Rendelési határidő: 10 nap',
+    atveteli_informacio: 'Rendelhető 10 nap alatt',
     kategoria: 'Esküvői torta',
     szeletszam: 32
   },
@@ -115,9 +131,11 @@ const rendelhetoTortak = [
     ar: '16 500 Ft-tól',
     varos: 'Szeged',
     kerulet: 'Belváros',
+    korzet: 'Belváros',
     cukraszda: 'Cukorcsillag Tortaműhely',
     allapot: 'rendelheto',
     hatarido: 'Rendelési határidő: 4 nap',
+    atveteli_informacio: 'Rendelhető 4 nap alatt',
     kategoria: 'Mentes torta',
     szeletszam: 12
   },
@@ -128,9 +146,11 @@ const rendelhetoTortak = [
     ar: '21 900 Ft-tól',
     varos: 'Pécs',
     kerulet: 'Belváros',
+    korzet: 'Belváros',
     cukraszda: 'Édes Mesék Cukrászda',
     allapot: 'rendelheto',
     hatarido: 'Rendelési határidő: 5 nap',
+    atveteli_informacio: 'Rendelhető 5 nap alatt',
     kategoria: 'Ünnepi torta',
     szeletszam: 20
   },
@@ -141,9 +161,11 @@ const rendelhetoTortak = [
     ar: '24 900 Ft-tól',
     varos: 'Győr',
     kerulet: 'Belváros',
+    korzet: 'Belváros',
     cukraszda: 'MeseHab Cukrászda',
     allapot: 'rendelheto',
     hatarido: 'Rendelési határidő: 6 nap',
+    atveteli_informacio: 'Rendelhető 6 nap alatt',
     kategoria: 'Formatorta',
     szeletszam: 18
   },
@@ -154,9 +176,11 @@ const rendelhetoTortak = [
     ar: '17 900 Ft-tól',
     varos: 'Miskolc',
     kerulet: 'Belváros',
+    korzet: 'Belváros',
     cukraszda: 'Tündérsüti Műhely',
     allapot: 'rendelheto',
     hatarido: 'Rendelési határidő: 4 nap',
+    atveteli_informacio: 'Rendelhető 4 nap alatt',
     kategoria: 'Mentes torta',
     szeletszam: 12
   }
@@ -169,6 +193,9 @@ const cukraszdak = [
     kep: 'kepek/torta-placeholder.jpg',
     varos: 'Budapest',
     kerulet: 'XIII. kerület',
+    korzet: 'XIII. kerület',
+    tipus: 'Cukrászda',
+    kiemelt: true,
     cim: 'Mese utca 12.',
     leiras: 'Klasszikus és mesés születésnapi torták készítése rövid határidővel.'
   },
@@ -178,6 +205,9 @@ const cukraszdak = [
     kep: 'kepek/torta-placeholder.jpg',
     varos: 'Debrecen',
     kerulet: 'Belváros',
+    korzet: 'Belváros',
+    tipus: 'Tortaműhely',
+    kiemelt: true,
     cim: 'Tündér tér 4.',
     leiras: 'Rendelhető alkalmi torták, mentes sütemények és családi ünnepi desszertek.'
   },
@@ -187,6 +217,9 @@ const cukraszdak = [
     kep: 'kepek/torta-placeholder.jpg',
     varos: 'Szeged',
     kerulet: 'Újszeged',
+    korzet: 'Újszeged',
+    tipus: 'Tortaműhely',
+    kiemelt: true,
     cim: 'Csillag sétány 8.',
     leiras: 'Egyedi díszítésű torták gyerekzsúrokra, céges eseményekre és esküvőkre.'
   },
@@ -196,6 +229,9 @@ const cukraszdak = [
     kep: 'kepek/torta-placeholder.jpg',
     varos: 'Pécs',
     kerulet: 'Tettye',
+    korzet: 'Tettye',
+    tipus: 'Cukrászda',
+    kiemelt: false,
     cim: 'Édes köz 3.',
     leiras: 'Házi ízvilágú torták, szezonális krémek és hagyományos cukrászsütemények.'
   }

@@ -437,13 +437,19 @@ article > section {
   color: var(--szin-halvany);
 }
 
-.torta-kartya-adatok {
+.torta-kartya-adatok,
+.cukraszda-kartya-adatok {
   display: grid;
   gap: 8px;
   margin: 18px 0 0;
 }
 
-.torta-adat-sor {
+.cukraszda-kartya-adatok {
+  margin: 12px 0 10px;
+}
+
+.torta-adat-sor,
+.cukraszda-adat-sor {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -452,22 +458,22 @@ article > section {
   border-top: 1px solid #f1e8df;
 }
 
-.torta-adat-sor dt {
+.torta-adat-sor dt,
+.cukraszda-adat-sor dt {
   color: var(--szin-halvany);
   font-size: 0.86rem;
   font-weight: 700;
 }
 
-.torta-adat-sor dd {
+.torta-adat-sor dd,
+.cukraszda-adat-sor dd {
   margin: 0;
   text-align: right;
   font-size: 0.9rem;
   font-weight: 700;
 }
 
-.torta-adat-sor:first-child dd,
-.ma-atveheto-tortak .torta-adat-sor:first-child dd,
-.rendelheto-tortak .torta-adat-sor:first-child dd {
+.torta-adat-sor--allapot dd {
   display: inline-flex;
   align-items: center;
   min-height: 28px;
@@ -478,30 +484,42 @@ article > section {
   letter-spacing: 0.04em;
 }
 
-.torta-adat-sor:first-child dd::before {
+.torta-adat-sor--allapot dd::before {
   font-size: 0.78rem;
 }
 
-.ma-atveheto-tortak .torta-adat-sor:first-child dd::before,
-.ma-atveheto-tortak-oldal .torta-adat-sor:first-child dd::before {
+.torta-adat-sor--keszleten dd::before {
   content: "Készleten";
 }
 
-.rendelheto-tortak .torta-adat-sor:first-child dd::before,
-.rendelheto-tortak-oldal .torta-adat-sor:first-child dd::before {
+.torta-adat-sor--rendelheto dd::before {
   content: "Rendelhető";
 }
 
-.ma-atveheto-tortak .torta-adat-sor:first-child dd,
-.ma-atveheto-tortak-oldal .torta-adat-sor:first-child dd {
+.torta-adat-sor--keszleten dd {
   background: #e9f8f1;
   color: var(--szin-siker);
 }
 
-.rendelheto-tortak .torta-adat-sor:first-child dd,
-.rendelheto-tortak-oldal .torta-adat-sor:first-child dd {
+.torta-adat-sor--rendelheto dd {
   background: #fff2dc;
   color: var(--szin-rendeles);
+}
+
+.cukraszda-kartya-kiemelt,
+.partner-kiemelt-jeloles {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  margin: 4px 0 10px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #f5e9fb;
+  color: var(--szin-kiemelt);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .kiemelt-cukraszdak .cukraszda-kartya::before {
@@ -682,13 +700,15 @@ article > section > p,
     padding: 18px;
   }
 
-  .torta-adat-sor {
+  .torta-adat-sor,
+  .cukraszda-adat-sor {
     align-items: flex-start;
     flex-direction: column;
     gap: 4px;
   }
 
-  .torta-adat-sor dd {
+  .torta-adat-sor dd,
+  .cukraszda-adat-sor dd {
     text-align: left;
   }
 }
