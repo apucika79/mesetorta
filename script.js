@@ -1,4 +1,4 @@
-// MESETORTA alap keresés és szűrés próbaadatokkal.
+// Mesetorta.hu alap keresés és szűrés próbaadatokkal.
 
 (function () {
   const NINCS_TALALAT_UZENET = 'Nincs találat a megadott feltételekkel.';
@@ -264,6 +264,14 @@
       </article>`;
   }
 
+  function talalatiTortaKartya(torta) {
+    return tortaKartya(torta).replace('<article class="torta-kartya"', '<article class="talalati-kartya torta-kartya"');
+  }
+
+  function talalatiPartnerKartya(partner) {
+    return partnerKartya(partner).replace('<article class="cukraszda-kartya"', '<article class="talalati-kartya cukraszda-kartya"');
+  }
+
   function uresAllapotBlokk(cim, szoveg, partnerLink) {
     return `
       <div class="ures-allapot" role="status">
@@ -289,6 +297,19 @@
     if (kontener.classList.contains('ajanlosav-gorgeto')) {
       ajanlosavKartyakJelolese(kontener);
     }
+  }
+
+  function talalatokSzamaFrissitese(lista, darab, tipus) {
+    const talalatokSzama = lista && lista.parentElement
+      ? lista.parentElement.querySelector('.talalatok-szama')
+      : null;
+    if (!talalatokSzama) {
+      return;
+    }
+
+    talalatokSzama.textContent = darab > 0
+      ? `${darab} ${tipus} található`
+      : 'Nincs találat';
   }
 
 
@@ -468,13 +489,14 @@
         arMaximum: selectErtek('ma-ar-maximum'),
         szeletszam: selectErtek('ma-szeletszam')
       });
-      listaKirajzolasa(lista, eredmeny, tortaKartya, voltKereses ? {
+      listaKirajzolasa(lista, eredmeny, talalatiTortaKartya, voltKereses ? {
         cim: 'Nincs találat',
         szoveg: NINCS_TALALAT_UZENET
       } : {
         cim: 'Nincs azonnal átvehető torta',
         szoveg: URES_AZONNAL_ATVEHETO_UZENET
       });
+      talalatokSzamaFrissitese(lista, eredmeny.length, 'torta');
     }
 
     urlap.addEventListener('submit', function (esemeny) {
@@ -503,13 +525,14 @@
         elkeszitesiIdo: selectErtek('rendelheto-elkeszitesi-ido'),
         arMaximum: selectErtek('rendelheto-ar-maximum')
       });
-      listaKirajzolasa(lista, eredmeny, tortaKartya, voltKereses ? {
+      listaKirajzolasa(lista, eredmeny, talalatiTortaKartya, voltKereses ? {
         cim: 'Nincs találat',
         szoveg: NINCS_TALALAT_UZENET
       } : {
         cim: 'Nincs rendelhető torta',
         szoveg: URES_RENDELHETO_UZENET
       });
+      talalatokSzamaFrissitese(lista, eredmeny.length, 'torta');
     }
 
     urlap.addEventListener('submit', function (esemeny) {
@@ -536,13 +559,14 @@
         tipus: selectErtek('partner-tipus'),
         kiemelt: selectErtek('kiemelt-partner')
       });
-      listaKirajzolasa(lista, eredmeny, partnerKartya, voltKereses ? {
+      listaKirajzolasa(lista, eredmeny, talalatiPartnerKartya, voltKereses ? {
         cim: 'Nincs találat',
         szoveg: NINCS_TALALAT_UZENET
       } : {
         cim: 'Nincs regisztrált partner',
         szoveg: URES_PARTNER_UZENET
       });
+      talalatokSzamaFrissitese(lista, eredmeny.length, 'cukrászda');
     }
 
     urlap.addEventListener('submit', function (esemeny) {
