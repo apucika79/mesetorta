@@ -732,6 +732,54 @@ article > section > p,
   color: var(--szin-halvany);
 }
 
+
+/* Találati oldalak listanézete */
+.talalati-oldal {
+  display: grid;
+  gap: 24px;
+}
+
+.talalati-fejlec {
+  text-align: center;
+}
+
+.talalati-leiras {
+  margin: 10px auto 0;
+}
+
+.szuro-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.talalatok-szama {
+  margin: -4px 0 18px;
+  color: var(--szin-elsodleges-sotet);
+  font-weight: 850;
+}
+
+.talalati-lista {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.talalati-kartya {
+  min-width: 0;
+}
+
+@media (max-width: 960px) {
+  .talalati-lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .talalati-lista {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Lábléc */
 .lablec {
   margin-top: 32px;
