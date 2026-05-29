@@ -358,6 +358,10 @@ article > section h2 {
   list-style: none;
 }
 
+.szekcio-muvelet {
+  margin-top: 20px;
+}
+
 /* Kártyák */
 .torta-kartya,
 .cukraszda-kartya,
