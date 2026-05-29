@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../stilus.css">
+  <title>Új torta felvétele - MESETORTA</title>
+</head>
+<body class="aloldal admin-oldal">
+  <header class="fejlec">
+    <div class="fejlec-belso">
+      <div class="logo-helye" aria-label="MESETORTA logó"><a href="../index.html">MESETORTA</a></div>
+      <nav class="fomenu-helye" aria-label="Admin menü">
+        <ul class="fomenu-lista">
+          <li class="fomenu-elem"><a href="index.html">Admin főoldal</a></li>
+          <li class="fomenu-elem"><a href="uj-partner.html">Új partner</a></li>
+          <li class="fomenu-elem"><a href="uj-torta.html" aria-current="page">Új torta</a></li>
+          <li class="fomenu-elem"><a href="varosok-kezelese.html">Városok</a></li>
+          <li class="fomenu-elem"><a href="jelentkezesek.html">Jelentkezések</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="oldal-tartalom admin-tartalom">
+    <section class="oldal-fejlec-szekcio" aria-labelledby="oldal-cim">
+      <p class="partner-jelentkezes-jeloles">Statikus űrlap</p>
+      <h1 id="oldal-cim" class="oldal-cim">Új torta felvétele</h1>
+      <p>Tortaadatok admin oldali felvételi váza. A mentés gomb jelenleg nem küld adatot és nem ment adatbázisba.</p>
+    </section>
+
+    <section class="jelentkezesi-urlap-helye" aria-labelledby="torta-urlap-cim">
+      <div class="urlap-fejlec">
+        <h2 id="torta-urlap-cim">Torta adatai</h2>
+        <p>Minden mező csak szerkezeti elem, működő adatmentés nélkül.</p>
+      </div>
+
+      <form class="partner-urlap" action="#" method="post" enctype="multipart/form-data" aria-describedby="urlap-megjegyzes">
+        <fieldset class="urlap-blokk">
+          <legend>Alapadatok</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo">
+              <label for="torta-neve">Torta neve</label>
+              <input type="text" id="torta-neve" name="torta-neve" placeholder="Pl. Erdei gyümölcsös álomtorta">
+            </div>
+            <div class="urlap-mezo">
+              <label for="partner">Partner kiválasztása</label>
+              <select id="partner" name="partner">
+                <option value="">Válassz partnert</option>
+                <option value="mesehab-cukraszda">MeseHab Cukrászda</option>
+                <option value="tundersuti-muhely">Tündérsüti Műhely</option>
+                <option value="cukorcsillag-tortamuhely">Cukorcsillag Tortaműhely</option>
+              </select>
+            </div>
+            <div class="urlap-mezo">
+              <label for="allapot">Állapot</label>
+              <select id="allapot" name="allapot">
+                <option value="keszleten">Készleten</option>
+                <option value="rendelheto">Rendelhető</option>
+              </select>
+            </div>
+            <div class="urlap-mezo">
+              <label for="varos">Város</label>
+              <input type="text" id="varos" name="varos" placeholder="Pl. Budapest">
+            </div>
+            <div class="urlap-mezo">
+              <label for="korzet-kerulet">Körzet / kerület</label>
+              <input type="text" id="korzet-kerulet" name="korzet-kerulet" placeholder="Pl. XIII. kerület">
+            </div>
+            <div class="urlap-mezo">
+              <label for="ar">Ár</label>
+              <input type="text" id="ar" name="ar" placeholder="Pl. 12 900 Ft">
+            </div>
+            <div class="urlap-mezo">
+              <label for="kategoria">Kategória</label>
+              <input type="text" id="kategoria" name="kategoria" placeholder="Pl. Gyümölcsös torta">
+            </div>
+            <div class="urlap-mezo">
+              <label for="szeletszam">Szeletszám</label>
+              <input type="text" id="szeletszam" name="szeletszam" placeholder="Pl. 12 szelet">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk">
+          <legend>Átvétel és rendelés</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="atveteli-informacio">Átvételi információ</label>
+              <input type="text" id="atveteli-informacio" name="atveteli-informacio" placeholder="Pl. Ma 16:00-ig vagy üzletben átvehető">
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="rendelesi-hatarido">Rendelési határidő</label>
+              <input type="text" id="rendelesi-hatarido" name="rendelesi-hatarido" placeholder="Pl. 3 nappal korábban">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk">
+          <legend>Leírás, kiemelés és kép</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="leiras">Leírás</label>
+              <textarea id="leiras" name="leiras" rows="7" placeholder="Rövid torta leírás."></textarea>
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label class="jelolonegyzet"><input type="checkbox" name="kiemelt-torta" value="igen"> <span>Kiemelt torta jelölés</span></label>
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="kep-feltoltes">Kép feltöltés helye</label>
+              <input type="file" id="kep-feltoltes" name="kep-feltoltes" accept="image/*">
+            </div>
+          </div>
+        </fieldset>
+
+        <p id="urlap-megjegyzes" class="urlap-megjegyzes">Statikus admin űrlap: nincs működő mentés, adatbázis vagy beküldés.</p>
+        <button type="button">Mentés</button>
+      </form>
+    </section>
+
+    <p class="admin-vissza-link"><a href="../index.html">Vissza a MESETORTA főoldalra</a></p>
+  </main>
+</body>
+</html>

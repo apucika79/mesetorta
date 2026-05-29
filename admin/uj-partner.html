@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../stilus.css">
+  <title>Új partner felvétele - MESETORTA</title>
+</head>
+<body class="aloldal admin-oldal">
+  <header class="fejlec">
+    <div class="fejlec-belso">
+      <div class="logo-helye" aria-label="MESETORTA logó"><a href="../index.html">MESETORTA</a></div>
+      <nav class="fomenu-helye" aria-label="Admin menü">
+        <ul class="fomenu-lista">
+          <li class="fomenu-elem"><a href="index.html">Admin főoldal</a></li>
+          <li class="fomenu-elem"><a href="uj-partner.html" aria-current="page">Új partner</a></li>
+          <li class="fomenu-elem"><a href="uj-torta.html">Új torta</a></li>
+          <li class="fomenu-elem"><a href="varosok-kezelese.html">Városok</a></li>
+          <li class="fomenu-elem"><a href="jelentkezesek.html">Jelentkezések</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="oldal-tartalom admin-tartalom">
+    <section class="oldal-fejlec-szekcio" aria-labelledby="oldal-cim">
+      <p class="partner-jelentkezes-jeloles">Statikus űrlap</p>
+      <h1 id="oldal-cim" class="oldal-cim">Új partner felvétele</h1>
+      <p>Partneradatok admin oldali felvételi váza. A mentés gomb jelenleg nem küld adatot és nem ment adatbázisba.</p>
+    </section>
+
+    <section class="jelentkezesi-urlap-helye" aria-labelledby="partner-urlap-cim">
+      <div class="urlap-fejlec">
+        <h2 id="partner-urlap-cim">Partner adatai</h2>
+        <p>Minden mező csak szerkezeti elem, működő adatmentés nélkül.</p>
+      </div>
+
+      <form class="partner-urlap" action="#" method="post" aria-describedby="urlap-megjegyzes">
+        <fieldset class="urlap-blokk">
+          <legend>Alapadatok</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo">
+              <label for="partner-neve">Partner neve</label>
+              <input type="text" id="partner-neve" name="partner-neve" placeholder="Pl. MeseHab Cukrászda">
+            </div>
+            <div class="urlap-mezo">
+              <label for="partner-tipusa">Partner típusa</label>
+              <select id="partner-tipusa" name="partner-tipusa">
+                <option value="">Válassz típust</option>
+                <option value="cukraszda">Cukrászda</option>
+                <option value="tortamuhely">Tortaműhely</option>
+                <option value="otthoni-tortakeszito">Otthoni tortakészítő</option>
+              </select>
+            </div>
+            <div class="urlap-mezo">
+              <label for="varos">Város</label>
+              <input type="text" id="varos" name="varos" placeholder="Pl. Budapest">
+            </div>
+            <div class="urlap-mezo">
+              <label for="korzet-kerulet">Körzet / kerület</label>
+              <input type="text" id="korzet-kerulet" name="korzet-kerulet" placeholder="Pl. XIII. kerület">
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="cim">Cím</label>
+              <input type="text" id="cim" name="cim" placeholder="Utca, házszám">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk">
+          <legend>Elérhetőségek</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo">
+              <label for="telefonszam">Telefonszám</label>
+              <input type="tel" id="telefonszam" name="telefonszam" placeholder="Pl. +36 30 123 4567">
+            </div>
+            <div class="urlap-mezo">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="Pl. hello@mesetorta.hu">
+            </div>
+            <div class="urlap-mezo">
+              <label for="weboldal">Weboldal</label>
+              <input type="url" id="weboldal" name="weboldal" placeholder="https://">
+            </div>
+            <div class="urlap-mezo">
+              <label for="facebook">Facebook</label>
+              <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/">
+            </div>
+            <div class="urlap-mezo">
+              <label for="instagram">Instagram</label>
+              <input type="url" id="instagram" name="instagram" placeholder="https://instagram.com/">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk">
+          <legend>Bemutatkozás és kiemelés</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="bemutatkozas">Bemutatkozás</label>
+              <textarea id="bemutatkozas" name="bemutatkozas" rows="7" placeholder="Rövid partner bemutatkozás."></textarea>
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label class="jelolonegyzet"><input type="checkbox" name="kiemelt-partner" value="igen"> <span>Kiemelt partner jelölés</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <p id="urlap-megjegyzes" class="urlap-megjegyzes">Statikus admin űrlap: nincs működő mentés, adatbázis vagy beküldés.</p>
+        <button type="button">Mentés</button>
+      </form>
+    </section>
+
+    <p class="admin-vissza-link"><a href="../index.html">Vissza a MESETORTA főoldalra</a></p>
+  </main>
+</body>
+</html>

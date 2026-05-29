@@ -1303,3 +1303,143 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+/* Admin felület statikus váza */
+.admin-tartalom .oldal-fejlec-szekcio {
+  margin-top: 0;
+}
+
+.admin-kartya-racs,
+.admin-statusz-racs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.admin-muvelet-kartya {
+  display: grid;
+  gap: 8px;
+  min-height: 138px;
+  padding: 18px;
+  border: 1px solid var(--szin-vonal);
+  border-radius: var(--sugar-kozepes);
+  background: var(--szin-felulet-meleg);
+  color: var(--szin-szoveg);
+  box-shadow: var(--arnyek-finoman);
+}
+
+.admin-muvelet-kartya:hover,
+.admin-muvelet-kartya:focus-visible {
+  color: var(--szin-szoveg);
+  transform: translateY(-2px);
+  box-shadow: var(--arnyek-kartya);
+}
+
+.admin-muvelet-kartya span {
+  font-size: 1.08rem;
+  font-weight: 850;
+}
+
+.admin-muvelet-kartya small,
+.admin-statusz-kartya p {
+  color: var(--szin-halvany);
+}
+
+.admin-statusz-kartya {
+  padding: 18px;
+  border: 1px solid #f1e8df;
+  border-radius: var(--sugar-kozepes);
+  background: linear-gradient(135deg, #fffaf5, #ffffff);
+}
+
+.admin-statusz-kartya p {
+  margin-bottom: 8px;
+  font-weight: 750;
+}
+
+.admin-statusz-kartya strong {
+  display: block;
+  color: var(--szin-elsodleges-sotet);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.admin-vissza-link {
+  margin-top: 24px;
+}
+
+.admin-tabla-gorgeto {
+  overflow-x: auto;
+}
+
+.admin-tabla {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.admin-tabla th,
+.admin-tabla td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--szin-vonal);
+  text-align: left;
+  vertical-align: top;
+}
+
+.admin-tabla th {
+  color: var(--szin-elsodleges-sotet);
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.admin-tabla td {
+  color: var(--szin-halvany);
+  font-weight: 650;
+}
+
+.admin-statusz-jelzo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--szin-masodlagos);
+  color: var(--szin-elsodleges-sotet);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.admin-statusz-jelzo--uj {
+  background: #fff1e6;
+  color: #8a4a0f;
+}
+
+.admin-statusz-jelzo--feldolgozas {
+  background: #eef3ff;
+  color: #33508f;
+}
+
+.admin-statusz-jelzo--elfogadva {
+  background: #eaf7f0;
+  color: var(--szin-siker);
+}
+
+.admin-statusz-jelzo--elutasitva {
+  background: #faeeee;
+  color: #9b3030;
+}
+
+@media (max-width: 960px) {
+  .admin-kartya-racs,
+  .admin-statusz-racs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .admin-kartya-racs,
+  .admin-statusz-racs {
+    grid-template-columns: 1fr;
+  }
+}

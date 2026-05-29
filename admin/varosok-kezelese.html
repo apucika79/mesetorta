@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../stilus.css">
+  <title>Városok kezelése - MESETORTA</title>
+</head>
+<body class="aloldal admin-oldal">
+  <header class="fejlec">
+    <div class="fejlec-belso">
+      <div class="logo-helye" aria-label="MESETORTA logó"><a href="../index.html">MESETORTA</a></div>
+      <nav class="fomenu-helye" aria-label="Admin menü">
+        <ul class="fomenu-lista">
+          <li class="fomenu-elem"><a href="index.html">Admin főoldal</a></li>
+          <li class="fomenu-elem"><a href="uj-partner.html">Új partner</a></li>
+          <li class="fomenu-elem"><a href="uj-torta.html">Új torta</a></li>
+          <li class="fomenu-elem"><a href="varosok-kezelese.html" aria-current="page">Városok</a></li>
+          <li class="fomenu-elem"><a href="jelentkezesek.html">Jelentkezések</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="oldal-tartalom admin-tartalom">
+    <section class="oldal-fejlec-szekcio" aria-labelledby="oldal-cim">
+      <p class="partner-jelentkezes-jeloles">Statikus városkezelés</p>
+      <h1 id="oldal-cim" class="oldal-cim">Városok kezelése</h1>
+      <p>Városok és körzetek admin szerkezeti váza. A mentés gomb jelenleg nem küld adatot és nem ment adatbázisba.</p>
+    </section>
+
+    <section class="jelentkezesi-urlap-helye" aria-labelledby="varos-urlap-cim">
+      <div class="urlap-fejlec">
+        <h2 id="varos-urlap-cim">Város adatai</h2>
+        <p>Az űrlap csak statikus szerkezet, működő mentés nélkül.</p>
+      </div>
+
+      <form class="partner-urlap" action="#" method="post" aria-describedby="urlap-megjegyzes">
+        <fieldset class="urlap-blokk">
+          <legend>Város és körzet</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo">
+              <label for="varos-neve">Város neve</label>
+              <input type="text" id="varos-neve" name="varos-neve" placeholder="Pl. Budapest">
+            </div>
+            <div class="urlap-mezo">
+              <label for="megye">Megye</label>
+              <input type="text" id="megye" name="megye" placeholder="Pl. Pest megye">
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="korzet-hozzaadasa">Körzet / kerület hozzáadása</label>
+              <input type="text" id="korzet-hozzaadasa" name="korzet-hozzaadasa" placeholder="Pl. XIII. kerület vagy Belváros">
+            </div>
+          </div>
+        </fieldset>
+
+        <p id="urlap-megjegyzes" class="urlap-megjegyzes">Statikus admin űrlap: nincs működő mentés, adatbázis vagy beküldés.</p>
+        <button type="button">Mentés</button>
+      </form>
+    </section>
+
+    <section class="admin-lista-szekcio" aria-labelledby="minta-varoslista-cim">
+      <h2 id="minta-varoslista-cim">Minta városlista</h2>
+      <div class="admin-tabla-gorgeto">
+        <table class="admin-tabla">
+          <thead>
+            <tr>
+              <th>Város</th>
+              <th>Megye</th>
+              <th>Körzet / kerület minták</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Budapest</td>
+              <td>Budapest</td>
+              <td>XIII. kerület, XI. kerület, Belváros</td>
+            </tr>
+            <tr>
+              <td>Debrecen</td>
+              <td>Hajdú-Bihar</td>
+              <td>Belváros, Nagyerdő</td>
+            </tr>
+            <tr>
+              <td>Szeged</td>
+              <td>Csongrád-Csanád</td>
+              <td>Belváros, Újszeged</td>
+            </tr>
+            <tr>
+              <td>Pécs</td>
+              <td>Baranya</td>
+              <td>Belváros, Uránváros</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="admin-vissza-link"><a href="../index.html">Vissza a MESETORTA főoldalra</a></p>
+  </main>
+</body>
+</html>
