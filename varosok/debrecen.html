@@ -26,37 +26,82 @@
     </div>
   </header>
 
-  <main>
-    <h1>Debrecen</h1>
-
-    <section aria-labelledby="bevezeto-cim">
-      <h2 id="bevezeto-cim">Rövid bevezető helye</h2>
-      <p>Debrecen városoldal rövid bevezető szövegének helye.</p>
+  <main class="oldal-tartalom varos-oldal">
+    <section class="oldal-fejlec-szekcio" aria-labelledby="oldal-cim">
+      <h1 id="oldal-cim" class="oldal-cim">Debrecen torták</h1>
+      <p>Debrecen MESETORTA városoldala a helyi városrészekhez tartozó tortákat és partnereket mutatja be.</p>
     </section>
 
     <section aria-labelledby="debrecen-korzetei-cim">
-      <h2 id="debrecen-korzetei-cim">Körzetek és városrészek</h2>
-      <ul>
-        <li>Belváros</li>
-        <li>Nagyerdő</li>
-        <li>Józsa</li>
+      <h2 id="debrecen-korzetei-cim">Körzetek / városrészek listája</h2>
+      <ul class="korzet-lista">
+        <li>Belváros torták</li>
+        <li>Nagyerdő torták</li>
+        <li>Józsa torták</li>
         <li>Tócóskert</li>
       </ul>
     </section>
 
-    <section aria-labelledby="azonnal-atveheto-tortak-cim">
-      <h2 id="azonnal-atveheto-tortak-cim">Azonnal átvehető torták</h2>
-      <div>Azonnal átvehető Debrecen torták listájának helye.</div>
+    <section aria-labelledby="ma-atveheto-tortak-cim">
+      <h2 id="ma-atveheto-tortak-cim">Ma átvehető torták ebben a városban</h2>
+      <div class="torta-lista">
+        <article class="torta-kartya">
+          <img class="torta-kartya-kep" src="../kepek/torta-placeholder.jpg" alt="Csokoládés mogyoró torta">
+          <div class="torta-kartya-tartalom">
+            <h3 class="torta-kartya-cim"><a href="../tortak/csokolades-mogyoro-torta.html">Csokoládés mogyoró torta</a></h3>
+            <p class="torta-kartya-ar">14 500 Ft</p>
+            <p class="torta-kartya-cukraszda">Belváros torták · Tündérsüti Műhely</p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section aria-labelledby="rendelheto-tortak-cim">
-      <h2 id="rendelheto-tortak-cim">Rendelhető torták</h2>
-      <div>Rendelhető Debrecen torták listájának helye.</div>
+      <h2 id="rendelheto-tortak-cim">Rendelhető torták ebben a városban</h2>
+      <div class="torta-lista">
+        <article class="torta-kartya">
+          <img class="torta-kartya-kep" src="../kepek/torta-placeholder.jpg" alt="Unikornis szülinapi torta">
+          <div class="torta-kartya-tartalom">
+            <h3 class="torta-kartya-cim"><a href="../tortak/unikornis-szulinapi-torta.html">Unikornis szülinapi torta</a></h3>
+            <p class="torta-kartya-ar">18 900 Ft-tól</p>
+            <p class="torta-kartya-cukraszda">Nagyerdő torták · Tündérsüti Műhely</p>
+          </div>
+        </article>
+        <article class="torta-kartya">
+          <img class="torta-kartya-kep" src="../kepek/torta-placeholder.jpg" alt="Erdei gyümölcsös álomtorta">
+          <div class="torta-kartya-tartalom">
+            <h3 class="torta-kartya-cim"><a href="../tortak/erdei-gyumolcsos-alomtorta.html">Erdei gyümölcsös álomtorta</a></h3>
+            <p class="torta-kartya-ar">12 900 Ft</p>
+            <p class="torta-kartya-cukraszda">Józsa torták · MeseHab Cukrászda</p>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section aria-labelledby="helyi-cukraszdak-cim">
-      <h2 id="helyi-cukraszdak-cim">Helyi cukrászdák</h2>
-      <div>Debrecen helyi cukrászdáinak listájának helye.</div>
+    <section aria-labelledby="helyi-partnerek-cim">
+      <h2 id="helyi-partnerek-cim">Cukrászdák és tortakészítők ebben a városban</h2>
+      <div class="cukraszda-lista">
+        <article class="cukraszda-kartya">
+          <img class="cukraszda-kartya-kep" src="../kepek/torta-placeholder.jpg" alt="Tündérsüti Műhely">
+          <div class="cukraszda-kartya-tartalom">
+            <h3 class="cukraszda-kartya-cim"><a href="../partnerek/tundersuti-muhely.html">Tündérsüti Műhely</a></h3>
+            <p class="cukraszda-kartya-hely">Debrecen · Belváros</p>
+          </div>
+        </article>
+        <article class="cukraszda-kartya">
+          <img class="cukraszda-kartya-kep" src="../kepek/torta-placeholder.jpg" alt="MeseHab Cukrászda">
+          <div class="cukraszda-kartya-tartalom">
+            <h3 class="cukraszda-kartya-cim"><a href="../partnerek/mesehab-cukraszda.html">MeseHab Cukrászda</a></h3>
+            <p class="cukraszda-kartya-hely">Debrecen · Józsa</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="partner-varos-blokk" aria-labelledby="partnerkent-megjelenek-cim">
+      <h2 id="partnerkent-megjelenek-cim">Partnerként megjelenek ebben a városban</h2>
+      <p>Debreceni cukrászdaként vagy tortakészítőként csatlakozz a MESETORTA helyi kínálatához.</p>
+      <a class="kereso-gomb" href="../partner-jelentkezes.html">Partnerként megjelenek</a>
     </section>
   </main>
 
