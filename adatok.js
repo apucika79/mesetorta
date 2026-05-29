@@ -472,3 +472,14 @@ const tortak = [
 const azonnalAtvehetoTortak = tortak.filter((torta) => torta.allapot === 'keszleten');
 const rendelhetoTortak = tortak.filter((torta) => torta.allapot === 'rendelheto');
 const cukraszdak = partnerek;
+
+window.MESETORTA_ADATOK = {
+  varosok,
+  korzetek,
+  kategoriak,
+  partnerek,
+  tortak,
+  azonnalAtvehetoTortak,
+  rendelhetoTortak,
+  cukraszdak
+};
