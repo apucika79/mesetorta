@@ -4,6 +4,24 @@
 
 A Mesétorta rendszer adatmodellje a partnerek, torták, városok, kategóriák, kiemelések és jelentkezések nyilvántartására épül.
 
+## Induló tortakategóriák
+
+* Születésnapi torta
+* Gyerektorta
+* Esküvői torta
+* Ballagási torta
+* Keresztelő torta
+* Céges torta
+* Egyedi torta
+* Mentes torta
+* Cukormentes torta
+* Gluténmentes torta
+* Vegán torta
+* Sajttorta
+* Formatorta
+* Fotótorta
+* Mini torta
+
 ## Entitások
 
 ### partnerek
@@ -33,6 +51,11 @@ A `partnerek` entitás a rendszerben megjelenő cukrászdákat, tortakészítők
 
 A `tortak` entitás a partnerek által kínált tortákat és azok megjelenítési adatait tartalmazza.
 
+A rendszer két fő tortatípust kezel:
+
+1. **Azonnal átvehető torta**: olyan torta, amely készleten van, és a megadott átvételi időablakban a vásárló számára rövid határidővel elérhető.
+2. **Rendelhető torta**: olyan torta, amely nincs feltétlenül készleten, de a partner vállalja az elkészítését rendelés alapján, a megadott kapacitási és határidőfeltételek szerint.
+
 | Mező neve | Típus | Rövid leírás |
 | --- | --- | --- |
 | id | egész szám | Egyedi tortaazonosító. |
@@ -48,6 +71,15 @@ A `tortak` entitás a partnerek által kínált tortákat és azok megjeleníté
 | kategoria_id | egész szám | Hivatkozás arra a kategóriára, amelybe a torta tartozik. |
 | allapot | szöveg | A torta adminisztratív vagy készítési állapota, például elérhető, rendelhető vagy szünetel. |
 | keszlet_db | egész szám | Az aktuálisan elérhető darabszám, ha készletről értékesített tortáról van szó. |
+| keszleten_van | logikai érték | Jelzi, hogy a torta jelenleg készleten elérhető-e. |
+| azonnal_atveheto | logikai érték | Jelzi, hogy a torta külön rendelési folyamat nélkül, azonnali vagy rövid határidejű átvételre alkalmas-e. |
+| atveheto_tol | dátum és idő | Az a legkorábbi időpont, amikortól a készleten lévő torta átvehető. |
+| atveheto_ig | dátum és idő | Az a legkésőbbi időpont, ameddig a készleten lévő torta átvehető. |
+| surgos_rendeles_vallalasa | logikai érték | Jelzi, hogy a partner vállal-e sürgős rendelést erre a tortára. |
+| max_napi_kapacitas | egész szám | Az adott tortából egy nap alatt vállalható legnagyobb rendelési mennyiség. |
+| rendelesi_hatarido_megjegyzes | hosszú szöveg | Szabad szöveges megjegyzés a rendelési határidőről, például minimum elkészítési idő vagy egyedi egyeztetési feltétel. |
+| kiemelt_keszleten | logikai érték | Jelzi, hogy a készleten lévő torta kiemelten jelenjen-e meg a találati listában. |
+| kiemelt_rendelheto | logikai érték | Jelzi, hogy a rendelhető torta kiemelten jelenjen-e meg a találati listában. |
 | elkeszitesi_ido | szöveg | A torta elkészítéséhez szükséges becsült idő. |
 | atveteli_cim | szöveg | A torta átvételi címe, ha eltér a partner címétől. |
 | aktiv | logikai érték | Jelzi, hogy a torta megjelenik-e a felhasználók számára. |
@@ -147,3 +179,12 @@ Az azonosító mezők egyedi rekordazonosításra szolgálnak. A `slug` mezők U
 ## Megjegyzések
 
 A dokumentum adatmodell-tervként szolgál. Nem tartalmaz technikai implementációt, adatbázis-sémát vagy futtatható kódot.
+
+## Találati lista rendezési logika
+
+A tortakereső találati listájában a torták megjelenítési sorrendje a készlet- és kiemelési állapot alapján a következő:
+
+1. kiemelt készleten lévő torták
+2. sima készleten lévő torták
+3. kiemelt rendelhető torták
+4. sima rendelhető torták
