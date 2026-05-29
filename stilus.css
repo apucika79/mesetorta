@@ -437,6 +437,59 @@ article > section h2 {
   margin-top: 20px;
 }
 
+
+/* Egységes státusz- és helycímkék */
+.cimke-sor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+
+.cimke {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.cimke-keszleten {
+  background: #e9f8f1;
+  color: var(--szin-siker);
+}
+
+.cimke-rendelheto {
+  background: #fff2dc;
+  color: var(--szin-rendeles);
+}
+
+.cimke-kiemelt {
+  background: #f5e9fb;
+  color: var(--szin-kiemelt);
+  text-transform: uppercase;
+}
+
+.cimke-varos {
+  background: #edf3ff;
+  color: #315c9d;
+}
+
+.cimke-korzet {
+  background: #f3efe9;
+  color: #6d5548;
+}
+
+.cimke-hatarido {
+  background: var(--szin-masodlagos);
+  color: var(--szin-elsodleges-sotet);
+}
+
 /* Kártyák */
 .torta-kartya,
 .cukraszda-kartya,

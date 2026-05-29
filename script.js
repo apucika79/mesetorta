@@ -186,6 +186,24 @@
     });
   }
 
+  function tortaAllapotFelirat(allapot) {
+    return allapot === 'rendelheto' ? 'Rendelhető' : 'Készleten';
+  }
+
+  function tortaCimkeSor(torta) {
+    const allapotOsztaly = torta.allapot === 'rendelheto' ? 'rendelheto' : 'keszleten';
+    const kiemeltHtml = torta.kiemelt ? '<span class="cimke cimke-kiemelt">Kiemelt</span>' : '';
+
+    return `
+          <div class="cimke-sor" aria-label="Torta státusz és elérhetőség">
+            <span class="cimke cimke-${allapotOsztaly}">${tortaAllapotFelirat(torta.allapot)}</span>
+            ${kiemeltHtml}
+            <span class="cimke cimke-varos">${biztonsagosSzoveg(torta.varos)}</span>
+            <span class="cimke cimke-korzet">${biztonsagosSzoveg(torta.korzet || torta.kerulet)}</span>
+            <span class="cimke cimke-hatarido">${biztonsagosSzoveg(torta.atveteli_informacio || torta.hatarido)}</span>
+          </div>`;
+  }
+
   function tortaKartya(torta) {
     const cim = biztonsagosSzoveg(torta.nev);
     const cimHtml = torta.oldal
@@ -199,7 +217,7 @@
         <div class="torta-kartya-tartalom">
           <h3 class="torta-kartya-cim">${cimHtml}</h3>
           <p class="torta-kartya-ar">${biztonsagosSzoveg(torta.ar)}</p>
-          <p class="torta-kartya-cukraszda">${biztonsagosSzoveg(torta.cukraszda)}</p>
+          <p class="torta-kartya-cukraszda">${biztonsagosSzoveg(torta.cukraszda)}</p>${tortaCimkeSor(torta)}
           <dl class="torta-kartya-adatok">
             <div class="torta-adat-sor torta-adat-sor--allapot torta-adat-sor--${allapotOsztaly}"><dt>Állapot</dt><dd>${biztonsagosSzoveg(torta.allapot)}</dd></div>
             <div class="torta-adat-sor"><dt>Város</dt><dd>${biztonsagosSzoveg(torta.varos)}</dd></div>
@@ -217,19 +235,24 @@
     const cimHtml = partner.oldal
       ? `<a href="${biztonsagosSzoveg(partner.oldal)}">${cim}</a>`
       : cim;
-    const kiemeltHtml = partner.kiemelt ? '<p class="cukraszda-kartya-kiemelt">Kiemelt partner</p>' : '';
+    const kiemeltHtml = partner.kiemelt ? '<span class="cimke cimke-kiemelt">Kiemelt partner</span>' : '';
 
     return `
       <article class="cukraszda-kartya">
         <img class="cukraszda-kartya-kep" src="${biztonsagosSzoveg(partner.kep)}" alt="${cim}">
         <div class="cukraszda-kartya-tartalom">
           <h3 class="cukraszda-kartya-cim">${cimHtml}</h3>
+          <div class="cimke-sor" aria-label="Partner típus és hely">
+            <span class="cimke cimke-rendelheto">${biztonsagosSzoveg(partner.tipus)}</span>
+            <span class="cimke cimke-varos">${biztonsagosSzoveg(partner.varos)}</span>
+            <span class="cimke cimke-korzet">${biztonsagosSzoveg(partner.korzet || partner.kerulet)}</span>
+            ${kiemeltHtml}
+          </div>
           <dl class="cukraszda-kartya-adatok">
             <div class="cukraszda-adat-sor"><dt>Város</dt><dd>${biztonsagosSzoveg(partner.varos)}</dd></div>
             <div class="cukraszda-adat-sor"><dt>Körzet / kerület</dt><dd>${biztonsagosSzoveg(partner.korzet || partner.kerulet)}</dd></div>
             <div class="cukraszda-adat-sor"><dt>Típus</dt><dd>${biztonsagosSzoveg(partner.tipus)}</dd></div>
           </dl>
-          ${kiemeltHtml}
           <p class="cukraszda-kartya-cimadat">${biztonsagosSzoveg(partner.cim)}</p>
           <p class="cukraszda-kartya-leiras">${biztonsagosSzoveg(partner.leiras)}</p>
         </div>
