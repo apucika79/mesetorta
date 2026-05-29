@@ -217,11 +217,15 @@ Egy belső, kezdetleges adminisztrációs felület vázának létrehozása a ké
 * admin nyitóoldal vagy irányítópult váz,
 * torták, partnerek és városok kezelésének belépési pontjai,
 * statikus táblázat- vagy listahelyek,
+* torták admin oldali státuszkezelésének szerkezeti váza,
 * üres állapotok és alap műveleti gombok helye,
 * jelölés arra, hogy az admin felület első körben csak alapváz.
 
 **Mi számít kész állapotnak:**
 Az admin alapfelület statikusan megmutatja, milyen tartalomtípusokat kell később kezelni, de még nem feltételez teljes jogosultságkezelést vagy működő háttérrendszert.
+
+**Későbbi torta státuszkezelési megjegyzés:**
+Az azonnal átvehető torták később automatikusan lejárhatnak a `keszlet_lejar` mező alapján. Ez ebben a szakaszban csak dokumentált előkészítés, nem automatikus lejárati logika.
 
 **Partner jelentkezés későbbi folyamata:**
 

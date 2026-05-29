@@ -15,6 +15,7 @@
           <li class="fomenu-elem"><a href="index.html">Admin főoldal</a></li>
           <li class="fomenu-elem"><a href="uj-partner.html">Új partner</a></li>
           <li class="fomenu-elem"><a href="uj-torta.html" aria-current="page">Új torta</a></li>
+          <li class="fomenu-elem"><a href="tortak-kezelese.html">Torták kezelése</a></li>
           <li class="fomenu-elem"><a href="varosok-kezelese.html">Városok</a></li>
           <li class="fomenu-elem"><a href="jelentkezesek.html">Jelentkezések</a></li>
         </ul>
@@ -57,6 +58,9 @@
               <select id="allapot" name="allapot">
                 <option value="keszleten">Készleten</option>
                 <option value="rendelheto">Rendelhető</option>
+                <option value="lejart">Lejárt</option>
+                <option value="rejtett">Rejtett</option>
+                <option value="eladva">Eladva</option>
               </select>
             </div>
             <div class="urlap-mezo">
@@ -92,6 +96,11 @@
             <div class="urlap-mezo urlap-mezo--szeles">
               <label for="rendelesi-hatarido">Rendelési határidő</label>
               <input type="text" id="rendelesi-hatarido" name="rendelesi-hatarido" placeholder="Pl. 3 nappal korábban">
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="keszlet-lejarati-ideje">Készlet lejárati ideje</label>
+              <input type="datetime-local" id="keszlet-lejarati-ideje" name="keszlet-lejarati-ideje">
+              <p class="urlap-segedszoveg">Az azonnal átvehető torták esetén add meg, meddig elérhető a torta.</p>
             </div>
           </div>
         </fieldset>

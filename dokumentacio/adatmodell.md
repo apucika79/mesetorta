@@ -75,6 +75,10 @@ A rendszer két fő tortatípust kezel:
 | kategoria_id | egész szám | Hivatkozás arra a kategóriára, amelybe a torta tartozik. |
 | varos_id | egész szám | Hivatkozás arra a városra, ahol a torta átvehető vagy rendelhető. |
 | korzet_id | egész szám | Hivatkozás arra a körzetre, ahol a torta átvehető vagy rendelhető. |
+| statusz | szöveg | A torta kezelési állapota: `keszleten`, `rendelheto`, `lejart`, `rejtett` vagy `eladva`. |
+| keszlet_lejar | dátum és idő | Az az időpont, ameddig az azonnal átvehető torta készleten elérhetőként kezelhető. |
+| eladva | logikai érték | Jelzi, hogy az adott készleten lévő torta elkelt-e. |
+| rejtett | logikai érték | Jelzi, hogy a torta admin döntés alapján ne jelenjen meg a felhasználói felületen. |
 | allapot | szöveg | A torta adminisztratív vagy készítési állapota, például elérhető, rendelhető vagy szünetel. |
 | keszlet_db | egész szám | Az aktuálisan elérhető darabszám, ha készletről értékesített tortáról van szó. |
 | keszleten_van | logikai érték | Jelzi, hogy a torta jelenleg készleten elérhető-e. |
@@ -89,6 +93,15 @@ A rendszer két fő tortatípust kezel:
 | elkeszitesi_ido | szöveg | A torta elkészítéséhez szükséges becsült idő. |
 | atveteli_cim | szöveg | A torta átvételi címe, ha eltér a partner címétől. |
 | aktiv | logikai érték | Jelzi, hogy a torta megjelenik-e a felhasználók számára. |
+
+A `statusz` mező tervezett tortaértékei:
+
+* `keszleten`: azonnal vagy rövid határidővel átvehető, készleten lévő torta.
+* `rendelheto`: előrendeléssel elkészíthető torta.
+* `lejart`: olyan készleten lévő torta, amelynek elérhetőségi ideje lejárt.
+* `rejtett`: admin által elrejtett torta, amely nem jelenik meg a látogatóknak.
+* `eladva`: elkelt torta, amelyből jelenleg nincs elérhető készlet.
+
 
 ### varosok
 

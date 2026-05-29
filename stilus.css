@@ -2204,3 +2204,135 @@ textarea {
     display: grid;
   }
 }
+
+/* Admin torta státuszkezelés váza */
+.admin-torta-szuro {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.admin-torta-szuro .szuro-muvelet {
+  align-items: end;
+}
+
+.admin-torta-racs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.admin-torta-kartya {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--szin-vonal);
+  border-radius: var(--sugar-kozepes);
+  background: #ffffff;
+  box-shadow: var(--arnyek-finoman);
+}
+
+.admin-torta-kartya-fejlec {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.admin-torta-kartya-fejlec h3 {
+  margin: 0;
+  color: var(--szin-szoveg);
+  font-size: 1.18rem;
+  line-height: 1.25;
+}
+
+.admin-torta-adatlista {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.admin-torta-adatlista div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-top: 1px solid #f1e8df;
+}
+
+.admin-torta-adatlista dt {
+  color: var(--szin-halvany);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.admin-torta-adatlista dd {
+  margin: 0;
+  color: var(--szin-szoveg);
+  text-align: right;
+  font-size: 0.92rem;
+  font-weight: 750;
+}
+
+.admin-torta-muveletek {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-torta-muveletek button {
+  min-height: 40px;
+  padding: 9px 14px;
+  box-shadow: none;
+}
+
+.admin-statusz-jelzo--keszleten {
+  background: #e9f8f1;
+  color: var(--szin-siker);
+}
+
+.admin-statusz-jelzo--rendelheto {
+  background: #fff2dc;
+  color: var(--szin-rendeles);
+}
+
+.admin-statusz-jelzo--lejart {
+  background: #faeeee;
+  color: #9b3030;
+}
+
+.admin-statusz-jelzo--rejtett {
+  background: #f3efe9;
+  color: #6d5548;
+}
+
+.admin-statusz-jelzo--eladva {
+  background: #eef3ff;
+  color: #33508f;
+}
+
+@media (max-width: 960px) {
+  .admin-torta-szuro,
+  .admin-torta-racs {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .admin-torta-kartya-fejlec,
+  .admin-torta-adatlista div {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-torta-adatlista dd {
+    text-align: left;
+  }
+
+  .admin-torta-muveletek button,
+  .admin-torta-szuro button {
+    width: 100%;
+  }
+}
