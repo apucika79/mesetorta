@@ -1,6 +1,6 @@
 # Fejlesztési sorrend
 
-Ez a dokumentum a Mesétorta első MVP-verziójának fejlesztési sorrendjét rögzíti. A cél az, hogy a munka átlátható, ellenőrizhető lépésekben haladjon, és minden fejlesztési pontnál egyértelmű legyen a cél, az elkészítendő feladatok köre és a kész állapot feltétele.
+Ez a dokumentum a Mesetorta.hu első MVP-verziójának fejlesztési sorrendjét rögzíti. A cél az, hogy a munka átlátható, ellenőrizhető lépésekben haladjon, és minden fejlesztési pontnál egyértelmű legyen a cél, az elkészítendő feladatok köre és a kész állapot feltétele.
 
 ## 1. Dokumentáció lezárása
 
@@ -66,7 +66,7 @@ A további oldalak úgy készíthetők el, hogy nem kell minden alkalommal újra
 ## 5. Főoldal statikus váz
 
 **Cél:**
-A Mesétorta kezdőoldalának felépítése statikus tartalommal, amely bemutatja a szolgáltatás lényegét és a fő navigációs irányokat.
+A Mesetorta.hu kezdőoldalának felépítése statikus tartalommal, amely bemutatja a szolgáltatás lényegét és a fő navigációs irányokat.
 
 **Mit kell elkészíteni:**
 
@@ -77,7 +77,7 @@ A Mesétorta kezdőoldalának felépítése statikus tartalommal, amely bemutatj
 * partner jelentkezésre vezető kiemelés.
 
 **Mi számít kész állapotnak:**
-A főoldal statikus állapotban végigjárható, érthetően kommunikálja a Mesétorta célját, és elvezet a legfontosabb aloldalak felé.
+A főoldal statikus állapotban végigjárható, érthetően kommunikálja a Mesetorta.hu célját, és elvezet a legfontosabb aloldalak felé.
 
 ## 6. Torta kártya komponens
 
@@ -146,7 +146,7 @@ Az oldal egyben mutatja a tortakínálatot, és a felhasználó azonnal meg tudj
 ## 10. Cukrászdák listaoldal
 
 **Cél:**
-A Mesétortán szereplő cukrászdák és partnerek áttekinthető listázása.
+A Mesetorta.hu felületén szereplő cukrászdák és partnerek áttekinthető listázása.
 
 **Mit kell elkészíteni:**
 
@@ -194,7 +194,7 @@ A felhasználó egy város alapján meg tudja nézni, milyen cukrászdák és to
 ## 13. Partner jelentkezési oldal
 
 **Cél:**
-Olyan statikus oldal létrehozása, amely bemutatja a cukrászdáknak, hogyan és miért érdemes csatlakozniuk a Mesétortához.
+Olyan statikus oldal létrehozása, amely bemutatja a cukrászdáknak, hogyan és miért érdemes csatlakozniuk a Mesetorta.hu felületéhez.
 
 **Mit kell elkészíteni:**
 
@@ -205,7 +205,7 @@ Olyan statikus oldal létrehozása, amely bemutatja a cukrászdáknak, hogyan é
 * visszamutató linkek a főoldalra és cukrászdák oldalára.
 
 **Mi számít kész állapotnak:**
-A cukrászdák számára világos, mit kínál a Mesétorta, hogyan tudnak érdeklődni, és milyen információkra lesz szükség a csatlakozáshoz.
+A cukrászdák számára világos, mit kínál a Mesetorta.hu, hogyan tudnak érdeklődni, és milyen információkra lesz szükség a csatlakozáshoz.
 
 ## 14. Admin alapfelület
 
@@ -222,6 +222,14 @@ Egy belső, kezdetleges adminisztrációs felület vázának létrehozása a ké
 
 **Mi számít kész állapotnak:**
 Az admin alapfelület statikusan megmutatja, milyen tartalomtípusokat kell később kezelni, de még nem feltételez teljes jogosultságkezelést vagy működő háttérrendszert.
+
+**Partner jelentkezés későbbi folyamata:**
+
+1. Partner kitölti a jelentkezési űrlapot.
+2. Admin átnézi.
+3. Admin jóváhagyja vagy elutasítja.
+4. Jóváhagyás után partner adatlap készül.
+5. Később partner saját belépést kaphat.
 
 ## 15. Próbaadatok bekötése
 
@@ -289,7 +297,7 @@ Az MVP változásai a főágban vannak, a főág friss állapota ellenőrzött, 
 
 ## Első MVP határai
 
-Az első MVP célja a Mesétorta alapvető böngészési, bemutatkozási és partnermegjelenítési működésének kialakítása. A verzió tudatosan nem tartalmaz minden későbbi üzleti és közösségi funkciót.
+Az első MVP célja a Mesetorta.hu alapvető böngészési, bemutatkozási és partnermegjelenítési működésének kialakítása. A verzió tudatosan nem tartalmaz minden későbbi üzleti és közösségi funkciót.
 
 Az első verzióban nincs:
 

@@ -2042,3 +2042,165 @@ textarea {
     display: none;
   }
 }
+
+.admin-info-blokk {
+  margin-bottom: 20px;
+  padding: 16px 18px;
+  border: 1px solid #f0d6c1;
+  border-radius: var(--sugar-kozepes);
+  background: #fff7ef;
+  color: var(--szin-elsodleges-sotet);
+  font-weight: 800;
+}
+
+.jelentkezes-kartya-racs,
+.jelentkezes-reszletek-racs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.jelentkezes-admin-kartya,
+.jelentkezes-reszlet-blokk {
+  border: 1px solid var(--szin-vonal);
+  border-radius: var(--sugar-kozepes);
+  background: #ffffff;
+  box-shadow: var(--arnyek-finoman);
+}
+
+.jelentkezes-admin-kartya {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
+.jelentkezes-kartya-fejlec {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.jelentkezes-kartya-fejlec h3 {
+  margin: 0;
+  color: var(--szin-szoveg);
+  font-size: 1.18rem;
+}
+
+.jelentkezes-kartya-felirat {
+  margin-bottom: 5px;
+  color: var(--szin-halvany);
+  font-size: 0.8rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.jelentkezes-adatlista {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.jelentkezes-adatlista div {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.45fr) 1fr;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f5ebe1;
+}
+
+.jelentkezes-adatlista div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.jelentkezes-adatlista dt {
+  color: var(--szin-elsodleges-sotet);
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
+.jelentkezes-adatlista dd {
+  margin: 0;
+  color: var(--szin-halvany);
+  font-weight: 700;
+}
+
+.jelentkezes-muveletek {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.jelentkezes-muveletek button {
+  padding: 10px 12px;
+  border: 1px solid #e8c7ad;
+  border-radius: 999px;
+  background: var(--szin-felulet-meleg);
+  color: var(--szin-elsodleges-sotet);
+  cursor: default;
+  font-weight: 850;
+}
+
+.jelentkezes-reszletek-szekcio {
+  margin-top: 30px;
+}
+
+.jelentkezes-reszlet-blokk {
+  padding: 18px;
+}
+
+.jelentkezes-reszlet-blokk--szeles {
+  grid-column: 1 / -1;
+}
+
+.jelentkezes-reszlet-blokk h3 {
+  margin-bottom: 10px;
+  color: var(--szin-szoveg);
+}
+
+.jelentkezes-reszlet-blokk p,
+.jelentkezes-reszlet-blokk li {
+  color: var(--szin-halvany);
+  font-weight: 700;
+}
+
+.jelentkezes-reszlet-blokk ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.jelentkezes-kephelyek {
+  display: grid;
+  gap: 10px;
+}
+
+.jelentkezes-kephelyek span {
+  display: grid;
+  min-height: 62px;
+  place-items: center;
+  border: 1px dashed #e4c5ac;
+  border-radius: var(--sugar-kicsi);
+  background: #fffaf5;
+  color: var(--szin-halvany);
+  font-weight: 850;
+}
+
+@media (max-width: 900px) {
+  .jelentkezes-kartya-racs,
+  .jelentkezes-reszletek-racs {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .jelentkezes-kartya-fejlec,
+  .jelentkezes-adatlista div {
+    grid-template-columns: 1fr;
+  }
+
+  .jelentkezes-kartya-fejlec {
+    display: grid;
+  }
+}
