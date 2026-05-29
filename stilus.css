@@ -1443,3 +1443,15 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+.nincs-talalat-uzenet {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 22px;
+  border: 1px dashed var(--szin-vonal);
+  border-radius: var(--sugar-kozepes);
+  background: #fffaf5;
+  color: var(--szin-halvany);
+  font-weight: 800;
+  text-align: center;
+}
