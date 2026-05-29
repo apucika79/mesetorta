@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Városkép placeholder</title>
+  <desc id="desc">Világos Mesetorta.hu városkép helyőrző.</desc>
+  <rect width="800" height="600" fill="#fff7ef"/>
+  <rect x="32" y="32" width="736" height="536" rx="34" fill="#ffffff" stroke="#eadfd5" stroke-width="4"/>
+  <path d="M150 420h500v72H150z" fill="#f4dfd0"/>
+  <path d="M190 265h90v155h-90zm135-70h105v225H325zm150 105h135v120H475z" fill="#9b4d36" opacity="0.82"/>
+  <path d="M325 195l52-52 53 52" fill="#f4aa79"/>
+  <text x="400" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#743625">Városkép helye</text>
+</svg>

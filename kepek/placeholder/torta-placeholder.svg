@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Torta kép placeholder</title>
+  <desc id="desc">Világos Mesetorta.hu tortakép helyőrző.</desc>
+  <rect width="800" height="600" fill="#fff7ef"/>
+  <rect x="28" y="28" width="744" height="544" rx="34" fill="#ffffff" stroke="#eadfd5" stroke-width="4"/>
+  <circle cx="400" cy="225" r="88" fill="#f4dfd0"/>
+  <path d="M246 365h308v44c0 36-29 65-65 65H311c-36 0-65-29-65-65v-44Z" fill="#9b4d36" opacity="0.88"/>
+  <path d="M286 316h228c28 0 50 22 50 50H236c0-28 22-50 50-50Z" fill="#f4aa79"/>
+  <text x="400" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#743625">Torta kép helye</text>
+</svg>

@@ -15,6 +15,79 @@
     korzetek: []
   };
 
+  const KEP_PLACEHOLDEREK = {
+    torta: 'kepek/placeholder/torta-placeholder.svg',
+    partnerLogo: 'kepek/placeholder/partner-logo-placeholder.svg',
+    partnerBorito: 'kepek/placeholder/partner-borito-placeholder.svg',
+    varos: 'kepek/placeholder/varos-placeholder.svg'
+  };
+
+  function placeholderPrefix() {
+    const stilus = document.querySelector('link[rel="stylesheet"]');
+    return stilus && stilus.getAttribute('href') && stilus.getAttribute('href').startsWith('../') ? '../' : '';
+  }
+
+  function placeholderUtvonal(tipus) {
+    return placeholderPrefix() + (KEP_PLACEHOLDEREK[tipus] || KEP_PLACEHOLDEREK.torta);
+  }
+
+  function kepUtvonal(ertek, tipus) {
+    if (!ertek) {
+      return placeholderUtvonal(tipus);
+    }
+
+    if (placeholderPrefix() && String(ertek).startsWith('kepek/')) {
+      return placeholderPrefix() + ertek;
+    }
+
+    return ertek;
+  }
+
+  function kepTipusElemAlapjan(kep) {
+    if (kep.dataset.placeholderTipus) {
+      return kep.dataset.placeholderTipus;
+    }
+    if (kep.classList.contains('partner-boritokep')) {
+      return 'partnerBorito';
+    }
+    if (kep.classList.contains('cukraszda-kartya-kep') || kep.classList.contains('partner-logo')) {
+      return 'partnerLogo';
+    }
+    if (kep.classList.contains('varos-kartya-kep')) {
+      return 'varos';
+    }
+    return 'torta';
+  }
+
+  function hianyzoKepPotlasa(kep) {
+    if (!kep || kep.dataset.placeholderAktiv === 'true') {
+      return;
+    }
+
+    const tipus = kepTipusElemAlapjan(kep);
+    const placeholder = kep.dataset.placeholder || placeholderUtvonal(tipus);
+    if (kep.getAttribute('src') === placeholder) {
+      return;
+    }
+
+    kep.dataset.placeholderAktiv = 'true';
+    kep.src = placeholder;
+  }
+
+  document.addEventListener('error', function (esemeny) {
+    if (esemeny.target && esemeny.target.tagName === 'IMG') {
+      hianyzoKepPotlasa(esemeny.target);
+    }
+  }, true);
+
+  function kepFallbackokInditasa() {
+    document.querySelectorAll('img').forEach(function (kep) {
+      if (!kep.getAttribute('src') || (kep.complete && kep.naturalWidth === 0)) {
+        hianyzoKepPotlasa(kep);
+      }
+    });
+  }
+
   function keresIdAlapjan(lista, id) {
     return (lista || []).find(function (elem) {
       return elem.id === id;
@@ -218,7 +291,7 @@
 
     return `
       <article class="torta-kartya">
-        <img class="torta-kartya-kep" src="${biztonsagosSzoveg(torta.kep)}" alt="${cim}">
+        <img class="torta-kartya-kep" src="${biztonsagosSzoveg(kepUtvonal(torta.kep_url || torta.kep, 'torta'))}" alt="${cim}" data-placeholder-tipus="torta">
         <div class="torta-kartya-tartalom">
           <h3 class="torta-kartya-cim">${cimHtml}</h3>
           <p class="torta-kartya-ar">${biztonsagosSzoveg(torta.ar)}</p>
@@ -244,7 +317,7 @@
 
     return `
       <article class="cukraszda-kartya">
-        <img class="cukraszda-kartya-kep" src="${biztonsagosSzoveg(partner.kep)}" alt="${cim}">
+        <img class="cukraszda-kartya-kep" src="${biztonsagosSzoveg(kepUtvonal(partner.logo_url || partner.kep, 'partnerLogo'))}" alt="${cim}" data-placeholder-tipus="partnerLogo">
         <div class="cukraszda-kartya-tartalom">
           <h3 class="cukraszda-kartya-cim">${cimHtml}</h3>
           <div class="cimke-sor" aria-label="Partner típus és hely">
@@ -579,6 +652,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    kepFallbackokInditasa();
     ajanlosavokInditasa();
     fooldaliKeresoInditasa();
     maAtvehetoOldalInditasa();
