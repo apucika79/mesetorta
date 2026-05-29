@@ -1,7 +1,121 @@
-<html>
+<!DOCTYPE html>
+<html lang="hu">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesetorta.hu - Országos tortakereső</title>
 </head>
-<body>
-  <h1>Mesetorta.hu - Fejlesztés alatt</h1>
+<body class="fooldal">
+  <header class="fejlec">
+    <div class="fejlec-belso">
+      <div class="logo-helye" aria-label="Logó helye">
+        Mesetorta.hu
+      </div>
+
+      <nav class="fomenu-helye" aria-label="Főmenü helye">
+        <ul class="fomenu-lista">
+          <li class="fomenu-elem"><a href="#ma-atveheto-tortak">Ma átvehető torták</a></li>
+          <li class="fomenu-elem"><a href="#rendelheto-tortak">Rendelhető torták</a></li>
+          <li class="fomenu-elem"><a href="#kiemelt-cukraszdak">Cukrászdák</a></li>
+          <li class="fomenu-elem"><a href="#partner-leszek">Partner leszek</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="fooldal-tartalom">
+    <section class="hero-szekcio" aria-labelledby="hero-cim">
+      <div class="hero-belso">
+        <h1 id="hero-cim" class="hero-cim">Országos tortakereső</h1>
+        <p class="hero-alcim">Találj azonnal átvehető vagy rendelhető tortát a közeledben</p>
+
+        <form class="kereso-helye" action="#" method="get" aria-label="Tortakereső helye">
+          <div class="kereso-mezo">
+            <label class="kereso-cimke" for="varos">Város</label>
+            <input class="kereso-input" type="text" id="varos" name="varos" placeholder="Város">
+          </div>
+
+          <div class="kereso-mezo">
+            <label class="kereso-cimke" for="kategoria">Kategória</label>
+            <select class="kereso-input" id="kategoria" name="kategoria">
+              <option value="">Kategória</option>
+            </select>
+          </div>
+
+          <div class="kereso-mezo">
+            <label class="kereso-cimke" for="elerhetoseg">Készleten/rendelhető</label>
+            <select class="kereso-input" id="elerhetoseg" name="elerhetoseg">
+              <option value="">Készleten/rendelhető</option>
+              <option value="keszleten">Készleten</option>
+              <option value="rendelheto">Rendelhető</option>
+            </select>
+          </div>
+
+          <div class="kereso-muvelet">
+            <button class="kereso-gomb" type="submit">Keresés</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="ma-atveheto-tortak" class="ma-atveheto-tortak szekcio-vaz" aria-labelledby="ma-atveheto-tortak-cim">
+      <div class="szekcio-belso">
+        <header class="szekcio-fejlec">
+          <h2 id="ma-atveheto-tortak-cim" class="szekcio-cim">Ma átvehető torták</h2>
+        </header>
+        <div class="szekcio-tartalom torta-lista-helye"></div>
+      </div>
+    </section>
+
+    <section id="rendelheto-tortak" class="rendelheto-tortak szekcio-vaz" aria-labelledby="rendelheto-tortak-cim">
+      <div class="szekcio-belso">
+        <header class="szekcio-fejlec">
+          <h2 id="rendelheto-tortak-cim" class="szekcio-cim">Rendelhető torták</h2>
+        </header>
+        <div class="szekcio-tartalom torta-lista-helye"></div>
+      </div>
+    </section>
+
+    <section id="kiemelt-cukraszdak" class="kiemelt-cukraszdak szekcio-vaz" aria-labelledby="kiemelt-cukraszdak-cim">
+      <div class="szekcio-belso">
+        <header class="szekcio-fejlec">
+          <h2 id="kiemelt-cukraszdak-cim" class="szekcio-cim">Kiemelt cukrászdák</h2>
+        </header>
+        <div class="szekcio-tartalom cukraszda-lista-helye"></div>
+      </div>
+    </section>
+
+    <section id="varosok" class="varosok szekcio-vaz" aria-labelledby="varosok-cim">
+      <div class="szekcio-belso">
+        <header class="szekcio-fejlec">
+          <h2 id="varosok-cim" class="szekcio-cim">Városok</h2>
+        </header>
+        <div class="szekcio-tartalom varos-lista-helye"></div>
+      </div>
+    </section>
+
+    <section id="partner-leszek" class="partner-leszek szekcio-vaz" aria-labelledby="partner-leszek-cim">
+      <div class="szekcio-belso">
+        <header class="szekcio-fejlec">
+          <h2 id="partner-leszek-cim" class="szekcio-cim">Partner leszek</h2>
+        </header>
+        <div class="szekcio-tartalom partner-tartalom-helye"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lablec">
+    <div class="lablec-belso">
+      <div class="lablec-logo-helye">Mesetorta.hu</div>
+      <nav class="lablec-menu-helye" aria-label="Lábléc menü helye">
+        <ul class="lablec-menu-lista">
+          <li class="lablec-menu-elem"><a href="#ma-atveheto-tortak">Ma átvehető torták</a></li>
+          <li class="lablec-menu-elem"><a href="#rendelheto-tortak">Rendelhető torták</a></li>
+          <li class="lablec-menu-elem"><a href="#kiemelt-cukraszdak">Cukrászdák</a></li>
+          <li class="lablec-menu-elem"><a href="#varosok">Városok</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
