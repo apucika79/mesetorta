@@ -63,6 +63,39 @@
         <h2 id="leiras-cim">Rövid leírás</h2>
         <p>Intenzív kakaós piskóta, mogyorós krém és csokoládés bevonat alkotja ezt a klasszikus, mégis látványos tortát. A kapcsolatfelvételi gomb csak helyet jelöl, nem indít rendelést.</p>
       </section>
+
+      <section class="erdeklodes-urlap-szekcio" aria-labelledby="erdeklodes-cim">
+        <h2 id="erdeklodes-cim">Érdeklődés / foglalási igény</h2>
+        <form class="kapcsolati-urlap" aria-label="Torta érdeklődési és foglalási igény űrlap">
+          <div class="urlap-mezo">
+            <label for="erdeklodes-nev">Név</label>
+            <input id="erdeklodes-nev" name="nev" type="text" autocomplete="name">
+          </div>
+          <div class="urlap-mezo">
+            <label for="erdeklodes-telefon">Telefonszám</label>
+            <input id="erdeklodes-telefon" name="telefon" type="tel" autocomplete="tel">
+          </div>
+          <div class="urlap-mezo">
+            <label for="erdeklodes-email">E-mail</label>
+            <input id="erdeklodes-email" name="email" type="email" autocomplete="email">
+          </div>
+          <div class="urlap-mezo">
+            <label for="erdeklodes-datum">Átvétel kívánt dátuma</label>
+            <input id="erdeklodes-datum" name="atvetel-datuma" type="date">
+          </div>
+          <div class="urlap-mezo urlap-mezo--teljes">
+            <label for="erdeklodes-uzenet">Üzenet</label>
+            <textarea id="erdeklodes-uzenet" name="uzenet" rows="5"></textarea>
+          </div>
+          <label class="urlap-checkbox-sor" for="erdeklodes-engedely">
+            <input id="erdeklodes-engedely" name="tovabbitas-engedely" type="checkbox">
+            <span>Elfogadom, hogy a MESETORTA továbbítsa az érdeklődésemet a partner felé.</span>
+          </label>
+          <div class="urlap-muvelet">
+            <button class="urlap-gomb" type="button">Érdeklődés küldése</button>
+          </div>
+        </form>
+      </section>
     </article>
 
     <section class="hasonlo-tortak" aria-labelledby="hasonlo-cim">
