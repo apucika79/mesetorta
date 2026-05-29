@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesetorta.hu | Egyedi torták álomból</title>
+    <meta name="description" content="Mesetorta.hu — csodás, egyedi, grafikus torták alkalmakra és különleges témákra." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hatter-paca paca-1"></div>
+    <div class="hatter-paca paca-2"></div>
+    <header class="fejlec" id="fooldal">
+      <a href="#fooldal" class="logo-link" aria-label="Ugrás a főoldalra"><span class="logo-ikon">🎂</span><span class="logo-szoveg">Mesetorta.hu</span></a>
+      <button class="mobil-gomb" id="mobilGomb" aria-label="Menü megnyitása">☰</button>
+      <nav class="menu" id="menu">
+        <a href="#rolunk">Rólunk</a><a href="#termekek">Termékek</a><a href="#webaruhaz">Webshop</a><a href="#kosar">Kosár</a><a href="#kapcsolat">Kapcsolat</a>
+        <a href="#kosar" class="kosar-link">🛒 <span id="kosarElemSzam">0 termék</span></a>
+      </nav>
+    </header>
+    <main>
+      <section class="hos" id="hos"><div class="hos-szoveg"><p class="cimke">Kézzel készített, varázslatos tortavilág</p><h1>Mesébe illő torták, amikből emlék születik.</h1><p>Szülinap, keresztelő, esküvő vagy tematikus buli? Mi tortába álmodjuk az ötletedet — figurákkal, csillogással, egyedi látványvilággal.</p><a href="#termekek" class="fo-gomb">Torták megtekintése</a></div><div class="hos-kep-keret"><img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=900&q=80" alt="Színes ünnepi torta" /></div></section>
+      <section class="szakasz" id="rolunk"><h2>Rólunk</h2><p>A Mesetorta.hu egy kreatív cukrász műhely, ahol minden torta személyre szabott történetet mesél el.</p></section>
+      <section class="szakasz" id="termekek">
+        <div class="szakasz-fej"><h2>Termékek — Tortaválasztó</h2><p>Szűrj alkalomra és figurára/témára.</p></div>
+        <div class="szurok">
+          <label>Alkalom<select id="alkalomSzuro"><option value="osszes">Összes</option><option value="szulinap">Szülinap</option><option value="nevnap">Névnap</option><option value="keresztelo">Keresztelő</option><option value="eskuvo">Esküvő</option><option value="evfordulo">Évforduló</option><option value="gyerek">Gyerekzsúr</option><option value="ceges">Céges</option><option value="babaavato">Babaváró</option><option value="egyeb">Egyéb</option></select></label>
+          <label>Figura / téma<select id="temaSzuro"><option value="osszes">Összes</option><option value="unikornis">Unikornis</option><option value="hercegno">Hercegnő</option><option value="minimal">Minimal</option><option value="sport">Sport</option></select></label>
+        </div>
+        <div class="torta-gorggeto"><div class="gorggeto-vezerlok"><button type="button" id="autoGorgetesGomb" class="auto-gorgetes-gomb" aria-pressed="true">⏸ Automatikus görgetés</button></div><button type="button" id="gorditBalra" class="gorggeto-nyil balra" aria-label="További találatok balra">‹</button><div id="tortaRacs" class="torta-racs"></div><button type="button" id="gorditJobbra" class="gorggeto-nyil jobbra" aria-label="További találatok jobbra">›</button></div>
+      </section>
+      <section class="szakasz" id="webaruhaz"><h2>Webshop</h2><ul><li>Minimum rendelési idő: 5 nap</li><li>Szeletméretek: 8, 12 és 16 szeletes</li><li>Fizetés: bankkártya (online)</li><li>Belépés nélkül is rendelhető</li></ul></section>
+      <section class="szakasz" id="kosar">
+        <h2>Kosár és fizetés</h2>
+        <div id="kosarUres">A kosarad még üres.</div>
+        <div id="kosarLista" class="kosar-lista"></div>
+        <form id="fizetesForm" class="fizetes-form">
+          <label for="vasarloEmail">E-mail cím</label><input id="vasarloEmail" type="email" required placeholder="pelda@email.hu" />
+          <label for="vasarloTelefon">Telefonszám</label><input id="vasarloTelefon" type="tel" required placeholder="+36 30 123 4567" />
+          <label for="atvetelNap">Átvétel napja</label><input id="atvetelNap" type="date" required />
+          <label for="atvetelIdoszak">Átvétel ideje</label><select id="atvetelIdoszak" required><option value="">Válassz idősávot</option><option value="delelott">Délelőtt</option><option value="delutan">Délután</option></select>
+          <label for="cukraszatUzenet">Üzenet a cukrászatnak</label><textarea id="cukraszatUzenet" rows="3" placeholder="Pl. allergén kérés, felirat, díszítés"></textarea>
+          <button type="submit" class="fo-gomb">Fizetés bankkártyával</button>
+          <p id="fizetesVisszajelzes"></p>
+        </form>
+      </section>
+      <section class="szakasz" id="kapcsolat"><h2>Kapcsolat</h2><p>E-mail: hello@mesetorta.hu</p><p>Telefon: +36 30 123 4567</p></section>
+    </main>
+    <footer class="lablec"><p>© 2026 Mesetorta.hu — Minden torta egy mese kezdete.</p></footer>
+    <div id="termekModal" class="modal-hatter" aria-hidden="true"><div class="modal-panel"><button id="modalBezaro" class="modal-bezaro" type="button">Bezár ✕</button><div class="modal-kep-wrap"><button id="modalKepBalra" type="button" class="modal-kep-nyil">‹</button><img id="modalKep" src="" alt="" /><button id="modalKepJobbra" type="button" class="modal-kep-nyil">›</button></div><p id="kepSzamlalo" class="kep-szamlalo"></p><h3 id="modalCim"></h3><p id="modalAr"></p><p id="modalSzeletek"></p><div class="rendeles-blokk"><label for="rendelesMeret">Méret választása</label><select id="rendelesMeret"></select><label for="rendelesUzenet">Megjegyzés a rendeléshez</label><textarea id="rendelesUzenet" rows="2" placeholder="Pl. név a tortára"></textarea><button id="kosarhozAdGomb" class="fo-gomb" type="button">Megrendelem (Kosárhoz adás)</button></div></div></div>
+    <script src="script.js"></script>
+  </body>
+</html>
