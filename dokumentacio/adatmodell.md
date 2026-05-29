@@ -154,13 +154,22 @@ A `kiemelesek` entitás a fizetett vagy szerkesztőségi kiemelések adatait kez
 | Mező neve | Típus | Rövid leírás |
 | --- | --- | --- |
 | id | egész szám | Egyedi kiemelésazonosító. |
-| tipus | szöveg | A kiemelés típusa, például főoldali, városi, kategóriaoldali vagy partnerkiemelés. |
-| partner_id | egész szám | Hivatkozás a kiemelt partnerre, ha a kiemelés partnerhez kapcsolódik. |
+| kiemeles_tipus | szöveg | A kiemelés típusa: torta kiemelés, készleten lévő torta kiemelés, partner kiemelés vagy területi kiemelés. |
+| partner_id | egész szám | Hivatkozás a kiemelt vagy érintett partnerre, ha a kiemelés partnerhez kapcsolódik. |
 | torta_id | egész szám | Hivatkozás a kiemelt tortára, ha a kiemelés tortához kapcsolódik. |
 | varos_id | egész szám | Hivatkozás a városra, ahol vagy amelyhez kapcsolódva a kiemelés megjelenik. |
+| korzet_id | egész szám | Hivatkozás a körzetre vagy kerületre, ha a kiemelés területhez kapcsolódik. |
 | kezdete | dátum és idő | A kiemelés kezdő időpontja. |
 | vege | dátum és idő | A kiemelés záró időpontja. |
 | aktiv | logikai érték | Jelzi, hogy a kiemelés jelenleg aktív-e. |
+| statusz | szöveg | A kiemelés admin állapota: `aktiv`, `lejart` vagy `szuneteltetett`. |
+| megjegyzes | hosszabb szöveg | Belső admin megjegyzés a kiemeléshez. |
+
+A `statusz` mező tervezett kiemelésértékei:
+
+* `aktiv`
+* `lejart`
+* `szuneteltetett`
 
 ### jelentkezesek
 

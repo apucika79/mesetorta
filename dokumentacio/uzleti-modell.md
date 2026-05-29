@@ -23,6 +23,17 @@ Ez a szakasz üzleti és szerkezeti irányt rögzít, nem jelent adatbázis-beve
 
 A Mesetorta.hu partner jelentkezési folyamata üzleti igényfelmérésként is működik: a partner már jelentkezéskor jelezheti, hogy ingyenes alap megjelenés, kiemelt partner megjelenés, területi kiemelés vagy készleten lévő torták kiemelése érdekli. Ez a rögzítés csak a későbbi üzleti modell előkészítése, nem jelent működő fizetést, adatbázist vagy automatikus beküldést.
 
+## Kiemelési lehetőségek
+
+A Mesetorta.hu későbbi üzleti modelljében több, admin felületen kezelhető kiemelési lehetőség jelenhet meg:
+
+* Partner kiemelés
+* Torta kiemelés
+* Készleten lévő torta kiemelés
+* Területi kiemelés
+
+A területi kiemelés nem kizárólagosság, hanem elsőbbségi megjelenés adott városban vagy körzetben. Ez a szakasz csak üzleti előkészítés, nem jelent működő fizetést, adatbázist, API-t vagy automatikus lejárati logikát.
+
 ## Bevételi lehetőségek
 
 ## Költségek
