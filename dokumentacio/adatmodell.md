@@ -188,3 +188,36 @@ A tortakereső találati listájában a torták megjelenítési sorrendje a kés
 2. sima készleten lévő torták
 3. kiemelt rendelhető torták
 4. sima rendelhető torták
+
+## Tortakategóriák
+
+Induló kategóriák:
+
+* Születésnapi torta
+* Gyerektorta
+* Esküvői torta
+* Ballagási torta
+* Keresztelő torta
+* Céges torta
+* Egyedi torta
+* Formatorta
+* Fotótorta
+* Sajttorta
+* Mini torta
+* Cukormentes torta
+* Gluténmentes torta
+* Vegán torta
+* Mentes torta
+
+## Keresési szűrők
+
+A rendszer induláskor az alábbi keresési szűrőket támogassa:
+
+* Város: a felhasználó egy adott település tortakínálatára szűkítheti a találatokat.
+* Budapest kerület: budapesti keresés esetén a találatok egy konkrét kerületre korlátozhatók.
+* Kategória: a torták a kiválasztott tortakategória alapján jeleníthetők meg.
+* Készleten / Rendelhető: különválaszthatók az azonnal elérhető és az előrendeléssel kérhető torták.
+* Ár: a találatok ár vagy ársáv alapján szűkíthetők.
+* Szeletszám: a felhasználó a kívánt adagméretnek megfelelő tortákat keresheti.
+* Kiemelt partner: csak azok a találatok jelennek meg, amelyek kiemelt partnerhez tartoznak.
+* Kiemelt torta: csak a kiemeltként megjelölt torták jelennek meg a találati listában.
