@@ -154,6 +154,7 @@ const kategoriak = [
 const partnerek = [
   {
     id: 'partner_001',
+    slug: 'mesehab-cukraszda',
     nev: 'MeseHab Cukrászda',
     kep: 'kepek/torta-placeholder.jpg',
     varos_id: 'varos_001',
@@ -169,6 +170,7 @@ const partnerek = [
   },
   {
     id: 'partner_002',
+    slug: 'tundersuti-muhely',
     nev: 'Tündérsüti Műhely',
     kep: 'kepek/torta-placeholder.jpg',
     varos_id: 'varos_002',
@@ -184,6 +186,7 @@ const partnerek = [
   },
   {
     id: 'partner_003',
+    slug: 'cukorcsillag-tortamuhely',
     nev: 'Cukorcsillag Tortaműhely',
     kep: 'kepek/torta-placeholder.jpg',
     varos_id: 'varos_003',
@@ -199,6 +202,7 @@ const partnerek = [
   },
   {
     id: 'partner_004',
+    slug: 'edes-mesek-cukraszda',
     nev: 'Édes Mesék Cukrászda',
     kep: 'kepek/torta-placeholder.jpg',
     varos_id: 'varos_004',
@@ -217,6 +221,7 @@ const partnerek = [
 const tortak = [
   {
     id: 'torta_001',
+    slug: 'erdei-gyumolcsos-alomtorta',
     korabbi_id: 'keszleten-001',
     nev: 'Erdei gyümölcsös álomtorta',
     kep: 'kepek/torta-placeholder.jpg',
@@ -238,6 +243,7 @@ const tortak = [
   },
   {
     id: 'torta_002',
+    slug: 'csokolades-mogyoro-torta',
     korabbi_id: 'keszleten-002',
     nev: 'Csokoládés mogyoró torta',
     kep: 'kepek/torta-placeholder.jpg',
@@ -259,6 +265,7 @@ const tortak = [
   },
   {
     id: 'torta_003',
+    slug: 'vanilias-eper-torta',
     korabbi_id: 'keszleten-003',
     nev: 'Vaníliás eper torta',
     kep: 'kepek/torta-placeholder.jpg',
@@ -280,6 +287,7 @@ const tortak = [
   },
   {
     id: 'torta_004',
+    slug: 'karamellas-sajttorta',
     korabbi_id: 'keszleten-004',
     nev: 'Karamellás sajttorta',
     kep: 'kepek/torta-placeholder.jpg',
@@ -301,6 +309,7 @@ const tortak = [
   },
   {
     id: 'torta_005',
+    slug: 'dobos-torta-szeletelt-diszitessel',
     korabbi_id: 'keszleten-005',
     nev: 'Dobos torta szeletelt díszítéssel',
     kep: 'kepek/torta-placeholder.jpg',
@@ -322,6 +331,7 @@ const tortak = [
   },
   {
     id: 'torta_006',
+    slug: 'citromos-habkonnyu-torta',
     korabbi_id: 'keszleten-006',
     nev: 'Citromos habkönnyű torta',
     kep: 'kepek/torta-placeholder.jpg',
@@ -343,6 +353,7 @@ const tortak = [
   },
   {
     id: 'torta_007',
+    slug: 'unikornis-szulinapi-torta',
     korabbi_id: 'rendelheto-001',
     nev: 'Unikornis szülinapi torta',
     kep: 'kepek/torta-placeholder.jpg',
@@ -364,6 +375,7 @@ const tortak = [
   },
   {
     id: 'torta_008',
+    slug: 'eskuvoi-rozsakrem-torta',
     korabbi_id: 'rendelheto-002',
     nev: 'Esküvői fehér rózsatorta',
     kep: 'kepek/torta-placeholder.jpg',
@@ -385,6 +397,7 @@ const tortak = [
   },
   {
     id: 'torta_009',
+    slug: 'mentes-afonyas-torta',
     korabbi_id: 'rendelheto-003',
     nev: 'Gluténmentes csokitorta',
     kep: 'kepek/torta-placeholder.jpg',
@@ -406,6 +419,7 @@ const tortak = [
   },
   {
     id: 'torta_010',
+    slug: 'macaron-diszes-unnepi-torta',
     korabbi_id: 'rendelheto-004',
     nev: 'Macaron díszes ünnepi torta',
     kep: 'kepek/torta-placeholder.jpg',
@@ -427,6 +441,7 @@ const tortak = [
   },
   {
     id: 'torta_011',
+    slug: 'marcipanos-mesefigura-torta',
     korabbi_id: 'rendelheto-005',
     nev: 'Marcipános mesefigura torta',
     kep: 'kepek/torta-placeholder.jpg',
@@ -448,6 +463,7 @@ const tortak = [
   },
   {
     id: 'torta_012',
+    slug: 'vegan-malnas-csokoladetorta',
     korabbi_id: 'rendelheto-006',
     nev: 'Vegán málnás csokoládétorta',
     kep: 'kepek/torta-placeholder.jpg',
