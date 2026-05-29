@@ -32,7 +32,51 @@
     </section>
 
     <section class="szuro-helye" aria-labelledby="szuro-cim">
-      <h2 id="szuro-cim">Szűrő helye</h2>
+      <h2 id="szuro-cim">Tortaszűrő</h2>
+      <form class="szuro-urlap" action="#" method="get" aria-label="Rendelhető torták szűrői">
+        <div class="szuro-mezo">
+          <label class="szuro-cimke" for="rendelheto-varos">Város vagy kerület</label>
+          <input class="szuro-input" type="text" id="rendelheto-varos" name="varos" placeholder="Pl. Szeged belváros">
+        </div>
+
+        <div class="szuro-mezo">
+          <label class="szuro-cimke" for="rendelheto-kategoria">Kategória</label>
+          <select class="szuro-input" id="rendelheto-kategoria" name="kategoria">
+            <option value="">Összes kategória</option>
+            <option value="gyerektorta">Gyerektorta</option>
+            <option value="eskuvoi-torta">Esküvői torta</option>
+            <option value="formatorta">Formatorta</option>
+            <option value="unnepi-torta">Ünnepi torta</option>
+            <option value="mentes-torta">Mentes torta</option>
+          </select>
+        </div>
+
+        <div class="szuro-mezo">
+          <label class="szuro-cimke" for="rendelheto-elkeszitesi-ido">Elkészítési idő</label>
+          <select class="szuro-input" id="rendelheto-elkeszitesi-ido" name="elkeszitesi-ido">
+            <option value="">Mindegy</option>
+            <option value="1-3-nap">1-3 nap</option>
+            <option value="4-6-nap">4-6 nap</option>
+            <option value="7-10-nap">7-10 nap</option>
+            <option value="10-plusz-nap">10+ nap</option>
+          </select>
+        </div>
+
+        <div class="szuro-mezo">
+          <label class="szuro-cimke" for="rendelheto-ar-maximum">Ár maximum</label>
+          <select class="szuro-input" id="rendelheto-ar-maximum" name="ar-maximum">
+            <option value="">Nincs megadva</option>
+            <option value="15000">15 000 Ft-ig</option>
+            <option value="25000">25 000 Ft-ig</option>
+            <option value="40000">40 000 Ft-ig</option>
+            <option value="60000">60 000 Ft-ig</option>
+          </select>
+        </div>
+
+        <div class="szuro-muvelet">
+          <button class="szuro-gomb" type="submit">Keresés</button>
+        </div>
+      </form>
     </section>
 
     <section class="talalati-lista-helye" aria-labelledby="talalati-lista-cim">

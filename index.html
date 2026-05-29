@@ -32,24 +32,29 @@
         <h1 id="hero-cim" class="hero-cim">Országos tortakereső</h1>
         <p class="hero-alcim">Találj azonnal átvehető vagy rendelhető tortát a közeledben</p>
 
-        <form class="kereso-helye" action="#" method="get" aria-label="Tortakereső helye">
+        <form class="kereso-helye" action="#" method="get" aria-label="Tortakereső">
           <div class="kereso-mezo">
-            <label class="kereso-cimke" for="varos">Város</label>
-            <input class="kereso-input" type="text" id="varos" name="varos" placeholder="Város">
+            <label class="kereso-cimke" for="varos">Város vagy kerület</label>
+            <input class="kereso-input" type="text" id="varos" name="varos" placeholder="Pl. Budapest XIII. kerület">
           </div>
 
           <div class="kereso-mezo">
             <label class="kereso-cimke" for="kategoria">Kategória</label>
             <select class="kereso-input" id="kategoria" name="kategoria">
-              <option value="">Kategória</option>
+              <option value="">Válassz kategóriát</option>
+              <option value="csokoladetorta">Csokoládétorta</option>
+              <option value="gyumolcsos-torta">Gyümölcsös torta</option>
+              <option value="gyerektorta">Gyerektorta</option>
+              <option value="eskuvoi-torta">Esküvői torta</option>
+              <option value="mentes-torta">Mentes torta</option>
             </select>
           </div>
 
           <div class="kereso-mezo">
-            <label class="kereso-cimke" for="elerhetoseg">Készleten/rendelhető</label>
+            <label class="kereso-cimke" for="elerhetoseg">Elérhetőség</label>
             <select class="kereso-input" id="elerhetoseg" name="elerhetoseg">
-              <option value="">Készleten/rendelhető</option>
-              <option value="keszleten">Készleten</option>
+              <option value="">Mindegy</option>
+              <option value="azonnal-atveheto">Azonnal átvehető</option>
               <option value="rendelheto">Rendelhető</option>
             </select>
           </div>
