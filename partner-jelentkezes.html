@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stilus.css">
+  <title>Partner jelentkezés - MESETORTA</title>
+</head>
+<body class="aloldal partner-jelentkezes-oldal">
+  <header class="fejlec">
+    <div class="fejlec-belso">
+      <div class="logo-helye" aria-label="MESETORTA logó">
+        <a href="index.html">MESETORTA</a>
+      </div>
+
+      <nav class="fomenu-helye" aria-label="Főmenü">
+        <ul class="fomenu-lista">
+          <li class="fomenu-elem"><a href="index.html">Kezdőlap</a></li>
+          <li class="fomenu-elem"><a href="ma-atveheto-tortak.html">Ma átvehető torták</a></li>
+          <li class="fomenu-elem"><a href="rendelheto-tortak.html">Rendelhető torták</a></li>
+          <li class="fomenu-elem"><a href="cukraszdak.html">Cukrászdák</a></li>
+          <li class="fomenu-elem"><a href="varosok.html">Városok</a></li>
+          <li class="fomenu-elem"><a href="partner-jelentkezes.html" aria-current="page">Partner leszek</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="oldal-tartalom partner-jelentkezes-tartalom">
+    <section class="oldal-fejlec-szekcio partner-jelentkezes-fejlec" aria-labelledby="oldal-cim">
+      <p class="partner-jelentkezes-jeloles">Cukrászdáknak és tortakészítőknek</p>
+      <h1 id="oldal-cim" class="oldal-cim">Partner jelentkezés</h1>
+      <p>Csatlakozz a MESETORTA országos tortakereső rendszeréhez, hogy a vásárlók könnyebben megtalálják a ma átvehető, rendelhető és alkalmi tortáidat.</p>
+    </section>
+
+    <section class="bemutatkozo-szoveg-helye partner-elonyok" aria-labelledby="bemutatkozo-szoveg-cim">
+      <h2 id="bemutatkozo-szoveg-cim">Miért érdemes csatlakozni?</h2>
+      <p>A MESETORTA célja, hogy összekösse a tortát kereső vásárlókat a helyi cukrászdákkal, tortaműhelyekkel és tortakészítőkkel. Partnerként bemutathatod a vállalkozásodat, a szolgáltatási területedet és a tortakínálatodat egy letisztult, kereshető felületen.</p>
+      <div class="partner-elony-racs" aria-label="Partner előnyök">
+        <div class="partner-elony-kartya">
+          <h3>Helyi láthatóság</h3>
+          <p>A város és körzet alapján kereső vásárlók könnyebben rátalálhatnak a szolgáltatásaidra.</p>
+        </div>
+        <div class="partner-elony-kartya">
+          <h3>Több tortatípus</h3>
+          <p>Jelezheted, hogy ma átvehető, rendelhető, esküvői, mentes vagy céges tortákkal dolgozol.</p>
+        </div>
+        <div class="partner-elony-kartya">
+          <h3>Egyszerű indulás</h3>
+          <p>A jelentkezési oldal most csak az adatbekérés szerkezetét mutatja, működő beküldés nélkül.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="jelentkezesi-urlap-helye" aria-labelledby="jelentkezesi-urlap-cim">
+      <div class="urlap-fejlec">
+        <h2 id="jelentkezesi-urlap-cim">Jelentkezési űrlap</h2>
+        <p>Töltsd ki a partnerprofilhoz szükséges alapadatokat. A gomb jelenleg nem küldi be az űrlapot.</p>
+      </div>
+
+      <form class="partner-urlap" action="#" method="post" enctype="multipart/form-data" aria-describedby="urlap-megjegyzes">
+        <fieldset class="urlap-blokk">
+          <legend>Alapadatok</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo">
+              <label for="cukraszda-neve">Cukrászda neve</label>
+              <input type="text" id="cukraszda-neve" name="cukraszda-neve" placeholder="Pl. MeseHab Cukrászda">
+            </div>
+            <div class="urlap-mezo">
+              <label for="kapcsolattarto-neve">Kapcsolattartó neve</label>
+              <input type="text" id="kapcsolattarto-neve" name="kapcsolattarto-neve" placeholder="Pl. Kovács Anna">
+            </div>
+            <div class="urlap-mezo">
+              <label for="telefonszam">Telefonszám</label>
+              <input type="tel" id="telefonszam" name="telefonszam" placeholder="Pl. +36 30 123 4567">
+            </div>
+            <div class="urlap-mezo">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="Pl. hello@cukraszda.hu">
+            </div>
+            <div class="urlap-mezo">
+              <label for="weboldal">Weboldal</label>
+              <input type="url" id="weboldal" name="weboldal" placeholder="https://">
+            </div>
+            <div class="urlap-mezo">
+              <label for="facebook-oldal">Facebook oldal</label>
+              <input type="url" id="facebook-oldal" name="facebook-oldal" placeholder="https://facebook.com/">
+            </div>
+            <div class="urlap-mezo">
+              <label for="varos">Város</label>
+              <input type="text" id="varos" name="varos" placeholder="Pl. Budapest">
+            </div>
+            <div class="urlap-mezo">
+              <label for="korzet-kerulet">Körzet / kerület</label>
+              <input type="text" id="korzet-kerulet" name="korzet-kerulet" placeholder="Pl. XIII. kerület vagy Belváros">
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="cim">Cím</label>
+              <input type="text" id="cim" name="cim" placeholder="Utca, házszám, emelet vagy átvételi pont">
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="partner-tipusa">Partner típusa</label>
+              <select id="partner-tipusa" name="partner-tipusa">
+                <option value="">Válassz partner típust</option>
+                <option value="cukraszda">Cukrászda</option>
+                <option value="tortamuhely">Tortaműhely</option>
+                <option value="otthoni-tortakeszito">Otthoni tortakészítő</option>
+                <option value="cukraszuzem">Cukrászüzem</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk">
+          <legend>Szolgáltatások</legend>
+          <p class="urlap-segedszoveg">Jelöld be, milyen típusú tortákkal szeretnél megjelenni.</p>
+          <div class="szolgaltatas-lista">
+            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="ma-atveheto-tortak"> <span>Ma átvehető torták</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="rendelheto-tortak"> <span>Rendelhető torták</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="eskuvoi-tortak"> <span>Esküvői torták</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="mentes-tortak"> <span>Mentes torták</span></label>
+            <label class="jelolonegyzet"><input type="checkbox" name="szolgaltatasok" value="ceges-tortak"> <span>Céges torták</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="urlap-blokk">
+          <legend>Bemutatkozás és képek</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="bemutatkozas">Szöveges bemutatkozás</label>
+              <textarea id="bemutatkozas" name="bemutatkozas" rows="7" placeholder="Írd le röviden a cukrászdát, tortaműhelyt, kínálatot, átvételi lehetőségeket és különlegességeket."></textarea>
+            </div>
+            <div class="urlap-mezo urlap-mezo--szeles">
+              <label for="kep-feltoltes">Kép feltöltés helye</label>
+              <input type="file" id="kep-feltoltes" name="kep-feltoltes" accept="image/*">
+              <p class="urlap-segedszoveg">Ide kerülhet majd logó, üzletfotó vagy tortaképek feltöltési mezője.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <p id="urlap-megjegyzes" class="urlap-megjegyzes">Ez egy statikus jelentkezési oldal: nincs adatbázis, nincs admin felület, és a beküldés még nem működik.</p>
+        <button class="jelentkezes-gomb" type="button">Jelentkezés</button>
+      </form>
+    </section>
+
+    <section class="gyik-szekcio" aria-labelledby="gyik-cim">
+      <h2 id="gyik-cim">GYIK</h2>
+      <div class="gyik-lista">
+        <details class="gyik-elem" open>
+          <summary>Hogyan működik?</summary>
+          <p>A partner jelentkezési oldal összegyűjti azokat az adatokat, amelyekből később létrehozható a cukrászda vagy tortakészítő publikus adatlapja.</p>
+        </details>
+        <details class="gyik-elem">
+          <summary>Mennyi idő a megjelenés?</summary>
+          <p>A végleges folyamat később kerül kialakításra. A cél az, hogy az adatok ellenőrzése után a partnerprofil rendezett formában jelenjen meg.</p>
+        </details>
+        <details class="gyik-elem">
+          <summary>Lesz területi kizárólagosság?</summary>
+          <p>A jelenlegi oldal csak a jelentkezési szerkezetet tartalmazza. A területi megjelenés és esetleges kiemelések üzleti szabályai később pontosíthatók.</p>
+        </details>
+        <details class="gyik-elem">
+          <summary>Hogyan kerülök a keresőbe?</summary>
+          <p>A megadott város, körzet, partner típus és szolgáltatások alapján később a kereső releváns listáiban jelenhet meg a partnered adatlapja.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lablec">
+    <div class="lablec-belso">
+      <div class="lablec-logo-helye">MESETORTA</div>
+      <p class="lablec-leiras">Országos tortakereső</p>
+      <nav class="lablec-menu-helye" aria-label="Lábléc menü">
+        <ul class="lablec-menu-lista">
+          <li class="lablec-menu-elem"><a href="ma-atveheto-tortak.html">Ma átvehető torták</a></li>
+          <li class="lablec-menu-elem"><a href="rendelheto-tortak.html">Rendelhető torták</a></li>
+          <li class="lablec-menu-elem"><a href="cukraszdak.html">Cukrászdák</a></li>
+          <li class="lablec-menu-elem"><a href="partner-jelentkezes.html">Partner leszek</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
