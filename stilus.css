@@ -692,3 +692,133 @@ article > section > p,
     text-align: left;
   }
 }
+
+/* Torta részletező oldal váz */
+.vissza-link {
+  margin-bottom: 18px;
+  font-weight: 750;
+}
+
+.torta-reszlet-fejlec .torta-reszlet-jeloles {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--szin-masodlagos);
+  color: var(--szin-elsodleges-sotet);
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.torta-reszlet-racs {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.torta-reszlet-kepkeret {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--szin-vonal);
+  border-radius: var(--sugar-kozepes);
+  background: var(--szin-felulet);
+  box-shadow: var(--arnyek-finoman);
+}
+
+.torta-reszlet-kep {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: linear-gradient(135deg, #f5ded0, #fff7ef);
+}
+
+.torta-reszlet-kepkeret figcaption {
+  padding: 12px 16px;
+  color: var(--szin-halvany);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.torta-reszlet-adatlap {
+  margin-top: 0;
+  padding: 22px;
+  border: 1px solid var(--szin-vonal);
+  border-radius: var(--sugar-kozepes);
+  background: var(--szin-felulet);
+  box-shadow: var(--arnyek-finoman);
+}
+
+.torta-reszlet-ar {
+  margin-bottom: 18px;
+  color: var(--szin-elsodleges-sotet);
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+.torta-reszlet-adatok {
+  display: grid;
+  gap: 0;
+  margin-bottom: 22px;
+}
+
+.torta-reszlet-adat-sor {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.8fr) minmax(0, 1.2fr);
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid #f1e8df;
+}
+
+.torta-reszlet-adat-sor dt {
+  color: var(--szin-halvany);
+  font-weight: 800;
+}
+
+.torta-reszlet-adat-sor dd {
+  margin: 0;
+  font-weight: 750;
+}
+
+.torta-erdekel-gomb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--szin-elsodleges);
+  color: #ffffff;
+  font-weight: 850;
+  box-shadow: 0 10px 22px rgba(155, 77, 54, 0.22);
+}
+
+.torta-erdekel-gomb:hover,
+.torta-erdekel-gomb:focus-visible {
+  background: var(--szin-elsodleges-sotet);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.hasonlo-tortak .torta-lista {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 960px) {
+  .torta-reszlet-racs,
+  .hasonlo-tortak .torta-lista {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .torta-reszlet-adat-sor {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
