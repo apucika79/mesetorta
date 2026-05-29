@@ -5,8 +5,37 @@
 
   const adatForras = window.MESETORTA_ADATOK || {
     tortak: [],
-    partnerek: []
+    partnerek: [],
+    varosok: [],
+    korzetek: []
   };
+
+  function keresIdAlapjan(lista, id) {
+    return (lista || []).find(function (elem) {
+      return elem.id === id;
+    }) || null;
+  }
+
+  function getTortaById(id) {
+    return keresIdAlapjan(adatForras.tortak, id);
+  }
+
+  function getPartnerById(id) {
+    return keresIdAlapjan(adatForras.partnerek, id);
+  }
+
+  function getVarosById(id) {
+    return keresIdAlapjan(adatForras.varosok, id);
+  }
+
+  function getKorzetById(id) {
+    return keresIdAlapjan(adatForras.korzetek, id);
+  }
+
+  window.getTortaById = getTortaById;
+  window.getPartnerById = getPartnerById;
+  window.getVarosById = getVarosById;
+  window.getKorzetById = getKorzetById;
 
   function normalizal(ertek) {
     return String(ertek || '')
