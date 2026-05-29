@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../stilus.css">
-  <title>Új partner felvétele - MESETORTA</title>
+  <title>Új partner felvétele - Mesetorta.hu</title>
 </head>
 <body class="aloldal admin-oldal">
   <header class="fejlec">
     <div class="fejlec-belso">
-      <div class="logo-helye" aria-label="MESETORTA logó"><a href="../index.html">MESETORTA</a></div>
+      <div class="logo-helye" aria-label="Mesetorta.hu logó"><a href="../index.html">Mesetorta.hu</a></div>
       <nav class="fomenu-helye" aria-label="Admin menü">
         <ul class="fomenu-lista">
           <li class="fomenu-elem"><a href="index.html">Admin főoldal</a></li>
@@ -35,7 +35,7 @@
         <p>Minden mező csak szerkezeti elem, működő adatmentés nélkül.</p>
       </div>
 
-      <form class="partner-urlap" action="#" method="post" aria-describedby="urlap-megjegyzes">
+      <form class="partner-urlap" action="#" method="post" enctype="multipart/form-data" aria-describedby="urlap-megjegyzes">
         <fieldset class="urlap-blokk">
           <legend>Alapadatok</legend>
           <div class="urlap-racs">
@@ -106,12 +106,35 @@
           </div>
         </fieldset>
 
+        <fieldset class="urlap-blokk kep-mezo-csoport">
+          <legend>Képadatok</legend>
+          <div class="urlap-racs">
+            <div class="urlap-mezo">
+              <label for="logo-feltoltes">Logó feltöltése</label>
+              <input class="fajl-mezo" type="file" id="logo-feltoltes" name="logo-feltoltes" accept="image/*">
+            </div>
+            <div class="urlap-mezo">
+              <label for="boritokep-feltoltes">Borítókép feltöltése</label>
+              <input class="fajl-mezo" type="file" id="boritokep-feltoltes" name="boritokep-feltoltes" accept="image/*">
+            </div>
+            <div class="urlap-mezo">
+              <label for="logo-url">Logó URL</label>
+              <input class="kep-url-mezo" type="url" id="logo-url" name="logo-url" placeholder="https://">
+            </div>
+            <div class="urlap-mezo">
+              <label for="boritokep-url">Borítókép URL</label>
+              <input class="kep-url-mezo" type="url" id="boritokep-url" name="boritokep-url" placeholder="https://">
+            </div>
+          </div>
+          <p class="urlap-segedszoveg">A borítókép legyen széles formátumú, a logó négyzetes.</p>
+        </fieldset>
+
         <p id="urlap-megjegyzes" class="urlap-megjegyzes">Statikus admin űrlap: nincs működő mentés, adatbázis vagy beküldés.</p>
         <button type="button">Mentés</button>
       </form>
     </section>
 
-    <p class="admin-vissza-link"><a href="../index.html">Vissza a MESETORTA főoldalra</a></p>
+    <p class="admin-vissza-link"><a href="../index.html">Vissza a Mesetorta.hu főoldalra</a></p>
   </main>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 ## Áttekintés
 
-A MESETORTA rendszer adatmodellje a partnerek, torták, városok, kategóriák, kiemelések és jelentkezések nyilvántartására épül.
+A Mesetorta.hu rendszer adatmodellje a partnerek, torták, városok, kategóriák, kiemelések és jelentkezések nyilvántartására épül.
 
 ## Induló tortakategóriák
 
@@ -44,7 +44,9 @@ A `partnerek` entitás a rendszerben megjelenő cukrászdákat, tortakészítők
 | instagram | szöveg | A partner Instagram-profiljának címe. |
 | bemutatkozas | hosszú szöveg | Rövid bemutatkozó leírás a partnerről és szolgáltatásairól. |
 | logo_url | szöveg | A partner logójának elérési útja vagy URL-je. |
+| logo_alt | szöveg | A partner logójának rövid alternatív szövege vagy képaláírása. |
 | boritokep_url | szöveg | A partner profiljához tartozó borítókép elérési útja vagy URL-je. |
+| boritokep_alt | szöveg | A partner borítóképének rövid alternatív szövege vagy képaláírása. |
 | statusz | szöveg | A partner adminisztratív állapota, például új, aktív, függőben vagy inaktív. |
 | csomag_tipus | szöveg | A partner előfizetési vagy megjelenési csomagjának típusa. |
 
@@ -65,6 +67,7 @@ A rendszer két fő tortatípust kezel:
 | slug | szöveg | Keresőbarát, URL-ben használható egyedi tortaazonosító. |
 | leiras | hosszú szöveg | A torta részletes leírása, összetevői vagy ajánlott alkalmai. |
 | kep_url | szöveg | A tortához tartozó kép elérési útja vagy URL-je. |
+| kep_alt | szöveg | A tortához tartozó kép rövid alternatív szövege vagy képaláírása. |
 | ar | tizedes szám | A torta ára vagy induló ára. |
 | meret | szöveg | A torta mérete, például átmérő, forma vagy súly alapján. |
 | szeletszam | egész szám | A tortából várható szeletek száma. |
@@ -98,6 +101,8 @@ A `varosok` entitás a szolgáltatási területek és települések alapadatait 
 | slug | szöveg | Keresőbarát, URL-ben használható városazonosító. |
 | megye | szöveg | A városhoz tartozó megye neve. |
 | tipus | szöveg | A település típusa, például város, község vagy régió. |
+| kep_url | szöveg | A városhoz tartozó kép elérési útja vagy URL-je. |
+| kep_alt | szöveg | A városhoz tartozó kép rövid alternatív szövege vagy képaláírása. |
 | legkozelebbi_varos_id | egész szám | Hivatkozás egy közeli nagyobb városra vagy szolgáltatási központra. |
 
 ### korzetek
