@@ -205,12 +205,10 @@ main > h1 {
 }
 
 /* Kereső és űrlapelemek */
-.kereso-helye {
+.kereso-helye,
+.szuro-urlap {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
   gap: 14px;
-  max-width: 980px;
-  margin: 36px auto 0;
   padding: 16px;
   border: 1px solid rgba(155, 77, 54, 0.14);
   border-radius: 24px;
@@ -219,11 +217,28 @@ main > h1 {
   text-align: left;
 }
 
-.kereso-mezo {
+.kereso-helye {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  max-width: 980px;
+  margin: 36px auto 0;
+}
+
+.szuro-urlap {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  margin-top: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.kereso-mezo,
+.szuro-mezo {
   min-width: 0;
 }
 
 .kereso-cimke,
+.szuro-cimke,
 label {
   display: block;
   margin-bottom: 7px;
@@ -233,6 +248,7 @@ label {
 }
 
 .kereso-input,
+.szuro-input,
 input,
 select,
 textarea {
@@ -247,6 +263,7 @@ textarea {
 }
 
 .kereso-input:focus,
+.szuro-input:focus,
 input:focus,
 select:focus,
 textarea:focus {
@@ -254,13 +271,15 @@ textarea:focus {
   border-color: var(--szin-elsodleges);
 }
 
-.kereso-muvelet {
+.kereso-muvelet,
+.szuro-muvelet {
   display: flex;
   align-items: end;
 }
 
 button,
 .kereso-gomb,
+.szuro-gomb,
 a[href="#"],
 .partner-tartalom-helye a {
   display: inline-flex;
@@ -281,7 +300,9 @@ a[href="#"],
 button:hover,
 button:focus-visible,
 .kereso-gomb:hover,
-.kereso-gomb:focus-visible {
+.kereso-gomb:focus-visible,
+.szuro-gomb:hover,
+.szuro-gomb:focus-visible {
   background: var(--szin-elsodleges-sotet);
   color: #ffffff;
   transform: translateY(-1px);
@@ -566,6 +587,7 @@ article > section > p,
   }
 
   .kereso-helye,
+  .szuro-urlap,
   .szekcio-tartalom,
   .torta-lista,
   .cukraszda-lista,
@@ -575,11 +597,13 @@ article > section > p,
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .kereso-muvelet {
+  .kereso-muvelet,
+  .szuro-muvelet {
     align-items: stretch;
   }
 
-  .kereso-gomb {
+  .kereso-gomb,
+  .szuro-gomb {
     width: 100%;
   }
 }
@@ -624,6 +648,7 @@ article > section > p,
   }
 
   .kereso-helye,
+  .szuro-urlap,
   .szekcio-tartalom,
   .torta-lista,
   .cukraszda-lista,
@@ -636,6 +661,10 @@ article > section > p,
   .kereso-helye {
     padding: 14px;
     border-radius: 18px;
+  }
+
+  .szuro-urlap {
+    gap: 12px;
   }
 
   .oldal-fejlec-szekcio,

@@ -32,7 +32,51 @@
     </section>
 
     <section class="szuro-helye" aria-labelledby="szuro-cim">
-      <h2 id="szuro-cim">Szűrő helye</h2>
+      <h2 id="szuro-cim">Tortaszűrő</h2>
+      <form class="szuro-urlap" action="#" method="get" aria-label="Ma átvehető torták szűrői">
+        <div class="szuro-mezo">
+          <label class="szuro-cimke" for="ma-varos">Város vagy kerület</label>
+          <input class="szuro-input" type="text" id="ma-varos" name="varos" placeholder="Pl. Debrecen belváros">
+        </div>
+
+        <div class="szuro-mezo">
+          <label class="szuro-cimke" for="ma-kategoria">Kategória</label>
+          <select class="szuro-input" id="ma-kategoria" name="kategoria">
+            <option value="">Összes kategória</option>
+            <option value="csokoladetorta">Csokoládétorta</option>
+            <option value="gyumolcsos-torta">Gyümölcsös torta</option>
+            <option value="tejszines-torta">Tejszínes torta</option>
+            <option value="sajttorta">Sajttorta</option>
+            <option value="klasszikus-torta">Klasszikus torta</option>
+          </select>
+        </div>
+
+        <div class="szuro-mezo">
+          <label class="szuro-cimke" for="ma-ar-maximum">Ár maximum</label>
+          <select class="szuro-input" id="ma-ar-maximum" name="ar-maximum">
+            <option value="">Nincs megadva</option>
+            <option value="10000">10 000 Ft-ig</option>
+            <option value="15000">15 000 Ft-ig</option>
+            <option value="20000">20 000 Ft-ig</option>
+            <option value="30000">30 000 Ft-ig</option>
+          </select>
+        </div>
+
+        <div class="szuro-mezo">
+          <label class="szuro-cimke" for="ma-szeletszam">Szeletszám</label>
+          <select class="szuro-input" id="ma-szeletszam" name="szeletszam">
+            <option value="">Mindegy</option>
+            <option value="8-10">8-10 szelet</option>
+            <option value="12">12 szelet</option>
+            <option value="16">16 szelet</option>
+            <option value="20-plusz">20+ szelet</option>
+          </select>
+        </div>
+
+        <div class="szuro-muvelet">
+          <button class="szuro-gomb" type="submit">Keresés</button>
+        </div>
+      </form>
     </section>
 
     <section class="talalati-lista-helye" aria-labelledby="talalati-lista-cim">
