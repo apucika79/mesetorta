@@ -338,6 +338,11 @@ Ez a fejlesztési pont jelenleg csak jövőbeli feladatot rögzít. Nem tartalma
 
 Az impresszum, az adatkezelési tájékoztató és a felhasználási feltételek jelenleg csak vázlatos alapoldalak. Élesítés előtt jogi ellenőrzés szükséges, ezért ezek nem tekinthetők végleges vagy teljes jogi dokumentumoknak.
 
+
+## Admin demó elérhetősége
+
+A jelenlegi admin felület demó célból nyilvánosan elérhető. Éles verzióban kötelező lesz beléptetés és jogosultságkezelés.
+
 ## Demó előkészítési ellenőrzőlista
 
 * főoldal működik
