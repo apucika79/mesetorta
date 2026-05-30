@@ -32,6 +32,7 @@ html {
 
 body {
   overflow-x: hidden;
+  width: 100%;
   margin: 0;
   min-width: 320px;
   background: var(--szin-hatter);
@@ -39,6 +40,18 @@ body {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.6;
+}
+
+body,
+header,
+main,
+footer,
+section,
+article,
+nav,
+form,
+fieldset {
+  max-width: 100%;
 }
 
 img {
@@ -127,10 +140,15 @@ main {
   box-shadow: 0 0 0 6px #fff0e6;
 }
 
+.logo-helye,
 .fomenu-helye,
 .lablec-menu-helye {
   max-width: 100%;
   min-width: 0;
+}
+
+.fomenu-helye {
+  flex: 1 1 auto;
 }
 
 .fomenu-lista,
@@ -140,6 +158,7 @@ main {
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 8px;
+  min-width: 0;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -148,6 +167,7 @@ main {
 .fomenu-elem,
 .lablec-menu-elem {
   max-width: 100%;
+  min-width: 0;
 }
 
 .fomenu-elem a,
@@ -162,6 +182,7 @@ main {
   font-weight: 650;
   text-align: center;
   white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .fomenu-elem a:hover,
@@ -180,10 +201,18 @@ main {
   flex-wrap: wrap;
   gap: 8px;
   width: min(var(--tartalom-szelesseg), calc(100% - 32px));
+  min-width: 0;
   margin: 18px auto 0;
   color: var(--szin-halvany);
   font-size: 0.95rem;
   font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.morzsa-link,
+.morzsa-aktualis {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .morzsa-link {
@@ -287,7 +316,8 @@ main > h1 {
 }
 
 .kereso-mezo,
-.szuro-mezo {
+.szuro-mezo,
+.urlap-mezo {
   min-width: 0;
 }
 
@@ -316,6 +346,13 @@ textarea {
   background: #ffffff;
   color: var(--szin-szoveg);
   font: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
 }
 
 input[type="file"] {
@@ -420,10 +457,6 @@ a[href="#"] {
   box-shadow: var(--arnyek-finoman);
 }
 
-.urlap-mezo {
-  min-width: 0;
-}
-
 .urlap-mezo--teljes,
 .urlap-checkbox-sor,
 .urlap-muvelet {
@@ -470,6 +503,7 @@ a[href="#"] {
 .urlap-muvelet {
   display: flex;
   justify-content: flex-start;
+  min-width: 0;
 }
 
 .urlap-gomb {
@@ -930,8 +964,10 @@ article > section > p,
 }
 
 .lablec-leiras {
+  max-width: 100%;
   margin: 0;
   color: var(--szin-halvany);
+  overflow-wrap: anywhere;
 }
 
 /* Reszponzív alapok */
@@ -1003,6 +1039,7 @@ article > section > p,
   .fejlec-belso {
     min-height: 0;
     gap: 14px;
+    padding: 12px 0;
   }
 
   .logo-helye,
@@ -1020,18 +1057,21 @@ article > section > p,
 
   .fomenu-lista,
   .lablec-menu-lista {
+    align-items: stretch;
     gap: 6px;
   }
 
   .fomenu-elem a,
   .lablec-menu-elem a {
-    min-height: 36px;
-    padding: 7px 10px;
+    min-height: 40px;
+    padding: 8px 10px;
     font-size: 0.9rem;
   }
 
   .hero-szekcio {
-    padding: 50px 12px 42px;
+    margin-inline: calc(50% - 50vw);
+    padding: 34px 12px 30px;
+    overflow-x: hidden;
   }
 
   .hero-cim,
@@ -1061,6 +1101,8 @@ article > section > p,
   }
 
   .kereso-helye {
+    gap: 12px;
+    margin-top: 22px;
     padding: 14px;
     border-radius: 18px;
   }
@@ -1082,6 +1124,18 @@ article > section > p,
   .partner-fo-gomb,
   .partner-masodlagos-gomb,
   .ures-allapot-gomb {
+    width: 100%;
+  }
+
+  .morzsa {
+    width: min(100% - 24px, var(--tartalom-szelesseg));
+    font-size: 0.88rem;
+  }
+
+  .kapcsolati-urlap,
+  .partner-urlap,
+  .urlap-racs,
+  .szuro-urlap {
     width: 100%;
   }
 
@@ -1133,6 +1187,11 @@ article > section > p,
 }
 
 @media (max-width: 420px) {
+  html,
+  body {
+    min-width: 0;
+  }
+
   main,
   .fejlec-belso,
   .lablec-belso,
@@ -1142,8 +1201,14 @@ article > section > p,
     width: min(100% - 20px, var(--tartalom-szelesseg));
   }
 
+  .fomenu-elem,
+  .lablec-menu-elem {
+    flex: 1 1 calc(50% - 6px);
+  }
+
   .fomenu-elem a,
   .lablec-menu-elem a {
+    width: 100%;
     padding-inline: 9px;
     font-size: 0.86rem;
   }
@@ -1998,6 +2063,7 @@ textarea {
 .ajanlosav-tartalom {
   position: relative;
   max-width: 100%;
+  overflow: hidden;
 }
 
 .ajanlosav-gorgeto {
@@ -2011,6 +2077,7 @@ textarea {
   scroll-behavior: smooth;
   scroll-padding-inline: 4px;
   scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -2069,6 +2136,13 @@ textarea {
   right: 8px;
 }
 
+@media (min-width: 681px) {
+  .ajanlosav-gorgeto {
+    padding-inline: 56px;
+    scroll-padding-inline: 56px;
+  }
+}
+
 @media (min-width: 961px) {
   .ajanlosav-kartya,
   .ajanlosav-gorgeto > article,
@@ -2090,15 +2164,16 @@ textarea {
 
   .ajanlosav-gorgeto {
     gap: 16px;
-    margin-inline: -4px;
-    padding-inline: 4px;
+    margin-inline: 0;
+    padding-inline: 0;
   }
 
   .ajanlosav-kartya,
   .ajanlosav-gorgeto > article,
   .ajanlosav-gorgeto > li,
   .ajanlosav-gorgeto > .partner-torta-hely {
-    flex-basis: 84vw;
+    flex-basis: min(82vw, 320px);
+    min-width: min(260px, 100%);
   }
 
   .ajanlosav-gorgeto > .ures-allapot {
