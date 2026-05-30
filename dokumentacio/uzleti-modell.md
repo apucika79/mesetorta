@@ -19,6 +19,12 @@ A Mesetorta.hu országos területi működésre készül. A városkatalógus ala
 Ez a szakasz üzleti és szerkezeti irányt rögzít, nem jelent adatbázis-bevezetést vagy működő keresési funkciót.
 
 
+## Projekt bemutató oldal
+
+A `projekt-bemutato.html` a Mesetorta.hu eladási és üzleti bemutató célú statikus oldala. Az oldal potenciális vevőnek, befektetőnek vagy átvevőnek foglalja össze a projekt piaci problémáját, megoldását, fő funkcióit, üzleti modelljét, területi bővíthetőségét, jelenlegi készültségét és további fejlesztési lehetőségeit.
+
+Ez az oldal nem tortavásárlóknak és nem cukrászdáknak szól, hanem a Mesetorta.hu projekt átvételét vagy továbbvitelét mérlegelő érdeklődőknek. A bemutató nem tartalmaz működő fizetést, adatbázist, kapcsolatfelvételi beküldést vagy API-kapcsolatot.
+
 ## Partner jelentkezési igények
 
 A Mesetorta.hu partner jelentkezési folyamata üzleti igényfelmérésként is működik: a partner már jelentkezéskor jelezheti, hogy ingyenes alap megjelenés, kiemelt partner megjelenés, területi kiemelés vagy készleten lévő torták kiemelése érdekli. Ez a rögzítés csak a későbbi üzleti modell előkészítése, nem jelent működő fizetést, adatbázist vagy automatikus beküldést.

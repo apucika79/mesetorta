@@ -800,6 +800,73 @@ article > section > p,
 }
 
 
+/* Projekt bemutató oldal */
+.projekt-bemutato-tartalom {
+  max-width: 980px;
+}
+
+.projekt-bemutato-fejlec {
+  text-align: left;
+}
+
+.projekt-bemutato-fejlec p {
+  margin-inline: 0;
+}
+
+.projekt-bemutato-jeloles {
+  display: inline-flex;
+  width: auto;
+  min-height: 30px;
+  margin-bottom: 14px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--szin-masodlagos);
+  color: var(--szin-elsodleges-sotet);
+  font-size: 0.84rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.projekt-lista {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 0;
+  padding-left: 22px;
+  color: var(--szin-halvany);
+}
+
+.projekt-lista li::marker {
+  color: var(--szin-elsodleges);
+}
+
+.projekt-lista-ketoszlopos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 34px;
+}
+
+.projekt-kapcsolat-blokk {
+  border-color: rgba(155, 77, 54, 0.28);
+  background: linear-gradient(135deg, #ffffff, var(--szin-felulet-meleg));
+}
+
+.projekt-megjegyzes {
+  margin-bottom: 0;
+  color: var(--szin-halvany);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+@media (max-width: 680px) {
+  .projekt-bemutato-fejlec {
+    text-align: left;
+  }
+
+  .projekt-lista-ketoszlopos {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Találati oldalak listanézete */
 .talalati-oldal {
   display: grid;
