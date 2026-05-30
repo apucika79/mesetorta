@@ -333,3 +333,7 @@ A későbbi validációs feladatok során külön figyelni kell arra, hogy:
 * a kiemelések csak kezdő dátummal, záró dátummal, státusszal és legalább egy cél kapcsolattal legyenek létrehozhatók.
 
 Ez a fejlesztési pont jelenleg csak jövőbeli feladatot rögzít. Nem tartalmaz JavaScript validációt, adatbázist, API-t vagy működő alkalmazáskódot.
+
+## Jogi oldalvázak állapota
+
+Az impresszum, az adatkezelési tájékoztató és a felhasználási feltételek jelenleg csak vázlatos alapoldalak. Élesítés előtt jogi ellenőrzés szükséges, ezért ezek nem tekinthetők végleges vagy teljes jogi dokumentumoknak.

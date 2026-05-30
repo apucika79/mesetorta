@@ -2445,3 +2445,41 @@ textarea {
     width: 100%;
   }
 }
+
+/* Jogi oldalvázak */
+.jogi-oldal-tartalom {
+  max-width: 980px;
+}
+
+.jogi-fejlec {
+  background: linear-gradient(135deg, #ffffff, #fff4ea);
+}
+
+.jogi-jeloles {
+  margin-bottom: 10px;
+  color: var(--szin-elsodleges);
+  font-size: 0.84rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.jogi-vazlat-blokk,
+.jogi-megjegyzes {
+  border: 1px solid var(--szin-vonal);
+  border-radius: var(--sugar-nagy);
+  background: #ffffff;
+  box-shadow: var(--arnyek-finoman);
+}
+
+.jogi-vazlat-blokk p,
+.jogi-megjegyzes p {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: var(--szin-halvany);
+}
+
+.jogi-megjegyzes {
+  border-color: rgba(155, 77, 54, 0.28);
+  background: linear-gradient(135deg, #ffffff, var(--szin-felulet-meleg));
+}
