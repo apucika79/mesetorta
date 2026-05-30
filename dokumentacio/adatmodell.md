@@ -294,3 +294,102 @@ A rendszer induláskor az alábbi keresési szűrőket támogassa:
 * Szeletszám: a felhasználó a kívánt adagméretnek megfelelő tortákat keresheti.
 * Kiemelt partner: csak azok a találatok jelennek meg, amelyek kiemelt partnerhez tartoznak.
 * Kiemelt torta: csak a kiemeltként megjelölt torták jelennek meg a találati listában.
+
+## Adatellenőrzési szabályok
+
+Ez a fejezet a Mesetorta.hu későbbi adatellenőrzési szabályait rögzíti. A szabályok dokumentációs célúak: jelenleg nem jelentenek működő validációt, adatbázis-sémát, API-t vagy JavaScript ellenőrzést.
+
+### Partner kötelező mezői
+
+Partner rögzítésekor az alábbi adatok legyenek kötelezőek:
+
+* partner neve,
+* partner típusa,
+* város,
+* körzet / kerület, ha releváns,
+* telefonszám vagy e-mail,
+* státusz.
+
+### Torta kötelező mezői
+
+Torta rögzítésekor az alábbi adatok legyenek kötelezőek:
+
+* torta neve,
+* partner,
+* állapot,
+* város,
+* körzet / kerület, ha releváns,
+* ár,
+* kategória,
+* kép vagy placeholder kép,
+* aktív / rejtett állapot.
+
+### Készleten lévő torták kötelező mezői
+
+Készleten lévő tortánál az általános tortaadatokon felül az alábbi mezők legyenek kötelezőek:
+
+* készlet darabszám,
+* átvételi információ,
+* készlet lejárati ideje.
+
+### Rendelhető torták kötelező mezői
+
+Rendelhető tortánál az általános tortaadatokon felül az alábbi mezők legyenek kötelezőek:
+
+* rendelési határidő,
+* elkészítési idő,
+* rendelési megjegyzés, ha szükséges.
+
+### Város kötelező mezői
+
+Város rögzítésekor az alábbi adatok legyenek kötelezőek:
+
+* város neve,
+* slug,
+* megye,
+* típus.
+
+### Körzet kötelező mezői
+
+Körzet, kerület vagy városrész rögzítésekor az alábbi adatok legyenek kötelezőek:
+
+* város azonosító,
+* körzet neve,
+* slug,
+* típus.
+
+### Jelentkezés kötelező mezői
+
+Partneri jelentkezésnél az alábbi adatok legyenek kötelezőek:
+
+* név / cégnév,
+* kapcsolattartó neve,
+* telefonszám vagy e-mail,
+* város,
+* partner típusa,
+* hozzájárulás.
+
+### Kiemelés kötelező mezői
+
+Kiemelés rögzítésekor az alábbi adatok legyenek kötelezőek:
+
+* kiemelés típusa,
+* kezdő dátum,
+* záró dátum,
+* státusz,
+* legalább egy cél az alábbiak közül:
+  * partner,
+  * torta,
+  * város,
+  * körzet.
+
+### Hibás adat példák
+
+A későbbi ellenőrzéseknek többek között az alábbi hibás adatokat kell megakadályozniuk:
+
+* torta ár nélkül,
+* készleten torta lejárati idő nélkül,
+* partner elérhetőség nélkül,
+* város slug nélkül,
+* kiemelés záró dátum nélkül,
+* jelentkezés hozzájárulás nélkül.

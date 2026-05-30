@@ -317,3 +317,19 @@ Az első verzióban nincs:
 * automata számlázás.
 
 Ezek a funkciók későbbi fejlesztési körökben kerülhetnek elő, miután az alap oldalstruktúra, a torta- és partnermegjelenítés, valamint az adminisztrációs irányok stabilan működnek.
+
+## Későbbi validációs feladatok
+
+A Mesetorta.hu későbbi fejlesztési ütemében az admin felületen és a partner űrlapokon olyan adatellenőrzést kell készíteni, amely az adatmodellben dokumentált kötelező mezőkre és hibás adat példákra épül.
+
+Az ellenőrzések célja, hogy a partnerek, torták, készleten lévő torták, rendelhető torták, városok, körzetek, jelentkezések és kiemelések csak a szükséges alapadatokkal kerülhessenek rögzítésre vagy publikálásra.
+
+A későbbi validációs feladatok során külön figyelni kell arra, hogy:
+
+* az admin felületen ne lehessen hiányos partner-, torta-, város-, körzet- vagy kiemelésadatot menteni,
+* a partner űrlapokon ne lehessen elérhetőség vagy hozzájárulás nélküli jelentkezést beküldeni,
+* a készleten lévő tortáknál kötelező legyen a darabszám, az átvételi információ és a készlet lejárati ideje,
+* a rendelhető tortáknál kötelező legyen a rendelési határidő, az elkészítési idő és szükség esetén a rendelési megjegyzés,
+* a kiemelések csak kezdő dátummal, záró dátummal, státusszal és legalább egy cél kapcsolattal legyenek létrehozhatók.
+
+Ez a fejlesztési pont jelenleg csak jövőbeli feladatot rögzít. Nem tartalmaz JavaScript validációt, adatbázist, API-t vagy működő alkalmazáskódot.
