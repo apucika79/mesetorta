@@ -47,6 +47,7 @@ A `partnerek` entitás a rendszerben megjelenő cukrászdákat, tortakészítők
 | weboldal | szöveg | A partner saját weboldalának címe. |
 | facebook | szöveg | A partner Facebook-oldalának címe. |
 | instagram | szöveg | A partner Instagram-profiljának címe. |
+| tiktok | szöveg | A partner TikTok oldalának URL-je, ha megadta. |
 | bemutatkozas | hosszú szöveg | Rövid bemutatkozó leírás a partnerről és szolgáltatásairól. |
 | logo_url | szöveg | A partner logójának elérési útja vagy URL-je. |
 | logo_alt | szöveg | A partner logójának rövid alternatív szövege vagy képaláírása. |
