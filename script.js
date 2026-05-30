@@ -471,7 +471,7 @@
     tartalom.appendChild(jobbNyil);
 
     function lapoz(irany) {
-      const tavolsag = Math.max(gorgeto.clientWidth * 0.82, 280);
+      const tavolsag = Math.max(gorgeto.clientWidth, 280);
       gorgeto.scrollBy({ left: irany * tavolsag, behavior: 'smooth' });
     }
 
