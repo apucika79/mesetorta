@@ -91,12 +91,37 @@ main,
   margin-inline: auto;
 }
 
+.oldal-kontener {
+  width: 100%;
+  max-width: var(--tartalom-szelesseg);
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
 main {
   padding: 36px 0 64px;
 }
 
 .fooldal-tartalom {
+  width: 100%;
+  max-width: none;
   padding-top: 0;
+}
+
+.fooldal .hero-szekcio {
+  padding-inline: 0;
+}
+
+.fooldal .szekcio-vaz {
+  margin-top: 48px;
+}
+
+.fooldal main > section:not(.hero-szekcio) {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 /* Fejléc és menük */
@@ -302,8 +327,9 @@ main > h1 {
 
 .kereso-helye {
   grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
-  max-width: 980px;
-  margin: 36px auto 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 36px 0 0;
 }
 
 .szuro-urlap {
@@ -1028,6 +1054,11 @@ article > section > p,
     width: min(100% - 24px, var(--tartalom-szelesseg));
   }
 
+  .oldal-kontener {
+    width: 100%;
+    padding-inline: 12px;
+  }
+
   main {
     padding: 24px 0 46px;
   }
@@ -1072,6 +1103,10 @@ article > section > p,
     margin-inline: calc(50% - 50vw);
     padding: 34px 12px 30px;
     overflow-x: hidden;
+  }
+
+  .fooldal .hero-szekcio {
+    padding-inline: 0;
   }
 
   .hero-cim,
@@ -1199,6 +1234,11 @@ article > section > p,
   .szekcio-belso,
   .oldal-tartalom {
     width: min(100% - 20px, var(--tartalom-szelesseg));
+  }
+
+  .oldal-kontener {
+    width: 100%;
+    padding-inline: 10px;
   }
 
   .fomenu-elem,
@@ -2121,6 +2161,7 @@ textarea {
 }
 
 .ajanlosav-tartalom {
+  --ajanlosav-gap: 22px;
   display: grid;
   grid-template-columns: 46px minmax(0, 1fr) 46px;
   align-items: center;
@@ -2132,7 +2173,7 @@ textarea {
 .ajanlosav-gorgeto {
   display: flex !important;
   grid-template-columns: none !important;
-  gap: 22px;
+  gap: var(--ajanlosav-gap);
   min-width: 0;
   max-width: 100%;
   overflow-x: auto;
@@ -2162,8 +2203,9 @@ textarea {
 .ajanlosav-gorgeto > li,
 .ajanlosav-gorgeto > .ures-allapot,
 .ajanlosav-gorgeto > .partner-torta-hely {
-  flex: 0 0 clamp(240px, calc((100% - 66px) / 4), 320px);
+  flex: 0 0 calc((100% - var(--ajanlosav-gap) - var(--ajanlosav-gap)) / 3);
   min-width: 0;
+  max-width: calc((100% - var(--ajanlosav-gap) - var(--ajanlosav-gap)) / 3);
   scroll-snap-align: start;
 }
 
@@ -2235,7 +2277,8 @@ textarea {
   .ajanlosav-gorgeto > article,
   .ajanlosav-gorgeto > li,
   .ajanlosav-gorgeto > .partner-torta-hely {
-    flex-basis: clamp(240px, calc((100% - 22px) / 2), 320px);
+    flex-basis: calc((100% - var(--ajanlosav-gap)) / 2);
+    max-width: calc((100% - var(--ajanlosav-gap)) / 2);
   }
 }
 
@@ -2254,7 +2297,8 @@ textarea {
   }
 
   .ajanlosav-gorgeto {
-    gap: 16px;
+    --ajanlosav-gap: 16px;
+    gap: var(--ajanlosav-gap);
     margin-inline: 0;
     padding-inline: 0;
   }
@@ -2263,8 +2307,9 @@ textarea {
   .ajanlosav-gorgeto > article,
   .ajanlosav-gorgeto > li,
   .ajanlosav-gorgeto > .partner-torta-hely {
-    flex-basis: min(82vw, 320px);
-    min-width: min(260px, 100%);
+    flex-basis: 100%;
+    min-width: 0;
+    max-width: 100%;
   }
 
   .ajanlosav-gorgeto > .ures-allapot {
