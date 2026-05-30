@@ -4,6 +4,11 @@
 
 A Mesetorta.hu rendszer adatmodellje a partnerek, torták, városok, kategóriák, kiemelések és jelentkezések nyilvántartására épül.
 
+
+## Demó mintaadatok
+
+Az `adatok.js` jelenlegi tartalma kizárólag Mesetorta.hu demó célú, kitalált mintaadat. A benne szereplő partnerek, torták, elérhetőségek és megjelenített adatok nem valódi vállalkozásokhoz tartoznak, nem értelmezhetők éles partneradatként, és csak az országos tortakereső működési logikájának bemutatására szolgálnak. A demó továbbra sem használ adatbázist vagy API-t.
+
 ## Induló tortakategóriák
 
 * Születésnapi torta
