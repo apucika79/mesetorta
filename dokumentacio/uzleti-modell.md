@@ -45,3 +45,30 @@ A területi kiemelés nem kizárólagosság, hanem elsőbbségi megjelenés adot
 ## Költségek
 
 ## Kockázatok
+
+## Jelenlegi demó állapot
+
+A jelenlegi verzió statikus demó, amely bemutatja a Mesetorta.hu üzleti és felhasználói logikáját.
+
+Működő / előkészített elemek:
+
+* főoldal
+* ajánlósávok
+* torta listaoldalak
+* cukrászda listaoldal
+* városoldalak
+* partner profilok
+* torta részletező oldalak
+* partner jelentkezési oldal
+* admin felület váz
+* jogi oldalvázak
+* SEO alapok
+
+Még nem működő elemek:
+
+* adatbázis
+* valódi adatmentés
+* online fizetés
+* e-mail küldés
+* partner belépés
+* automatikus készletlejárat

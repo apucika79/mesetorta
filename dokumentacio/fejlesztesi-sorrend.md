@@ -337,3 +337,20 @@ Ez a fejlesztési pont jelenleg csak jövőbeli feladatot rögzít. Nem tartalma
 ## Jogi oldalvázak állapota
 
 Az impresszum, az adatkezelési tájékoztató és a felhasználási feltételek jelenleg csak vázlatos alapoldalak. Élesítés előtt jogi ellenőrzés szükséges, ezért ezek nem tekinthetők végleges vagy teljes jogi dokumentumoknak.
+
+## Demó előkészítési ellenőrzőlista
+
+* főoldal működik
+* ajánlósávok működnek
+* találati oldalak működnek
+* városoldalak működnek
+* partneroldalak működnek
+* tortaoldalak működnek
+* admin oldalak megnyithatók
+* jogi oldalak megnyithatók
+* sitemap.xml létezik
+* robots.txt létezik
+* mobilnézet ellenőrizve
+* adatbázis még nincs bekötve
+* beküldések még nem működnek
+* képek placeholder állapotban vannak
