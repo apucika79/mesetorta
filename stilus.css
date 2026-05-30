@@ -1867,6 +1867,66 @@ textarea {
 }
 
 /* Admin felület statikus váza */
+
+.admin-demo-jelzes {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 18px 20px;
+  border: 1px solid rgba(155, 77, 54, 0.28);
+  border-left: 6px solid var(--szin-elsodleges);
+  border-radius: var(--sugar-kozepes);
+  background: linear-gradient(135deg, #ffffff, var(--szin-felulet-meleg));
+  box-shadow: var(--arnyek-finoman);
+}
+
+.admin-demo-jelzes h2,
+.admin-demo-jelzes p {
+  margin: 0;
+}
+
+.admin-demo-jelzes h2 {
+  color: var(--szin-elsodleges);
+  font-size: 1.18rem;
+}
+
+.admin-demo-jelzes p {
+  color: var(--szin-halvany);
+  font-weight: 700;
+}
+
+.admin-navigacio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding: 14px;
+  border: 1px solid var(--szin-vonal);
+  border-radius: var(--sugar-nagy);
+  background: #ffffff;
+  box-shadow: var(--arnyek-finoman);
+}
+
+.admin-navigacio-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 14px;
+  border: 1px solid rgba(155, 77, 54, 0.22);
+  border-radius: 999px;
+  background: var(--szin-felulet-meleg);
+  color: var(--szin-szoveg);
+  font-weight: 800;
+}
+
+.admin-navigacio-link:hover,
+.admin-navigacio-link:focus-visible,
+.admin-navigacio-link[aria-current="page"] {
+  background: var(--szin-elsodleges);
+  color: #ffffff;
+}
+
 .admin-tartalom .oldal-fejlec-szekcio {
   margin-top: 0;
 }
