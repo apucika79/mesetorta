@@ -304,55 +304,53 @@
         <header class="szekcio-fejlec">
           <h2 id="varosok-cim" class="szekcio-cim">Népszerű városok</h2>
         </header>
-        <div class="szekcio-tartalom varos-lista-helye">
-          <ul class="varos-lista">
-            <li class="varos-lista-elem">
-              <a href="varosok/budapest.html">
-                <img class="varos-kartya-kep" src="kepek/placeholder/varos-placeholder.svg" alt="Budapest városképének helye" data-placeholder-tipus="varos">
-                <span class="varos-kartya-tartalom">
-                  <span class="varos-kartya-nev">Budapest</span>
-                  <span class="varos-kartya-adatok">12 torta · 4 partner · 23 kerület</span>
-                </span>
-              </a>
-            </li>
-            <li class="varos-lista-elem">
-              <a href="varosok/debrecen.html">
-                <img class="varos-kartya-kep" src="kepek/placeholder/varos-placeholder.svg" alt="Debrecen városképének helye" data-placeholder-tipus="varos">
-                <span class="varos-kartya-tartalom">
-                  <span class="varos-kartya-nev">Debrecen</span>
-                  <span class="varos-kartya-adatok">6 torta · 2 partner · 4 városrész</span>
-                </span>
-              </a>
-            </li>
-            <li class="varos-lista-elem">
-              <a href="varosok/szeged.html">
-                <img class="varos-kartya-kep" src="kepek/placeholder/varos-placeholder.svg" alt="Szeged városképének helye" data-placeholder-tipus="varos">
-                <span class="varos-kartya-tartalom">
-                  <span class="varos-kartya-nev">Szeged</span>
-                  <span class="varos-kartya-adatok">5 torta · 2 partner · 4 városrész</span>
-                </span>
-              </a>
-            </li>
-            <li class="varos-lista-elem">
-              <a href="varosok/gyor.html">
-                <img class="varos-kartya-kep" src="kepek/placeholder/varos-placeholder.svg" alt="Győr városképének helye" data-placeholder-tipus="varos">
-                <span class="varos-kartya-tartalom">
-                  <span class="varos-kartya-nev">Győr</span>
-                  <span class="varos-kartya-adatok">0 torta · 0 partner · 4 városrész</span>
-                </span>
-              </a>
-            </li>
-            <li class="varos-lista-elem">
-              <a href="varosok/pecs.html">
-                <img class="varos-kartya-kep" src="kepek/placeholder/varos-placeholder.svg" alt="Pécs városképének helye" data-placeholder-tipus="varos">
-                <span class="varos-kartya-tartalom">
-                  <span class="varos-kartya-nev">Pécs</span>
-                  <span class="varos-kartya-adatok">0 torta · 0 partner · 4 városrész</span>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
+        <ul class="szekcio-tartalom varos-lista varos-lista-helye">
+          <li class="varos-lista-elem">
+            <a href="varosok/budapest.html">
+              <img class="varos-kartya-kep" src="kepek/placeholder/varos-placeholder.svg" alt="Budapest városképének helye" data-placeholder-tipus="varos">
+              <span class="varos-kartya-tartalom">
+                <span class="varos-kartya-nev">Budapest</span>
+                <span class="varos-kartya-adatok">12 torta · 4 partner · 23 kerület</span>
+              </span>
+            </a>
+          </li>
+          <li class="varos-lista-elem">
+            <a href="varosok/debrecen.html">
+              <img class="varos-kartya-kep" src="kepek/placeholder/varos-placeholder.svg" alt="Debrecen városképének helye" data-placeholder-tipus="varos">
+              <span class="varos-kartya-tartalom">
+                <span class="varos-kartya-nev">Debrecen</span>
+                <span class="varos-kartya-adatok">6 torta · 2 partner · 4 városrész</span>
+              </span>
+            </a>
+          </li>
+          <li class="varos-lista-elem">
+            <a href="varosok/szeged.html">
+              <img class="varos-kartya-kep" src="kepek/placeholder/varos-placeholder.svg" alt="Szeged városképének helye" data-placeholder-tipus="varos">
+              <span class="varos-kartya-tartalom">
+                <span class="varos-kartya-nev">Szeged</span>
+                <span class="varos-kartya-adatok">5 torta · 2 partner · 4 városrész</span>
+              </span>
+            </a>
+          </li>
+          <li class="varos-lista-elem">
+            <a href="varosok/gyor.html">
+              <img class="varos-kartya-kep" src="kepek/placeholder/varos-placeholder.svg" alt="Győr városképének helye" data-placeholder-tipus="varos">
+              <span class="varos-kartya-tartalom">
+                <span class="varos-kartya-nev">Győr</span>
+                <span class="varos-kartya-adatok">0 torta · 0 partner · 4 városrész</span>
+              </span>
+            </a>
+          </li>
+          <li class="varos-lista-elem">
+            <a href="varosok/pecs.html">
+              <img class="varos-kartya-kep" src="kepek/placeholder/varos-placeholder.svg" alt="Pécs városképének helye" data-placeholder-tipus="varos">
+              <span class="varos-kartya-tartalom">
+                <span class="varos-kartya-nev">Pécs</span>
+                <span class="varos-kartya-adatok">0 torta · 0 partner · 4 városrész</span>
+              </span>
+            </a>
+          </li>
+        </ul>
         <div class="szekcio-muvelet">
           <a class="kereso-gomb" href="varosok.html">Összes város megtekintése</a>
         </div>
@@ -364,7 +362,15 @@
         <header class="szekcio-fejlec">
           <h2 id="partner-leszek-cim" class="szekcio-cim">Partner leszek</h2>
         </header>
-        <div class="szekcio-tartalom partner-tartalom-helye"></div>
+        <div class="szekcio-tartalom partner-tartalom-helye">
+          <a class="partner-cta-kartya" href="partner-jelentkezes.html" aria-label="Partner jelentkezés megnyitása">
+            <span class="partner-cta-szoveg">
+              <span class="partner-cta-felirat">Cukrászda vagy tortakészítő vagy?</span>
+              <span class="partner-cta-leiras">Jelenj meg a Mesetorta.hu ajánlatai között, és érd el azokat, akik tortát keresnek a közeledben.</span>
+            </span>
+            <span class="partner-cta-gomb" aria-hidden="true">Partner jelentkezés</span>
+          </a>
+        </div>
       </div>
     </section>
   </main>
