@@ -31,6 +31,15 @@
     return placeholderPrefix() + (KEP_PLACEHOLDEREK[tipus] || KEP_PLACEHOLDEREK.torta);
   }
 
+  function belsoLinkUtvonal(ertek) {
+    const utvonal = String(ertek || '');
+    if (!utvonal || /^(#|https?:|mailto:|tel:|\/|\.\.\/)/.test(utvonal)) {
+      return utvonal;
+    }
+
+    return placeholderPrefix() ? placeholderPrefix() + utvonal : utvonal;
+  }
+
   function kepUtvonal(ertek, tipus) {
     if (!ertek) {
       return placeholderUtvonal(tipus);
@@ -285,7 +294,7 @@
   function tortaKartya(torta) {
     const cim = biztonsagosSzoveg(torta.nev);
     const cimHtml = torta.oldal
-      ? `<a href="${biztonsagosSzoveg(torta.oldal)}">${cim}</a>`
+      ? `<a href="${biztonsagosSzoveg(belsoLinkUtvonal(torta.oldal))}">${cim}</a>`
       : cim;
     const allapotOsztaly = torta.allapot === 'rendelheto' ? 'rendelheto' : 'keszleten';
 
@@ -311,7 +320,7 @@
   function partnerKartya(partner) {
     const cim = biztonsagosSzoveg(partner.nev);
     const cimHtml = partner.oldal
-      ? `<a href="${biztonsagosSzoveg(partner.oldal)}">${cim}</a>`
+      ? `<a href="${biztonsagosSzoveg(belsoLinkUtvonal(partner.oldal))}">${cim}</a>`
       : cim;
     const kiemeltHtml = partner.kiemelt ? '<span class="cimke cimke-kiemelt">Kiemelt partner</span>' : '';
 
@@ -350,7 +359,7 @@
       <div class="ures-allapot" role="status">
         <h3 class="ures-allapot-cim">${biztonsagosSzoveg(cim)}</h3>
         <p class="ures-allapot-szoveg">${biztonsagosSzoveg(szoveg)}</p>
-        <a class="ures-allapot-gomb" href="${biztonsagosSzoveg(partnerLink || PARTNER_JELENTKEZES_LINK)}">Partnerként megjelenek</a>
+        <a class="ures-allapot-gomb" href="${biztonsagosSzoveg(belsoLinkUtvonal(partnerLink || PARTNER_JELENTKEZES_LINK))}">Partnerként megjelenek</a>
       </div>`;
   }
 
